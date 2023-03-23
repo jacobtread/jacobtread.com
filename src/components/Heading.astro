@@ -1,0 +1,202 @@
+---
+import Typer from "./Typer.svelte";
+---
+
+<div class="heading">
+  <div class="heading__content">
+    <h1 class="heading__name">
+      <span class="heading__name__first">Jacob</span>
+      <span class="heading__name__last">Read</span>
+    </h1>
+    <p class="heading__role">
+      <Typer
+        client:only="svelte"
+        values={[
+          "Rust",
+          "Full-Stack",
+          "Web",
+          "Kotlin",
+          "Front-end",
+          "Back-end",
+          "Stonks™",
+          "JS",
+          "PHP",
+          "Go",
+          "Cool",
+          "Bad",
+          "Cheat",
+          "HTML",
+          "CSS",
+          "!Good",
+        ]}
+        duration={1000}
+      />
+      Developer
+    </p>
+    <nav class="nav">
+      <a href="/blog" class="nav__link">Blog</a>
+      <a href="#contact" class="nav__link">Contact</a>
+      <a href="#about" class="nav__link">About</a>
+      <a href="#technology" class="nav__link">Technology</a>
+      <a href="#projects" class="nav__link">Projects</a>
+    </nav>
+  </div>
+</div>
+
+<style>
+  .heading {
+    height: 100vh;
+    width: 100%;
+
+    background: linear-gradient(
+        90deg,
+        rgba(17, 17, 17, 1),
+        rgba(12, 12, 12, 0.75)
+      ),
+      url("/background.jpg") no-repeat;
+    background-size: cover;
+
+    background-color: #111;
+    display: grid;
+    align-items: center;
+    color: #ffffff;
+  }
+
+  .heading__content {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 86rem;
+    padding: 5rem;
+  }
+
+  .heading__name {
+    font-weight: 700;
+    font-size: 8rem;
+    color: #ffffff;
+    transition: all 0.5s ease;
+    line-height: 1;
+    margin-left: -4px;
+  }
+
+  .heading__name__first,
+  .heading__name__last {
+    opacity: 0;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.25rem;
+    animation: in-left 0.5s ease forwards;
+  }
+
+  .heading__name__first {
+    background: -webkit-linear-gradient(30deg, #7ed380, #0c9bdd);
+    -webkit-background-clip: text;
+    color: #7ed380;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .heading__name__last {
+    animation-delay: 0.1s;
+  }
+
+  .heading__role {
+    margin-top: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+    animation: in-left 0.5s 0.2s ease forwards;
+    opacity: 0;
+  }
+
+  .nav {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .nav__link {
+    font-weight: bold;
+    color: #9f9f9f;
+    font-size: 1.25rem;
+    text-decoration: none;
+    padding: 1rem;
+    border: 2px solid #222b22;
+    text-transform: uppercase;
+    border-radius: 0.25rem;
+
+    background-color: transparent;
+    transition: color 0.5s, border-color 0.25s, background-color 0.5s;
+    animation: link-in-left 0.5s 1.25s ease forwards;
+    opacity: 0;
+  }
+
+  .nav__link:nth-child(2) {
+    animation-delay: 1s;
+  }
+  .nav__link:nth-child(3) {
+    animation-delay: 0.75s;
+  }
+  .nav__link:nth-child(4) {
+    animation-delay: 0.5s;
+  }
+
+  .nav__link:nth-child(5) {
+    animation-delay: 0.25s;
+  }
+
+  .nav__link:hover {
+    color: #ffffff;
+    border-color: #7ed380;
+    background-color: #335734;
+  }
+
+  @keyframes in-left {
+    0% {
+      opacity: 0;
+      transform: translateX(-150px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes link-in-left {
+    0% {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @media screen and (max-width: 64rem) {
+    .heading__name {
+      font-size: 6rem;
+    }
+
+    .heading__role {
+      font-size: 2rem;
+    }
+  }
+
+  @media screen and (max-width: 32rem) {
+    .heading__name {
+      font-size: 3rem;
+    }
+
+    .heading__role {
+      font-size: 1.25rem;
+    }
+
+    .nav {
+      flex-flow: column nowrap;
+    }
+
+    .nav__link {
+      display: block;
+      width: 100%;
+    }
+  }
+</style>

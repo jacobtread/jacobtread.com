@@ -1,0 +1,142 @@
+---
+import Discord from "./icons/Discord.astro";
+import GitHub from "./icons/GitHub.astro";
+import Instagram from "./icons/Instagram.astro";
+import LinkedIn from "./icons/LinkedIn.astro";
+import Mail from "./icons/Mail.astro";
+---
+
+<section class="section contact" id="contact">
+  <h2 class="section__title">Getting in touch</h2>
+  <p class="section__text">
+    Below are my Socials which you can connect with me on. Check out my
+    <b>GitHub</b> to see all the projects that im currently working on.
+  </p>
+
+  <div class="contact__values">
+    <a
+      href="https://github.com/jacobtread"
+      rel="noreferrer noopener"
+      target="_blank"
+      class="contact-item"
+      title="Packed with side projects"
+    >
+      <GitHub class="icon" />
+      <div>
+        <span class="contact-item__name">GitHub</span>
+        <p class="contact-item__value">github.com/jacobtread</p>
+      </div>
+    </a>
+    <a
+      href="https://www.linkedin.com/in/jacobtread/"
+      rel="noreferrer noopener"
+      target="_blank"
+      class="contact-item"
+      title="Where the professionals are"
+    >
+      <LinkedIn class="icon" />
+      <div>
+        <span class="contact-item__name">Linked in</span>
+        <p class="contact-item__value">www.linkedin.com/in/jacobtread</p>
+      </div>
+    </a>
+    <a
+      href="mailto:jacobtread@gmail.com"
+      rel="noreferrer noopener"
+      target="_blank"
+      class="contact-item"
+      title="The good-ol contact method"
+    >
+      <Mail class="icon" />
+      <div>
+        <span class="contact-item__name">Email</span>
+        <p class="contact-item__value">jacobtread@gmail.com</p>
+      </div>
+    </a>
+    <a
+      href="https://instagram.com/jacobtread"
+      rel="noreferrer noopener"
+      target="_blank"
+      class="contact-item"
+      title="Ahhh- Social media"
+    >
+      <Instagram class="icon" />
+      <div>
+        <span class="contact-item__name">Instagram</span>
+        <p class="contact-item__value">instagram.com/jacobtread</p>
+      </div>
+    </a>
+    <div class="contact-item" title="Favorite chatting app">
+      <Discord class="icon" />
+      <div>
+        <span class="contact-item__name">Discord</span>
+        <p class="contact-item__value">Jacobtread#3770</p>
+      </div>
+    </div>
+  </div>
+
+  <p class="keep">Keep reading to find out more about me 👀</p>
+</section>
+
+<style>
+  .contact {
+    height: 100vh;
+  }
+
+  .keep {
+    color: #999;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+  }
+
+  .icon {
+    width: 3rem;
+    height: auto;
+  }
+
+  .contact__values {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 64rem;
+    justify-content: stretch;
+    margin: 1rem auto;
+    gap: 1.5rem;
+    padding: 2rem;
+    border: 0.3rem dashed #222;
+    border-radius: 0.25rem;
+  }
+
+  .contact-item {
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    align-items: center;
+
+    color: #fff;
+    background-color: #222;
+    padding: 1rem;
+    text-align: left;
+    gap: 1rem;
+    text-decoration: none;
+    border-radius: 0.25rem;
+    border: 1px solid #333;
+    transition: border-color 0.25s ease, background-color 0.25s ease;
+  }
+
+  .contact-item:hover {
+    background-color: #2e2e2e;
+  }
+
+  .contact-item:first-child {
+    grid-column: 1 / 3;
+  }
+
+  .contact-item__name {
+    font-weight: bold;
+    font-size: 1.25rem;
+  }
+
+  .contact-item__value {
+    color: #999;
+    font-size: 1.15rem;
+  }
+</style>

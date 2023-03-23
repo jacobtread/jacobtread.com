@@ -1,0 +1,43 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+
+	font-family: 'Inter', Arial, Helvetica, sans-serif;
+
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+p {
+	line-height: 1.5;
+}
+
+body {
+	background-color: #111;
+	color: #fff;
+}
+
+
+.section {
+	text-align: center;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+
+	margin: 15vh 0;
+}
+
+.section__title {
+	font-size: 3.5rem;
+}
+
+.section__text {
+	max-width: 48rem;
+	margin: 1rem auto;
+	font-size: 1.25rem;
+	color: #999;
+}
