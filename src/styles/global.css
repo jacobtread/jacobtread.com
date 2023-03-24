@@ -22,24 +22,20 @@ body {
 
 
 .section {
-	text-align: center;
-	display: flex;
-	flex-flow: column;
-	justify-content: center;
-	align-items: center;
 
-	margin: 15vh 0;
-
+	max-width: 80rem;
+	margin: 15vh auto;
 }
 
 .section__title {
-	font-size: 3.5rem;
+	font-size: 3rem;
+	margin-bottom: 0.5rem;
 }
 
 .section__text {
-	max-width: 48rem;
-	margin: 1rem auto;
-	font-size: 1.25rem;
+	margin-bottom: 1rem;
+	max-width: 40rem;
+	font-size: 1.15rem;
 	color: #999;
 }
 
