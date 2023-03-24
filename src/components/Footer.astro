@@ -3,28 +3,33 @@ const today = new Date();
 ---
 
 <footer class="footer">
-  <p class="footer__brand">JR</p>
-  <p class="footer__email">jacobtread@gmail.com</p>
-  <p class="footer__copy">
-    Copyright &copy; 2020 - {today.getFullYear()} Jacob Read. All rights reserved.
-  </p>
-  <div class="nav">
-    <a href="/blog" class="nav__link">Blog</a>
-    <a href="#contact" class="nav__link">Contact</a>
-    <a href="#about" class="nav__link">About</a>
-    <a href="#technology" class="nav__link">Technology</a>
-    <a href="#projects" class="nav__link">Projects</a>
+  <div class="footer-wrapper">
+    <p class="footer__brand">JR</p>
+    <p class="footer__email">jacobtread@gmail.com</p>
+    <p class="footer__copy">
+      Copyright &copy; 2020 - {today.getFullYear()} Jacob Read. All rights reserved.
+    </p>
+    <div class="nav">
+      <a href="/" class="nav__link">Home</a>
+      <a href="/blog" class="nav__link">Blog</a>
+      <a href="#contact" class="nav__link">Contact</a>
+      <a href="#about" class="nav__link">About</a>
+      <a href="#technology" class="nav__link">Technology</a>
+      <a href="#projects" class="nav__link">Projects</a>
+    </div>
   </div>
 </footer>
 <style>
   .footer {
-    max-width: 80rem;
+    border-top: 1px solid #333;
     width: 100%;
-    margin: 2rem auto;
     gap: 1.5rem;
     padding: 2rem;
-    border: 0.3rem dashed #222;
-    border-radius: 0.25rem;
+  }
+
+  .footer-wrapper {
+    max-width: 80rem;
+    margin: 2rem auto;
   }
 
   .footer__brand {
