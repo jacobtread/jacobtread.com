@@ -19,8 +19,15 @@ const posts = (await getCollection("blog")).sort(
         {
           posts.map((post) => (
             <li>
-              <FormattedDate date={post.data.pubDate} />
-              <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+              <a class="post" href={`/blog/${post.slug}/`}>
+                <h2 class="post__title">
+                  {post.data.title}{" "}
+                  <span class="post__date">
+                    <FormattedDate date={post.data.pubDate} />
+                  </span>
+                </h2>
+                <p class="post__desc">{post.data.description}</p>
+              </a>
             </li>
           ))
         }
@@ -30,19 +37,45 @@ const posts = (await getCollection("blog")).sort(
 </Layout>
 
 <style>
-  ul {
+  .blog {
+    margin: 5vh auto;
+  }
+
+  .posts {
     list-style-type: none;
-    padding: unset;
   }
-  ul li {
-    display: flex;
+
+  .post {
+    display: block;
+    margin-bottom: 1rem;
+    padding: 1rem;
+
+    color: #fff;
+    background-color: #222;
+    padding: 1rem;
+
+    text-decoration: none;
+    border-radius: 0.25rem;
+    border: 1px solid #333;
   }
-  ul li :global(time) {
-    flex: 0 0 130px;
+
+  .post:hover {
+    background-color: #2e2e2e;
+  }
+
+  .post__date {
+    font-size: 1rem;
     font-style: italic;
     color: #595959;
   }
-  ul li a:visited {
-    color: #8e32dc;
+
+  .post:visited {
+    color: #999;
+  }
+
+  .post__title {
+  }
+
+  .post__desc {
   }
 </style>
