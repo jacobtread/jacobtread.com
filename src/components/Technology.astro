@@ -1,0 +1,183 @@
+---
+---
+
+<section class="section technology" id="technology">
+  <h2 class="section__title">Technology</h2>
+  <p class="section__text">
+    Below are some of the languages, frameworks, and tooling that I work with
+  </p>
+
+  <div class="technology__values">
+    <div class="tech">
+      <img
+        src="/images/langb-small.png"
+        alt="Backend Language Icons"
+        loading="lazy"
+        class="tech__img"
+        width="170"
+        height="153"
+      />
+      <div class="tech__content">
+        <h3 class="tech__title">Backend Languages</h3>
+        <p class="tech__text">
+          I am very familiar with languages such as Java, Kotlin, and PHP. But
+          as of last year I've begun using the Rust programming language and
+          have recently used it for almost all my backend projects.
+        </p>
+      </div>
+    </div>
+
+    <div class="tech">
+      <img
+        src="/images/langf-small.png"
+        alt="Frontend Language Icons"
+        loading="lazy"
+        class="tech__img"
+        width="170"
+        height="150"
+      />
+      <div class="tech__content">
+        <h3 class="tech__title">Frontend Languages</h3>
+        <p class="tech__text">
+          I am very well accustomed to popular frontend languages like
+          JavaScript and TypeScript with around 5 years experienced in them both
+          added up. I have been using them a lot throughout many of my projects.
+        </p>
+      </div>
+    </div>
+
+    <div class="tech">
+      <img
+        src="/images/editors-small.png"
+        alt="Editor Icons"
+        loading="lazy"
+        class="tech__img"
+        width="170"
+        height="153"
+      />
+      <div class="tech__content">
+        <h3 class="tech__title">IDE & Editors</h3>
+        <p class="tech__text">
+          Previously I would have preferred to develop my applications using the
+          JetBrains collections of IDE's however I've since grown away from
+          these as my usage of the Rust language has increased and have since
+          started preferring to use VSCode for most projects. However for
+          writing code in Java and Kotlin I will use JetBrains IDE's still as
+          they are a well designed tool for the right job. I have also been
+          experimenting with modal text editors such as NeoVim and Helix in my
+          off time.
+        </p>
+      </div>
+    </div>
+
+    <div class="tech">
+      <img
+        src="/images/framb-small.png"
+        alt="Editor Icons"
+        loading="lazy"
+        class="tech__img"
+        width="170"
+        height="153"
+      />
+      <div class="tech__content">
+        <h3 class="tech__title">Backend Frameworks & Tooling</h3>
+        <p class="tech__text">
+          I am very familiar with the Laravel php framework having shipped
+          multiple production projects using it in the past. Previous
+          generations of this website have been made in frameworks like NuxtJS,
+          and NextJS however this time around I decided to go with Astro to
+          build out a blog. I have used NodeJS to make bots as well as other
+          useful tools and full on server systems. Recently I have come to use
+          the Actix and Axum web frameworks while developing my Rust
+          applications.
+        </p>
+      </div>
+    </div>
+
+    <div class="tech">
+      <img
+        src="/images/framf-small.png"
+        alt="Editor Icons"
+        loading="lazy"
+        class="tech__img"
+        width="170"
+        height="112"
+      />
+      <div class="tech__content">
+        <h3 class="tech__title">Frontend Frameworks & Tooling</h3>
+        <p class="tech__text">
+          I am quite familiar with a number of front-end frameworks my favorite
+          of which is Svelte. I have a few other assorted frameworks mixed in
+          throughout my project but Svelte tends to be the one I rely on the
+          most. After my recent entrolment for study at Developer Institue I've
+          found myself using React and its collection of frameworks more often.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <p class="hint">
+    Thats all for this page why don't you check out my <a href="/blog">Blog</a>
+  </p>
+</section>
+
+<style>
+  .technology__values {
+    display: grid;
+    gap: 1rem;
+    max-width: 80rem;
+
+    padding: 2rem;
+    border: 0.3rem dashed #222;
+    border-radius: 0.25rem;
+
+    margin: 1rem 0;
+  }
+
+  .tech {
+    display: grid;
+    grid-template-columns: 170px 1fr;
+
+    position: relative;
+    color: #fff;
+    background-color: #222;
+    padding: 1.5rem;
+    text-align: left;
+    gap: 2rem;
+    text-decoration: none;
+    border-radius: 0.25rem;
+    border: 1px solid #333;
+    transition: background-color 0.25s ease;
+  }
+
+  .tech:nth-child(odd) {
+    grid-template-columns: 1fr 170px;
+  }
+
+  .tech:nth-child(odd) .tech__img {
+    grid-column: 2 / 2;
+    grid-row: 1;
+  }
+
+  .tech:nth-child(odd) .tech__content {
+    grid-column: 1 / 1;
+    grid-row: 1;
+  }
+
+  .tech__img {
+    align-self: center;
+  }
+
+  .tech__content {
+  }
+
+  .tech__title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .tech__text {
+    font-size: 1.25rem;
+    color: #999;
+  }
+</style>
