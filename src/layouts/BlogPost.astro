@@ -2,6 +2,7 @@
 import type { CollectionEntry } from "astro:content";
 import Footer from "../components/Footer.astro";
 import FormattedDate from "../components/FormattedDate.astro";
+import Layout from "./Layout.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -16,68 +17,35 @@ const {
 } = Astro.props;
 ---
 
-<html lang="en">
-  <head>
-    <!-- Global Metadata -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-
-    <!-- Canonical URL -->
-    <link rel="canonical" href={canonicalURL} />
-
-    <!-- Primary Meta Tags -->
-    <title>{title}</title>
-    <meta name="title" content={title} />
-    <meta name="description" content={description} />
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={Astro.url} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={new URL(image, Astro.url)} />
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={Astro.url} />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={new URL(image, Astro.url)} />
-
-    <style>
-      .title {
-        font-size: 2em;
-        margin: 0.25em 0 0;
+<Layout title={title} description={description} image={image}>
+  <main>
+    <article>
+      {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
+      <h1 class="title">{title}</h1>
+      <FormattedDate date={pubDate} />
+      {
+        updatedDate && (
+          <div class="last-updated-on">
+            Last updated on <FormattedDate date={updatedDate} />
+          </div>
+        )
       }
-      hr {
-        border-top: 1px solid #ddd;
-        margin: 1rem 0;
-      }
-      .last-updated-on {
-        font-style: italic;
-      }
-    </style>
-  </head>
+      <hr />
+      <slot />
+    </article>
+  </main>
+</Layout>
 
-  <body>
-    <main>
-      <article>
-        {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
-        <h1 class="title">{title}</h1>
-        <FormattedDate date={pubDate} />
-        {
-          updatedDate && (
-            <div class="last-updated-on">
-              Last updated on <FormattedDate date={updatedDate} />
-            </div>
-          )
-        }
-        <hr />
-        <slot />
-      </article>
-    </main>
-    <Footer />
-  </body>
-</html>
+<style>
+  .title {
+    font-size: 2em;
+    margin: 0.25em 0 0;
+  }
+  hr {
+    border-top: 1px solid #ddd;
+    margin: 1rem 0;
+  }
+  .last-updated-on {
+    font-style: italic;
+  }
+</style>
