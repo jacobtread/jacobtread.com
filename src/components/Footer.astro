@@ -2,12 +2,55 @@
 const today = new Date();
 ---
 
-<footer>
-	&copy; {today.getFullYear()} YOUR NAME HERE. All rights reserved.
+<footer class="footer">
+  <p class="footer__brand">JR</p>
+  <p class="footer__email">jacobtread@gmail.com</p>
+  <p class="footer__copy">
+    Copyright &copy; 2020 - {today.getFullYear()} Jacob Read. All rights reserved.
+  </p>
+  <div class="nav">
+    <a href="/blog" class="nav__link">Blog</a>
+    <a href="#contact" class="nav__link">Contact</a>
+    <a href="#about" class="nav__link">About</a>
+    <a href="#technology" class="nav__link">Technology</a>
+    <a href="#projects" class="nav__link">Projects</a>
+  </div>
 </footer>
 <style>
-	footer {
-		padding: 25px;
-		text-align: center;
-	}
+  .footer {
+    max-width: 80rem;
+    width: 100%;
+    margin: 2rem auto;
+    gap: 1.5rem;
+    padding: 2rem;
+    border: 0.3rem dashed #222;
+    border-radius: 0.25rem;
+  }
+
+  .footer__brand {
+    font-size: 4rem;
+    font-weight: bold;
+  }
+
+  .footer__email {
+    color: #999;
+  }
+
+  .footer__copy {
+    color: #7ed380;
+    margin-top: 0.5rem;
+  }
+
+  .nav {
+    margin-top: 0.5rem;
+  }
+
+  .nav__link {
+    color: #999;
+    margin-right: 1rem;
+  }
+
+  .nav__link:hover {
+    color: #fff;
+  }
 </style>
