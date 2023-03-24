@@ -494,3 +494,9 @@ This all changes now that the entire server runs over HTTP. Due to the server us
 ### Better hosting support
 
 Previously if you wanted to host a **Pocket Relay** server you would have to get Dedicated, VPS hosting, or something similar in order to be able to expose all the required ports. This all changes with the new server as it only requires an HTTP port. This opens the server up to many hosting options including Google Cloud free container hosting.
+
+--- 
+
+### Server knowledge
+
+Because of how HTTP upgrades work if the server needs extra information about the client environment it possible to transmit that information through the initial request before the session is created. Previously such things wouldn't be possible or atleast wouldn't be reliable. This extra knowledge was made use of in order to provide the correct HTTP server details to the client. This was achieved by having the client provide headers containing the server details.
