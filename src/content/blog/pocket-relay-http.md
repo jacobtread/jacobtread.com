@@ -1,7 +1,8 @@
 ---
 title: "Pocket Relay and it's new system"
 description: "Migration from multiple servers to a single HTTP server"
-pubDate: "Mar 25 2023"
+pubDate: "03/25/2023"
+updatedDate: "03/25/2023"
 heroImage: "/blog/pocket-relay-http/heading.jpg"
 ---
 
@@ -50,7 +51,9 @@ This server handles the bulk of all the server logic like games, matchmaking, pl
 This server recieves informational messages from the **Mass Effect 3** game client. This includes messages for information like when players get kills and the details of each kill. An example of the decoded contents for one of these messages looks like the following:
 
 ```js
-00000055/-;00000029/GAME/MULT/KILL/inst=Jacob&dead=SFXPawn_Cannibal2&ksrc=M-8Avenger&posX=6180.4721&posY=1858.0004&posZ=91.1499&mapv=biop_mpcer3&clas=AdeptHumanMale&levl=3&diff=0&mtch=1\0t
+00000055/-;00000029/GAME/MULT/KILL/inst=Jacob&dead=SFXPawn_Cannibal2
+&ksrc=M-8Avenger&posX=6180.4721&posY=1858.0004&posZ=91.1499
+&mapv=biop_mpcer3&clas=AdeptHumanMale&levl=3&diff=0&mtch=1\0t
 ```
 
 The above message describes a in game kill by "Jacob" who killed a Cannibal enemy using a M-8 Avenger and then the position of the enemy.

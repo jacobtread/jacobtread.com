@@ -1,5 +1,4 @@
 ---
-import Footer from "../../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
 import FormattedDate from "../../components/FormattedDate.astro";
@@ -15,6 +14,7 @@ const posts = (await getCollection("blog")).sort(
     <section class="section blog">
       <h1 class="section__title">Blog</h1>
       <p class="section__text">Check out my blog posts below</p>
+      <a href="/" class="back button">Back</a>
       <ul class="posts">
         {
           posts.map((post) => (
@@ -37,11 +37,17 @@ const posts = (await getCollection("blog")).sort(
 </Layout>
 
 <style>
+  .back {
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
   .blog {
     margin: 5vh auto;
   }
 
   .posts {
+    margin: 1rem;
     list-style-type: none;
   }
 
@@ -67,6 +73,7 @@ const posts = (await getCollection("blog")).sort(
     font-size: 1rem;
     font-style: italic;
     color: #595959;
+    font-weight: normal;
   }
 
   .post:visited {

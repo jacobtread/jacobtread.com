@@ -44,3 +44,27 @@ body {
 	font-size: 1.1rem;
 	margin-top: 1rem;
 }
+
+*::-webkit-scrollbar {
+	width: 10px;
+	height: 4px;
+	background-color: #222;
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: #7ed380;
+}
+
+.button {
+	font-weight: bold;
+	color: #9f9f9f;
+	font-size: 1.25rem;
+	text-decoration: none;
+	padding: 1rem;
+	border: 2px solid #222b22;
+	text-transform: uppercase;
+	border-radius: 0.25rem;
+
+	background-color: #222;
+	transition: color 0.5s, border-color 0.25s, background-color 0.5s;
+}
