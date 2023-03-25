@@ -1,8 +1,8 @@
 ---
 import { getCollection } from "astro:content";
-import GitHub from "../components/icons/GitHub.astro";
-import Project from "../components/Project.astro";
-import Layout from "../layouts/Layout.astro";
+import GitHub from "@components/icons/GitHub.astro";
+import Project from "@components/Project.astro";
+import Layout from "@layouts/Layout.astro";
 
 const projects = (await getCollection("projects")).sort(
   (a, b) => (a.data.priority ?? 99) - (b.data.priority ?? 99)
@@ -30,39 +30,27 @@ const projects = (await getCollection("projects")).sort(
 
     <a href="/" class="back button">Back</a>
 
-    <ul class="projects">
+    <ul class="blocks blocks--span-first">
       {projects.map((project) => <Project {...project} />)}
     </ul>
   </main>
 </Layout>
 
-<style>
-  .projects {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+<style lang="scss">
+  @import "@styles/scheme.scss";
+
+  .blocks {
     list-style: none;
-    width: 100%;
   }
 
   .back {
-    display: inline-block;
     margin-bottom: 1rem;
   }
 
   .content {
     width: 100%;
-    max-width: 80rem;
+    max-width: $content-width;
     margin: 1rem auto;
     padding: 1rem;
-  }
-
-  .link {
-  }
-
-  @media screen and (max-width: 64rem) {
-    .projects {
-      grid-template-columns: 1fr;
-    }
   }
 </style>

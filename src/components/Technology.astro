@@ -3,7 +3,7 @@
   <p class="section__text">
     Below is some of the frameworks, languages, and technology that I work with
   </p>
-  <div class="blocks">
+  <div class="blocks blocks--column">
     <div class="block">
       <div>
         <h3 class="block__title">Backend Languages</h3>
@@ -106,10 +106,6 @@
 </div>
 
 <style>
-  .links {
-    margin-top: 1rem;
-  }
-
   .blocks {
     display: grid;
     grid-template-columns: 1fr;
@@ -119,53 +115,6 @@
   .block {
     display: grid;
     grid-template-columns: 1fr 170px;
-
-    position: relative;
-    color: #fff;
-    background-color: #222;
-    padding: 1.5rem;
-    text-align: left;
-    gap: 1rem;
-    text-decoration: none;
-    border-radius: 0.25rem;
-    border: 1px solid #333;
-    transition: background-color 0.25s ease;
-  }
-
-  .block:hover {
-    background-color: #2e2e2e;
-  }
-
-  .link {
-    display: inline-block;
-    margin-right: 1rem;
-    padding: 1rem;
-    background-color: #333;
-    color: #fff;
-    font-weight: bold;
-    border-radius: 0.25rem;
-    text-decoration: none;
-    font-size: 1.2rem;
-    transition: background-color 0.25s ease;
-  }
-
-  .block:hover .link {
-    background-color: #444;
-  }
-
-  .link:hover,
-  .block:hover .link:hover {
-    background-color: #62a563;
-  }
-
-  .block__title {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .block__text {
-    font-size: 1.15rem;
-    color: #999;
   }
 
   @media screen and (max-width: 48rem) {

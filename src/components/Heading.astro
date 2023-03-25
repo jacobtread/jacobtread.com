@@ -43,7 +43,9 @@ import Typer from "./Typer.svelte";
   </div>
 </div>
 
-<style>
+<style lang="scss">
+  @import "@styles/scheme.scss";
+
   .heading {
     height: 100vh;
     width: 100%;
@@ -54,21 +56,20 @@ import Typer from "./Typer.svelte";
 
     display: grid;
     align-items: center;
-    color: #ffffff;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid $border-color;
   }
 
   .heading__content {
     margin: 0 auto;
     width: 100%;
     max-width: 86rem;
-    padding: 5rem;
+    padding: 0 5rem;
   }
 
   .heading__name {
     font-weight: 700;
     font-size: 8rem;
-    color: #ffffff;
+    color: $title;
     line-height: 1;
     margin-left: -4px;
   }
@@ -83,9 +84,9 @@ import Typer from "./Typer.svelte";
   }
 
   .heading__name__first {
-    background: -webkit-linear-gradient(30deg, #7ed380, #0c9bdd);
+    background: -webkit-linear-gradient(30deg, $primary-lighter, $secondary);
     -webkit-background-clip: text;
-    color: #7ed380;
+    color: $primary-lighter;
     -webkit-text-fill-color: transparent;
   }
 
@@ -108,9 +109,16 @@ import Typer from "./Typer.svelte";
     margin-top: 1rem;
   }
 
+  // The delay increase for each button
+  $nav-delay-inc: 0.15s;
+  // The total number of buttons
+  $nav-button-count: 5;
+  // The total animation delay for all the buttons
+  $nav-total-delay: $nav-delay-inc * $nav-button-count;
+
   .nav__link {
     font-weight: bold;
-    color: #9f9f9f;
+    color: #999;
     font-size: 1.25rem;
     text-decoration: none;
     padding: 1rem;
@@ -119,29 +127,27 @@ import Typer from "./Typer.svelte";
     border-radius: 0.25rem;
 
     background-color: transparent;
-    transition: color 0.5s, border-color 0.25s, background-color 0.5s;
-    animation: link-in-left 0.5s 0.75s ease forwards;
     opacity: 0;
+
+    transition: color 0.5s, border-color 0.25s, background-color 0.5s;
+
+    animation: link-in-left 0.5s $nav-total-delay ease forwards;
   }
 
-  .nav__link:nth-child(2) {
-    animation-delay: 0.6s;
-  }
-  .nav__link:nth-child(3) {
-    animation-delay: 0.45s;
-  }
-  .nav__link:nth-child(4) {
-    animation-delay: 0.3s;
-  }
+  // Delayed animations for each of the buttons
+  $delay: $nav-total-delay;
+  @for $i from 1 to ($nav-button-count + 1) {
+    .nav__link:nth-child(#{$i}) {
+      animation-delay: $delay;
+    }
 
-  .nav__link:nth-child(5) {
-    animation-delay: 0.15s;
+    $delay: $delay - $nav-delay-inc;
   }
 
   .nav__link:hover {
     color: #ffffff;
-    border-color: #7ed380;
-    background-color: #335734;
+    border-color: $primary;
+    background-color: $primary-darker;
   }
 
   @keyframes in-left {
@@ -166,7 +172,7 @@ import Typer from "./Typer.svelte";
     }
   }
 
-  @media screen and (max-width: 64rem) {
+  @media screen and (max-width: $screen-tablet) {
     .heading__name {
       font-size: 6rem;
     }
@@ -174,11 +180,20 @@ import Typer from "./Typer.svelte";
     .heading__role {
       font-size: 2rem;
     }
+
+    .heading {
+      text-align: center;
+    }
+
+    .nav {
+      text-align: center;
+      justify-content: center;
+    }
   }
 
-  @media screen and (max-width: 34rem) {
+  @media screen and (max-width: $screen-small) {
     .heading__content {
-      padding: 3rem;
+      padding: 0 3rem;
     }
     .heading__name {
       font-size: 5rem;
@@ -190,6 +205,7 @@ import Typer from "./Typer.svelte";
 
     .nav {
       flex-flow: column nowrap;
+      width: 100%;
     }
 
     .nav__link {
@@ -198,13 +214,7 @@ import Typer from "./Typer.svelte";
     }
   }
 
-  @media screen and (max-width: 30rem) {
-    .heading__name {
-      font-size: 4rem;
-    }
-  }
-
-  @media screen and (max-width: 26rem) {
+  @media screen and (max-width: $screen-extra-small) {
     .heading__name {
       font-size: 3rem;
     }

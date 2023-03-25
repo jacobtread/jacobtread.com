@@ -1,7 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import FormattedDate from "../components/FormattedDate.astro";
-import Layout from "./Layout.astro";
+import FormattedDate from "@components/FormattedDate.astro";
+import Layout from "@layouts/Layout.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
@@ -108,7 +108,9 @@ const {
   }
 </style>
 
-<style>
+<style lang="scss">
+  @import "@styles/scheme.scss";
+
   .date {
     color: #666;
   }
@@ -161,7 +163,7 @@ const {
   }
 
   .content {
-    max-width: 80rem;
+    max-width: $content-width;
     margin: 2rem auto;
     padding: 2rem;
   }

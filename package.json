@@ -16,6 +16,7 @@
     "@astrojs/svelte": "^2.1.0",
     "@fontsource/inter": "^4.5.15",
     "astro": "^2.1.0",
+    "sass": "^1.60.0",
     "svelte": "^3.54.0"
   }
 }

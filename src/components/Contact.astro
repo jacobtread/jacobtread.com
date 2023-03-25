@@ -13,12 +13,12 @@ import Mail from "./icons/Mail.astro";
     <b>GitHub</b> to see all the projects that im currently working on.
   </p>
 
-  <div class="contact__values">
+  <div class="blocks">
     <a
       href="https://github.com/jacobtread"
       rel="noreferrer noopener"
       target="_blank"
-      class="contact-item"
+      class="block contact-item"
       title="Packed with side projects"
     >
       <GitHub class="icon" />
@@ -31,7 +31,7 @@ import Mail from "./icons/Mail.astro";
       href="https://www.linkedin.com/in/jacobtread/"
       rel="noreferrer noopener"
       target="_blank"
-      class="contact-item"
+      class="block contact-item"
       title="Where the professionals are"
     >
       <LinkedIn class="icon" />
@@ -44,7 +44,7 @@ import Mail from "./icons/Mail.astro";
       href="mailto:jacobtread@gmail.com"
       rel="noreferrer noopener"
       target="_blank"
-      class="contact-item"
+      class="block contact-item"
       title="The good-ol contact method"
     >
       <Mail class="icon" />
@@ -54,7 +54,7 @@ import Mail from "./icons/Mail.astro";
       </div>
     </a>
 
-    <div class="contact-item" title="Favorite chatting app">
+    <div class="block contact-item" title="Favorite chatting app">
       <Discord class="icon" />
       <div>
         <span class="contact-item__name">Discord</span>
@@ -66,20 +66,13 @@ import Mail from "./icons/Mail.astro";
   <p class="hint">Keep reading to find out more about me 👀</p>
 </section>
 
-<style>
+<style lang="scss">
+  @import "@styles/scheme.scss";
+
   .icon {
     max-width: 3rem;
     width: 100%;
     height: auto;
-  }
-
-  .contact__values {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
   }
 
   .contact-item {
@@ -87,19 +80,8 @@ import Mail from "./icons/Mail.astro";
     grid-template-columns: 3rem 1fr;
     align-items: center;
 
-    color: #fff;
-    background-color: #222;
-    padding: 1rem;
-    text-align: left;
     gap: 1rem;
-    text-decoration: none;
-    border-radius: 0.25rem;
-    border: 1px solid #333;
-    transition: border-color 0.25s ease, background-color 0.25s ease;
-  }
-
-  .contact-item:hover {
-    background-color: #2e2e2e;
+    padding: 1rem !important;
   }
 
   .contact-item__name {
@@ -112,27 +94,14 @@ import Mail from "./icons/Mail.astro";
     font-size: 1.15rem;
   }
 
-  @media screen and (max-width: 64rem) {
-    .contact__values {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  @media screen and (max-width: 48rem) {
-    .contact-item {
-      /* text-align: center; */
-      /* grid-template-columns: 1fr; */
-      width: 100%;
-      overflow: hidden;
-    }
-
+  @media screen and (max-width: $screen-mobile) {
     .icon {
       margin: 0 auto;
       max-width: 2rem;
     }
   }
 
-  @media screen and (max-width: 28rem) {
+  @media screen and (max-width: $screen-extra-small) {
     .contact-item__value {
       display: none;
     }
