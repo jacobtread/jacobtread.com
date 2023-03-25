@@ -1,17 +1,44 @@
 ---
-import About from "../components/About.astro";
-import Contact from "../components/Contact.astro";
-import Heading from "../components/Heading.astro";
-import Technology from "../components/Technology.astro";
-import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+import { getCollection } from "astro:content";
+import Project from "../components/Project.astro";
 import Layout from "../layouts/Layout.astro";
+
+const projects = (await getCollection("projects")).sort(
+  (a, b) => (a.data.priority ?? 99) - (b.data.priority ?? 99)
+);
 ---
 
-<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-  <Heading />
-  <main class="main">
-    <Contact />
-    <About />
-    <Technology />
+<Layout
+  title={"Projects | Jacobtread"}
+  description={"List of some of my projects"}
+>
+  <main class="content">
+    <h1 class="section__title">Projects</h1>
+    <p class="section__text">Check out some of my projects below</p>
+
+    <a href="/" class="back button">Back</a>
+
+    <ul class="projects">
+      {projects.map((project) => <Project {...project} />)}
+    </ul>
   </main>
 </Layout>
+
+<style>
+  .projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    list-style: none;
+  }
+
+  .back {
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
+  .content {
+    max-width: 80rem;
+    margin: 1rem auto;
+  }
+</style>
