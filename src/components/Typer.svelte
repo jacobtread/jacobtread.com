@@ -53,6 +53,7 @@
   onMount(() => {
     executeUpdate();
   });
+
   onDestroy(() => {
     if (timeout) clearTimeout(timeout);
   });
@@ -62,13 +63,16 @@
   {value}
 </span>
 
-<style>
+<style lang="scss">
+  @import "@styles/scheme.scss";
+
   .typer {
-    color: #7ed380;
+    color: $primary-lighter;
     position: relative;
     margin-right: 4px;
   }
 
+  /* Before element for displaying the typing cursor */
   .typer[data-typing="true"]::after {
     content: "";
     position: absolute;
@@ -76,10 +80,11 @@
     top: 0;
     width: 2px;
     height: 100%;
-    background: currentColor;
+    background: $primary-lighter;
     animation: typer-cursor-blink 1s 1s infinite;
   }
 
+  /* Blinking cursor animation using opacity */
   @keyframes typer-cursor-blink {
     0%,
     100% {
