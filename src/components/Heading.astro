@@ -38,7 +38,7 @@ import Typer from "./Typer.svelte";
       <a href="#contact" class="nav__link">Contact</a>
       <a href="#about" class="nav__link">About</a>
       <a href="#technology" class="nav__link">Technology</a>
-      <a href="#projects" class="nav__link">Projects</a>
+      <a href="/projects" class="nav__link">Projects</a>
     </nav>
   </div>
 </div>
@@ -69,7 +69,6 @@ import Typer from "./Typer.svelte";
     font-weight: 700;
     font-size: 8rem;
     color: #ffffff;
-    transition: all 0.5s ease;
     line-height: 1;
     margin-left: -4px;
   }
@@ -177,9 +176,12 @@ import Typer from "./Typer.svelte";
     }
   }
 
-  @media screen and (max-width: 32rem) {
+  @media screen and (max-width: 34rem) {
+    .heading__content {
+      padding: 3rem;
+    }
     .heading__name {
-      font-size: 3rem;
+      font-size: 5rem;
     }
 
     .heading__role {
@@ -193,6 +195,18 @@ import Typer from "./Typer.svelte";
     .nav__link {
       display: block;
       width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 30rem) {
+    .heading__name {
+      font-size: 4rem;
+    }
+  }
+
+  @media screen and (max-width: 26rem) {
+    .heading__name {
+      font-size: 3rem;
     }
   }
 </style>

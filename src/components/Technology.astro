@@ -167,4 +167,18 @@
     font-size: 1.15rem;
     color: #999;
   }
+
+  @media screen and (max-width: 48rem) {
+    .block {
+      grid-template-columns: 1fr;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .block__img {
+      grid-column: 1 / 1;
+      grid-row: 1 / 1;
+      margin: 0 auto 1rem;
+    }
+  }
 </style>

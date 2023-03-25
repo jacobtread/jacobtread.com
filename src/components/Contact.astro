@@ -68,7 +68,8 @@ import Mail from "./icons/Mail.astro";
 
 <style>
   .icon {
-    width: 3rem;
+    max-width: 3rem;
+    width: 100%;
     height: auto;
   }
 
@@ -109,5 +110,31 @@ import Mail from "./icons/Mail.astro";
   .contact-item__value {
     color: #999;
     font-size: 1.15rem;
+  }
+
+  @media screen and (max-width: 64rem) {
+    .contact__values {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media screen and (max-width: 48rem) {
+    .contact-item {
+      /* text-align: center; */
+      /* grid-template-columns: 1fr; */
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .icon {
+      margin: 0 auto;
+      max-width: 2rem;
+    }
+  }
+
+  @media screen and (max-width: 28rem) {
+    .contact-item__value {
+      display: none;
+    }
   }
 </style>

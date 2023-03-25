@@ -137,4 +137,19 @@ import RustCrab from "./icons/RustCrab.astro";
     font-size: 1.15rem;
     color: #999;
   }
+
+  @media screen and (max-width: 90rem) {
+    .crab {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 64rem) {
+    .blocks {
+      grid-template-columns: 1fr;
+    }
+
+    .block:last-child {
+      grid-column: 1 / 2;
+    }
+  }
 </style>

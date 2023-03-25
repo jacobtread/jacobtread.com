@@ -22,15 +22,28 @@ body {
 
 
 .section {
-
+	padding: 2rem;
 	max-width: 80rem;
 	margin: 15vh auto;
+}
+
+@media screen and (max-width: 64rem) {
+	.section {
+		margin: 5vh auto;
+	}
 }
 
 .section__title {
 	font-size: 3rem;
 	margin-bottom: 0.5rem;
 }
+
+@media screen and (max-width: 34rem) {
+	.section__title {
+		font-size: 2rem;
+	}
+}
+
 
 .section__text {
 	margin-bottom: 1rem;
