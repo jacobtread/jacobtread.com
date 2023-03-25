@@ -3,20 +3,18 @@
 
   export let values: string[];
   export let duration: number;
+  let className: string = "";
 
   let valueIndex: number = 0;
   let deleting: boolean = false;
-  let currentLength: number = 0;
   let value = "";
   let complete = false;
   let timeout: any;
 
   const executeUpdate = () => {
-    complete = false; // Set the initial complete state
-
     const valueAtIndex: string = values[valueIndex]; // The value that is at the current index
     let delay: number; // The delay before update should be called
-
+    let currentLength: number = value.length;
     if (deleting) {
       currentLength--; // Deleting reduces the length of the value
       if (currentLength == 0) {
@@ -39,14 +37,13 @@
         // If we are at the end of the value
         delay = duration; // Set the delay to the display duration
         deleting = true; // Delete the text on the next update
-        complete = true;
       } else {
         delay = 300 - Math.random() * 100;
       }
     }
-
     const newValue = valueAtIndex.substring(0, currentLength);
     value = newValue; // Update the value state
+    complete = newValue.length == valueAtIndex.length;
     timeout = setTimeout(executeUpdate, delay);
   };
 
@@ -57,30 +54,26 @@
   onDestroy(() => {
     if (timeout) clearTimeout(timeout);
   });
+
+  export { className as class };
 </script>
 
-<span class="typer" data-typing={!complete}>
+<span class={className} data-typing={!complete}>
   {value}
 </span>
 
-<style lang="scss">
-  @import "@styles/scheme.scss";
-
-  .typer {
-    color: $primary-lighter;
-    position: relative;
-    margin-right: 4px;
-  }
-
+<style>
   /* Before element for displaying the typing cursor */
   .typer[data-typing="true"]::after {
     content: "";
     position: absolute;
+
     right: -4px;
     top: 0;
     width: 2px;
     height: 100%;
-    background: $primary-lighter;
+
+    background: currentColor;
     animation: typer-cursor-blink 1s 1s infinite;
   }
 
