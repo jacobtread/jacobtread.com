@@ -33,30 +33,64 @@ body {
 	color: #ffffff;
 }
 
+hr {
+    border-width: 1px;
+    border-color: #111;
+    max-width: 5rem;
+    margin: 2rem 0;
+    width: 100%;
+}
+
+
 .section {
-	padding: 2rem;
-	max-width: $content-width;
-	margin: 15vh auto;
+	margin: 5rem 0;
+
 
 	&__title {
+		text-align: center;
 		font-size: 3rem;
 		margin-bottom: 0.5rem;
 	}
 
 	&__text {
+		text-align: center;
 		margin-bottom: 1rem;
-		max-width: 40rem;
+		max-width: 48rem;
 		font-size: 1.15rem;
 		color: #999;
+		margin: 0 auto 1rem;
+	}
+
+	&--left {
+		.section__title, .section__text {
+			text-align: left;
+		}
+
+		.section__text {
+			margin: 0;
+		}
+	}
+
+	&__actions {
+		display: flex;
+		flex-flow: row wrap;
+		gap: 1rem;
+		margin: 1rem 0;
 	}
 }
+
+.main {
+	max-width: $content-width;
+	margin: 0 auto;
+	padding: 2rem;
+}
+
 
 .hint {
 	color: #999;
 	font-size: 1.1rem;
 	margin-top: 1rem;
 }
-
 
 
 .button {
@@ -113,6 +147,7 @@ body {
 	display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
+    list-style: none;
 
 	&--column {
 		grid-template-columns: 1fr;

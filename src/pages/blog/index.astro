@@ -10,63 +10,43 @@ const posts = (await getCollection("blog")).sort(
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-  <main>
-    <section class="section blog">
-      <h1 class="section__title">Blog</h1>
-      <p class="section__text">Check out my blog posts below</p>
-      <a href="/" class="back button">Back</a>
-      <ul class="posts">
-        {
-          posts.map((post) => (
-            <li>
-              <a class="post" href={`/blog/${post.slug}/`}>
-                <h2 class="post__title">
-                  {post.data.title}{" "}
-                  <span class="post__date">
-                    <FormattedDate date={post.data.pubDate} />
-                  </span>
-                </h2>
-                <p class="post__desc">{post.data.description}</p>
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </section>
+  <main class="main section--left">
+    <h1 class="section__title">Blog</h1>
+    <p class="section__text">Check out my blog posts below</p>
+    <div class="section__actions">
+      <a href="/" class="button">Back</a>
+    </div>
+    <ul class="blocks blocks--column posts">
+      {
+        posts.map((post) => (
+          <li>
+            <a class="post block" href={`/blog/${post.slug}/`}>
+              <h2 class="post__title">
+                {post.data.title}{" "}
+                <span class="post__date">
+                  <FormattedDate date={post.data.pubDate} />
+                </span>
+              </h2>
+              <p class="post__desc">{post.data.description}</p>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
   </main>
 </Layout>
 
-<style>
-  .back {
-    display: inline-block;
-    margin-bottom: 1rem;
-  }
-
-  .blog {
-    margin: 5vh auto;
-  }
+<style lang="scss">
+  @import "@styles/scheme";
 
   .posts {
-    margin: 1rem;
-    list-style-type: none;
+    padding: 1rem;
+    border: 1px solid $border-color;
   }
 
   .post {
     display: block;
-    margin-bottom: 1rem;
     padding: 1rem;
-
-    color: #fff;
-    background-color: #222;
-    padding: 1rem;
-
-    text-decoration: none;
-    border-radius: 0.25rem;
-    border: 1px solid #333;
-  }
-
-  .post:hover {
-    background-color: #2e2e2e;
   }
 
   .post__date {
