@@ -1,5 +1,6 @@
 ---
 import Typer from "./Typer.svelte";
+import typerList from "../content/typer.json";
 ---
 
 <div class="heading">
@@ -9,26 +10,13 @@ import Typer from "./Typer.svelte";
       <span class="heading__name__last">Read</span>
     </h1>
     <p class="heading__role">
+      <!-- Fallback incase the typer cannot be loaded -->
+      <noscript><span class="typer">Full-Stack</span></noscript>
+      <!-- Typing element with its possible values -->
       <Typer
+        class="typer"
         client:only="svelte"
-        values={[
-          "Rust",
-          "Full-Stack",
-          "Web",
-          "Kotlin",
-          "Front-end",
-          "Back-end",
-          "Stonks™",
-          "JS",
-          "PHP",
-          "Go",
-          "Cool",
-          "Bad",
-          "Cheat",
-          "HTML",
-          "CSS",
-          "!Good",
-        ]}
+        values={typerList}
         duration={1000}
       />
       Developer
@@ -45,6 +33,12 @@ import Typer from "./Typer.svelte";
 
 <style lang="scss">
   @import "@styles/scheme.scss";
+
+  .typer {
+    color: $primary-lighter;
+    position: relative;
+    margin-right: 4px;
+  }
 
   .heading {
     height: 100vh;
