@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import GitHub from "../components/icons/GitHub.astro";
 import Project from "../components/Project.astro";
 import Layout from "../layouts/Layout.astro";
 
@@ -14,7 +15,18 @@ const projects = (await getCollection("projects")).sort(
 >
   <main class="content">
     <h1 class="section__title">Projects</h1>
-    <p class="section__text">Check out some of my projects below</p>
+    <p class="section__text">
+      Check out some of my projects below. For a full list of my projects check
+      out my
+      <a
+        class="link"
+        href="https://github.com/jacobtread"
+        rel="noreferrer noopener"
+        target="_blank"
+      >
+        GitHub</a
+      >
+    </p>
 
     <a href="/" class="back button">Back</a>
 
@@ -30,6 +42,7 @@ const projects = (await getCollection("projects")).sort(
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
     list-style: none;
+    width: 100%;
   }
 
   .back {
@@ -38,7 +51,18 @@ const projects = (await getCollection("projects")).sort(
   }
 
   .content {
+    width: 100%;
     max-width: 80rem;
     margin: 1rem auto;
+    padding: 1rem;
+  }
+
+  .link {
+  }
+
+  @media screen and (max-width: 64rem) {
+    .projects {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
