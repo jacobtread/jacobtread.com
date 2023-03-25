@@ -53,7 +53,14 @@ const { Content } = await render();
 <style is:global>
   .project p {
     margin: 1rem 0;
+    font-size: 1.1rem;
     color: #999;
+  }
+
+  @media screen and (max-width: 48rem) {
+    .project p {
+      font-size: 1rem;
+    }
   }
 </style>
 
@@ -93,12 +100,14 @@ const { Content } = await render();
     gap: 0.5rem;
     margin-bottom: 1rem;
     color: #777;
+    flex-flow: row wrap;
   }
 
   .project__links {
     list-style: none;
     display: flex;
     gap: 1rem;
+    flex-flow: row wrap;
   }
 
   .project__link {
@@ -115,5 +124,11 @@ const { Content } = await render();
 
   .project__link:hover {
     background-color: #62a563;
+  }
+
+  @media screen and (max-width: 64rem) {
+    .project:first-child {
+      grid-column: 1 / 2;
+    }
   }
 </style>
