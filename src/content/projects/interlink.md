@@ -1,6 +1,6 @@
 ---
 title: "Interlink"
-tags: ["Rust", "Async", "Tokio"]
+tags: ["Rust", "Async", "Tokio", "Library"]
 links: [{ type: "GITHUB", link: "https://github.com/jacobtread/interlink" }]
 priority: 4
 ---
