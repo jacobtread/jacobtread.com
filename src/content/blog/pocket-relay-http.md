@@ -3,7 +3,7 @@ title: "Pocket Relay and it's new system"
 description: "Migration from multiple servers to a single HTTP server"
 pubDate: "03/25/2023"
 updatedDate: "03/25/2023"
-image: "/blog/pocket-relay-http/social.jpg"
+socialImage: "/blog/pocket-relay-http/social.jpg"
 heroImage: "/blog/pocket-relay-http/heading.jpg"
 ---
 
