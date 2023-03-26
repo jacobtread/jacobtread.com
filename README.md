@@ -1,51 +1,29 @@
-# Astro Starter Kit: Blog
+![Social Image](public/social.jpg)
 
+# Personal Website
+
+[Deployed Site](https://jacobtread.com)
+
+This is the GitHub repository for my personal website. This website is written using [Astro](https://astro.build/), SCSS, Svelte, and TypeScript.
+
+## Projects
+
+This website has a list of projects which is loaded from markdown files in the `src/content/projects` directory. Each project markdown file looks like the following:
+
+```md
+---
+title: "Pocket Relay"
+tags: ["Rust", "Axum", "Mass Effect 3", "Game Server", "Docker"]
+links:
+  [
+    { type: "GITHUB", link: "https://github.com/PocketRelay/Server" },
+    { type: "WEBSITE", link: "https://pocket-relay.pages.dev/" },
+  ]
+priority: 1
+---
+
+I have started completely rewriting my Pocket Relay game server in Rust which early on showed off great performance improvements along with many benifits over the original Kotlin version. So far I've seen a massive memory usage decrease going from 160mb idle on the Kotlin server to only 3.5mb with two players on the Rust server. This Rust rewrite also removes the requirement of needing a JVM which greatly improves its easy of use and user experience. This version also makes use of my BlazeSSL project which makes it more stable and not depend on operating system SSL implementations for its legacy connections.
 ```
-npm create astro@latest -- --template blog
-```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/blog)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/blog)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/blog/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-
-![blog](https://user-images.githubusercontent.com/4677417/186189140-4ef17aac-c3c9-4918-a8c2-ce86ba1bb394.png)
-
-Features:
-
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```
-├── public/
-├── src/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
-
-Any static assets, like images, can be placed in the `public/` directory.
 
 ## 🧞 Commands
 
@@ -59,11 +37,3 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`      | Preview your build locally, before deploying     |
 | `npm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-
-## Credit
-
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
