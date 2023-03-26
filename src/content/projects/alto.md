@@ -1,5 +1,5 @@
 ---
-title: "ALTO"
+title: "Alto"
 tags: ["Kotlin", "Java", "VueJS", "Minecraft", "Go", "OpenGL"]
 links:
   [
