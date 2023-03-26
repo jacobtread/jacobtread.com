@@ -3,6 +3,7 @@ title: "Pocket Relay and it's new system"
 description: "Migration from multiple servers to a single HTTP server"
 pubDate: "03/25/2023"
 updatedDate: "03/25/2023"
+image: "/blog/pocket-relay-http/social.jpg"
 heroImage: "/blog/pocket-relay-http/heading.jpg"
 ---
 
@@ -332,7 +333,6 @@ async fn upgrade(upgrade: BlazeUpgrade) -> Result<Response, StatusCode> {
 
 Then the client just needed to handle any connections and make a get request which then becomes an upgraded stream that it can pipe all the data through
 
-
 ```rust
 use crate::{constants::MAIN_PORT, show_error, TARGET};
 use reqwest::{
@@ -498,7 +498,7 @@ This all changes now that the entire server runs over HTTP. Due to the server us
 
 Previously if you wanted to host a **Pocket Relay** server you would have to get Dedicated, VPS hosting, or something similar in order to be able to expose all the required ports. This all changes with the new server as it only requires an HTTP port. This opens the server up to many hosting options including Google Cloud free container hosting.
 
---- 
+---
 
 ### Server knowledge
 
