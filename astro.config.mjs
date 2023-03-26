@@ -6,7 +6,7 @@ import svelte from "@astrojs/svelte";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://jacobtread-astro.pages.dev",
+  site: "https://jacobtread.com",
   integrations: [mdx(), sitemap(), svelte()],
   markdown: {
     shikiConfig: {
