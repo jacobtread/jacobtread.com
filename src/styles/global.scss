@@ -6,6 +6,7 @@
 	box-sizing: border-box;
 
 	font-family: 'Inter', Arial, Helvetica, sans-serif;
+	scroll-behavior: smooth;
 
 	/* Scrollbar styling */
 	&::-webkit-scrollbar {
@@ -18,10 +19,6 @@
 	&::-webkit-scrollbar-thumb {
 		background-color: $primary;
 	}
-}
-
-html {
-	scroll-behavior: smooth;
 }
 
 p {
