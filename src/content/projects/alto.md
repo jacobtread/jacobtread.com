@@ -8,4 +8,4 @@ links:
   ]
 ---
 
-Alto is a high performance Minecraft client written in Kotlin which greatly out performs many clients available today. This project is pending rewrite and currently doesn&apos;t have any publicly available releases.
+Alto is a high performance Minecraft client written in Kotlin which greatly out performs many clients available today. This project is pending rewrite and currently doesn't have any publicly available releases.

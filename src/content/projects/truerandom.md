@@ -12,4 +12,4 @@ links:
 priority: 7
 ---
 
-A joke website designed for the "Terrible Ideas Hackathon". This website is centered around a dice rolling machine as a service concept. The project is for generating random numbers by physically rolling a dice with a mechanical arm.
+**TrueRandom** is joke website designed for the "Terrible Ideas Hackathon". This website is centered around a dice rolling machine as a service concept. The project is for generating random numbers by physically rolling a dice with a mechanical arm.

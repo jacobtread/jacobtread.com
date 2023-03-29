@@ -20,5 +20,5 @@ links:
   ]
 ---
 
-A custom fork of the Malduino Wireless Bad-USB firmware with a more modern embedded
+This is a custom fork of the Malduino Wireless Bad-USB firmware with a more modern embedded
 website which has a nice SPA which uses the Svelte frontend framework.
