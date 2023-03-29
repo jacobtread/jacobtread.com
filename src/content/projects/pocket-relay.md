@@ -3,10 +3,15 @@ title: "Pocket Relay"
 tags: ["Rust", "Axum", "Mass Effect 3", "Game Server", "Docker"]
 links:
   [
-    { type: "GITHUB", link: "https://github.com/PocketRelay/Server" },
+    {
+      type: "GITHUB",
+      link: "https://github.com/PocketRelay/Server",
+      name: "Server Github",
+    },
+    { type: "GITHUB", link: "https://github.com/PocketRelay" },
     { type: "WEBSITE", link: "https://pocket-relay.pages.dev/" },
   ]
 priority: 1
 ---
 
-I have started completely rewriting my Pocket Relay game server in Rust which early on showed off great performance improvements along with many benifits over the original Kotlin version. So far I've seen a massive memory usage decrease going from 160mb idle on the Kotlin server to only 3.5mb with two players on the Rust server. This Rust rewrite also removes the requirement of needing a JVM which greatly improves its easy of use and user experience. This version also makes use of my BlazeSSL project which makes it more stable and not depend on operating system SSL implementations for its legacy connections.
+**Pocket Relay** is a custom server emulator that I've written for the **Mass Effect 3** game. This server acts pretends to be the official servers allowing people to play the multiplayer for **Mass Effect 3** offline, over LAN, and experiment with the different characters and weapons. This server originally was written in Kotlin but has since been rewritten in Rust. The server boasts great performance and is able to handle a number of clients while keeping memory usage < 10mb. This server branched out into the creation of many other projects in order to make it possible, many of which are listen on this page.
