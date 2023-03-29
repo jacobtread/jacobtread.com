@@ -11,4 +11,4 @@ links:
 ---
 
 This is a tiny portable Rust application which has only one purpose and that is to create an
-HTTP server that shares all the files placed in the &quot;public&quot; folder next to it
+HTTP server that shares all the files placed in the "public" folder next to it.

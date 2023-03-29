@@ -14,4 +14,4 @@ links:
 priority: 6
 ---
 
-A real time quiz application for quickly and easily making quizzes with an extremely small deployment size of 1.82mb making it extra portable. There is an in progress rewrite in the Rust programming language.
+Quizler is a real time quiz application for quickly and easily making quizzes with an extremely small deployment size of 1.82mb making it extra portable. There is an in progress rewrite in the Rust programming language. This is intented to be used as a quick simple LAN quiz game tool, however it can be deployed and run within a container on the cloud.
