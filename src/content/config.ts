@@ -29,6 +29,7 @@ const projects = defineCollection({
 			name: z.string().optional(),
 		})),
 		priority: z.number().optional(),
+		image: z.string().optional(),
 	})
 })
 

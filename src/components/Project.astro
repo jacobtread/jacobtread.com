@@ -5,7 +5,7 @@ import GitHub from "./icons/GitHub.astro";
 type Props = CollectionEntry<"projects">;
 
 const {
-  data: { title, tags, links },
+  data: { title, tags, links, image },
   render,
 } = Astro.props;
 
@@ -19,6 +19,8 @@ const { Content } = await render();
 
 <li class="block project">
   <div>
+    {image && <img src={image} alt={title} loading="lazy" class="icon" />}
+
     <h2 class="project__title">{title}</h2>
     <Content />
   </div>
@@ -66,6 +68,13 @@ const { Content } = await render();
 
 <style lang="scss">
   @import "@styles/scheme.scss";
+
+  .icon {
+    max-height: 32px;
+    height: 100%;
+    width: auto;
+    margin-bottom: 1rem;
+  }
 
   .project {
     display: grid;
