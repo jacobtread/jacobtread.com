@@ -8,6 +8,8 @@ const PAGE_TITLE = "Blog | " + SITE_TITLE;
 const PAGE_DESCRIPTION =
   "Check out my Blog. This is where I post my tech related encounters and updates.";
 
+const RSS_URL = new URL("/blog/rss.xml", Astro.url);
+
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
@@ -16,9 +18,16 @@ const posts = (await getCollection("blog")).sort(
 <Layout title={PAGE_TITLE} description={PAGE_DESCRIPTION}>
   <main class="main section--left">
     <h1 class="section__title">Blog</h1>
-    <p class="section__text">Check out my blog posts below</p>
+    <p class="section__text">
+      Check out my blog posts below. I've also provided a link to the RSS feed
+      for my blog
+    </p>
     <div class="section__actions">
-      <a href="/" class="button">Back</a>
+      <a href="/" class="button back">Back</a>
+      <div class="rss">
+        <span class="rss__title">RSS</span>
+        <a class="rss__value" href={RSS_URL} target="_blank">{RSS_URL}</a>
+      </div>
     </div>
     <ul class="blocks blocks--column posts">
       {
@@ -42,6 +51,33 @@ const posts = (await getCollection("blog")).sort(
 
 <style lang="scss">
   @import "@styles/scheme";
+
+  .rss {
+    $bg-color: #222222;
+    $btn-border-color: #333333;
+    display: inline-block;
+    background-color: $bg-color;
+    border: 2px solid $btn-border-color;
+    border-radius: 0.25rem;
+
+    &__title {
+      font-weight: bold;
+      padding-left: 1rem;
+      padding-right: 0.5rem;
+      font-size: 1.25rem;
+      user-select: none;
+      color: #999;
+    }
+
+    &__value {
+      display: inline-block;
+      color: $primary;
+      background-color: #151515;
+      padding: 0.95rem;
+      margin: 0.25rem;
+      border-radius: 0.25rem;
+    }
+  }
 
   .posts {
     padding: 1rem;
@@ -68,5 +104,29 @@ const posts = (await getCollection("blog")).sort(
   }
 
   .post__desc {
+  }
+
+  @media screen and (max-width: $screen-small) {
+    .back,
+    .rss {
+      width: 100%;
+      display: block;
+    }
+
+    .rss {
+      padding: 0.5rem;
+
+      &__title {
+        display: block;
+        padding: 0.5rem;
+      }
+
+      &__value {
+        display: block;
+        width: calc(100% - 0.5rem);
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
   }
 </style>
