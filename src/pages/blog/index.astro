@@ -82,6 +82,8 @@ const posts = (await getCollection("blog")).sort(
   .posts {
     padding: 1rem;
     border: 1px solid $border-color;
+    opacity: 0;
+    animation: in-left 0.5s 0.3s ease forwards;
   }
 
   .post {
