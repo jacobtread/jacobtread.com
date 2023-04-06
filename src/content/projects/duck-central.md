@@ -14,7 +14,7 @@ links:
   [
     {
       type: "GITHUB",
-      link: "https://github.com/jacobtread/jacobtread/DuckCentral",
+      link: "https://github.com/jacobtread/DuckCentral",
     },
   ]
 ---
