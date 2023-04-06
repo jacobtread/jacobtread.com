@@ -11,13 +11,7 @@ tags:
     "WebSocket",
     "Arduino",
   ]
-links:
-  [
-    {
-      type: "GITHUB",
-      link: "https://github.com/jacobtread/jacobtread/MalDuino-W",
-    },
-  ]
+links: [{ type: "GITHUB", link: "https://github.com/jacobtread/MalDuino-W" }]
 ---
 
 This is a custom fork of the Malduino Wireless Bad-USB firmware with a more modern embedded
