@@ -31,6 +31,8 @@ const projects = defineCollection({
 		priority: z.number().optional(),
 		image: z.string().optional(),
 	})
-})
+});
 
-export const collections = { blog, projects };
+const licenses = defineCollection({});
+
+export const collections = { blog, projects, licenses };
