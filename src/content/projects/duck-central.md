@@ -10,13 +10,7 @@ tags:
     "WebSocket",
     "Arduino",
   ]
-links:
-  [
-    {
-      type: "GITHUB",
-      link: "https://github.com/jacobtread/DuckCentral",
-    },
-  ]
+links: [{ type: "GITHUB", link: "https://github.com/jacobtread/DuckCentral" }]
 ---
 
 An app for controlling the Malduino Wireless Bad-USB using a Android app with a
