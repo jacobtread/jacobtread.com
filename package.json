@@ -8,7 +8,8 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "format": "yarn prettier -w src --plugin-search-dir=."
   },
   "dependencies": {
     "@astrojs/mdx": "^0.18.2",
@@ -19,5 +20,9 @@
     "astro": "^2.1.0",
     "sass": "^1.60.0",
     "svelte": "^3.54.0"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.7",
+    "prettier-plugin-astro": "^0.8.0"
   }
 }
