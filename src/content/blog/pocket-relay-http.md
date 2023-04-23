@@ -7,7 +7,7 @@ socialImage: "/blog/pocket-relay-http/social.jpg"
 heroImage: "/blog/pocket-relay-http/heading.jpg"
 ---
 
-This blob post covers my newest advancements in my **Pocket Relay** project which you can view [Here](https://github.com/PocketRelay).
+This blog post covers my newest advancements in my **Pocket Relay** project which you can view [Here](https://github.com/PocketRelay).
 
 ## How it originally was
 
