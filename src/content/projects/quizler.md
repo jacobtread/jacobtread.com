@@ -1,17 +1,12 @@
 ---
 title: "Quizler"
-tags: ["VueJS", "TypeScript", "Go", "Rust", "Docker"]
+tags: ["Svelte", "TypeScript", "Axum", "Rust", "Docker"]
 links:
   [
     { type: "GITHUB", link: "https://github.com/jacobtread/Quizler" },
-    {
-      type: "GITHUB",
-      link: "https://github.com/jacobtread/Quizler-rust",
-      name: "Rust re-write",
-    },
-    { type: "WEBSITE", link: "https://quizler.jacobtread.com/" },
+    { type: "WEBSITE", link: "https://quizler-2p40.onrender.com/" },
   ]
-priority: 6
+priority: 2
 ---
 
-Quizler is a real time quiz application for quickly and easily making quizzes with an extremely small deployment size of 1.82mb making it extra portable. There is an in progress rewrite in the Rust programming language. This is intented to be used as a quick simple LAN quiz game tool, however it can be deployed and run within a container on the cloud.
+Quizler is a super small, easy-to-use, and deployable app for creating quizzes that can be played across multiple devices in real time. The app is intended to be small, portable, and easy to use. This is my replacement for my original real-time quiz application (Quizler-v1). It comes with lots of new features and performance improvements.
