@@ -17,6 +17,6 @@ image: "/projects/logos/pocket-relay.svg"
 
 **Pocket Relay** is a custom game server emulator for **Mass Effect 3**. The server allows players to host their own servers for the game, enabling things like playing over **LAN** (Local Area Network). 
 
-This server includes a dashboard which allows users to manage the server, and even experiment with different in-game items and characters in an environment isolated from the official game servers. 
+This server includes a dashboard, which allows users to manage the server and even experiment with different in-game items and characters in an environment isolated from the official game servers. 
 
-The server is very performant able to handle many simultaneous connections all while using very little resources.
+The server is very performant, able to handle many simultaneous connections while using very few resources.
