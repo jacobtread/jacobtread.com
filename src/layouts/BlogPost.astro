@@ -2,6 +2,8 @@
 import type { CollectionEntry } from "astro:content";
 import FormattedDate from "@components/FormattedDate.astro";
 import Layout from "@layouts/Layout.astro";
+import "@fontsource/jetbrains-mono";
+import "@fontsource/jetbrains-mono/400.css";
 
 type Props = CollectionEntry<"blog">["data"];
 
@@ -87,6 +89,10 @@ const {
     padding: 1rem;
     line-height: 1.5;
     margin: 1rem 0;
+  }
+
+  .content .astro-code * {
+    font-family: "Jetbrains Mono", "Courier New", Courier, monospace;
   }
 
   .content a {

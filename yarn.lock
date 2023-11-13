@@ -653,6 +653,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fontsource/jetbrains-mono@npm:^5.0.17":
+  version: 5.0.17
+  resolution: "@fontsource/jetbrains-mono@npm:5.0.17"
+  checksum: 3b39f21814cf9b861e30c9345243530eccbf55484553f47b997d1f63ea7611a9ee7f80010344acc580bd529391b07dce6c4fe958e39e91eff97b6a29630cb2df
+  languageName: node
+  linkType: hard
+
 "@isaacs/cliui@npm:^8.0.2":
   version: 8.0.2
   resolution: "@isaacs/cliui@npm:8.0.2"
@@ -2812,6 +2819,7 @@ __metadata:
     "@astrojs/sitemap": ^1.2.1
     "@astrojs/svelte": ^2.1.0
     "@fontsource/inter": ^4.5.15
+    "@fontsource/jetbrains-mono": ^5.0.17
     astro: ^2.1.0
     prettier: ^2.8.7
     prettier-plugin-astro: ^0.8.0
