@@ -3,12 +3,12 @@ title: "Pocket Relay"
 tags: ["Rust", "Axum", "SQLite", "Mass Effect 3", "Game Server", "Docker"]
 links:
   [
+    { type: "GITHUB", link: "https://github.com/PocketRelay", name: "Project GitHub" },
     {
       type: "GITHUB",
       link: "https://github.com/PocketRelay/Server",
       name: "Server GitHub",
     },
-    { type: "GITHUB", link: "https://github.com/PocketRelay", name: "Project GitHub" },
     { type: "WEBSITE", link: "https://pocket-relay.pages.dev/" },
   ]
 priority: 1
