@@ -31,21 +31,22 @@ const { Content } = await render();
     </ul>
     <ul class="block__row">
       {
-        links.map((link) => {
-          const name = link.name ?? DEFAULT_NAMES[link.type];
-          return (
-            <li>
-              <a
-                class="block__button"
-                target="_blank"
-                rel="noreferrer noopener"
-                href={link.link}>
-                {link.type === "GITHUB" && <GitHub class="inline-icon" />}
-                {name}
-              </a>
-            </li>
-          );
-        })
+        links &&
+          links.map((link) => {
+            const name = link.name ?? DEFAULT_NAMES[link.type];
+            return (
+              <li>
+                <a
+                  class="block__button"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  href={link.link}>
+                  {link.type === "GITHUB" && <GitHub class="inline-icon" />}
+                  {name}
+                </a>
+              </li>
+            );
+          })
       }
     </ul>
   </div>
