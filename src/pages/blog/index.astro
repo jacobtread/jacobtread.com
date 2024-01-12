@@ -1,6 +1,6 @@
 ---
 import { SITE_TITLE } from "../../consts";
-import { getCollection } from "astro:content";
+import { CollectionEntry, getCollection } from "astro:content";
 import FormattedDate from "../../components/FormattedDate.astro";
 import Layout from "../../layouts/Layout.astro";
 
@@ -10,8 +10,16 @@ const PAGE_DESCRIPTION =
 
 const RSS_URL = new URL("/blog/rss.xml", Astro.url);
 
-const posts = (await getCollection("blog")).sort(
-    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+// Type alias for a blog entry
+type BlogPost = CollectionEntry<"blog">;
+
+// Obtain the collection of blog posts
+const blogPosts: BlogPost[] = await getCollection("blog");
+
+// Sort the blog posts based on publish date
+blogPosts.sort(
+    (a: BlogPost, b: BlogPost) =>
+        b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
 
@@ -33,7 +41,7 @@ const posts = (await getCollection("blog")).sort(
         </div>
         <ul class="blocks blocks--column posts">
             {
-                posts.map((post) => (
+                blogPosts.map((post) => (
                     <li>
                         <a class="post block" href={`/blog/${post.slug}/`}>
                             <h2 class="post__title">
