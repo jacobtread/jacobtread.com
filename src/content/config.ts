@@ -19,6 +19,9 @@ const blog = defineCollection({
     }),
 });
 
+/// Maximum possible priority value
+const MAX_PRIORITY_VALUE: number = Number.MAX_SAFE_INTEGER;
+
 const projects = defineCollection({
     schema: z.object({
         title: z.string(),
@@ -32,7 +35,8 @@ const projects = defineCollection({
                 })
             )
             .optional(),
-        priority: z.number().optional(),
+        priority: z.number().optional()
+            .default(MAX_PRIORITY_VALUE),
         image: z.string().optional(),
     }),
 });

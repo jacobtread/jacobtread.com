@@ -1,5 +1,5 @@
 ---
-import { getCollection } from "astro:content";
+import { CollectionEntry, getCollection } from "astro:content";
 import Project from "@components/Project.astro";
 import Layout from "@layouts/Layout.astro";
 import GitHub from "@components/icons/GitHub.astro";
@@ -9,9 +9,14 @@ const PAGE_TITLE = "Projects | " + SITE_TITLE;
 const PAGE_DESCRIPTION =
     "Check out a list of my projects. This list doesn't contain all my projects but it contains a decent chunk of the important ones.";
 
-const projects = (await getCollection("projects")).sort(
-    (a, b) => (a.data.priority ?? 99) - (b.data.priority ?? 99)
-);
+// Type alias for a project entry
+type Project = CollectionEntry<"projects">;
+
+// Obtain the collection of projects
+const projects: Project[] = await getCollection("projects");
+
+// Sort the projects based on their priority
+projects.sort((a: Project, b: Project) => a.data.priority - b.data.priority);
 ---
 
 <Layout title={PAGE_TITLE} description={PAGE_DESCRIPTION}>
