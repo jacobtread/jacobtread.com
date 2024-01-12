@@ -4,202 +4,209 @@ import typerList from "../data/typer.json";
 ---
 
 <div class="heading">
-  <div class="heading__content">
-    <h1 class="heading__name">
-      <span class="heading__name__first">Jacob</span>
-      <span class="heading__name__last">Read</span>
-    </h1>
-    <p class="heading__role">
-      <!-- Fallback incase the typer cannot be loaded -->
-      <noscript><span class="typer">Full-Stack</span></noscript>
-      <!-- Typing element with its possible values -->
-      <Typer
-        class="typer"
-        client:only="svelte"
-        values={typerList}
-        duration={1000}
-      />
-      Developer
-    </p>
-    <nav class="nav">
-      <a href="/blog" class="nav__link">Blog</a>
-      <a href="#contact" class="nav__link">Contact</a>
-      <a href="#about" class="nav__link">About</a>
-      <a href="#technology" class="nav__link">Technology</a>
-      <a href="/projects" class="nav__link">Projects</a>
-    </nav>
-  </div>
+    <div class="heading__content">
+        <h1 class="heading__name">
+            <span class="heading__name__first">Jacob</span>
+            <span class="heading__name__last">Read</span>
+        </h1>
+        <p class="heading__role">
+            <!-- Fallback incase the typer cannot be loaded -->
+            <noscript><span class="typer">Full-Stack</span></noscript>
+            <!-- Typing element with its possible values -->
+            <Typer
+                class="typer"
+                client:only="svelte"
+                values={typerList}
+                duration={1000}
+            />
+            Developer
+        </p>
+        <nav class="nav">
+            <a href="/blog" class="nav__link">Blog</a>
+            <a href="#contact" class="nav__link">Contact</a>
+            <a href="#about" class="nav__link">About</a>
+            <a href="#technology" class="nav__link">Technology</a>
+            <a href="/projects" class="nav__link">Projects</a>
+        </nav>
+    </div>
 </div>
 
 <style lang="scss">
-  @import "@styles/scheme.scss";
+    @import "@styles/scheme.scss";
 
-  .typer {
-    color: $primary-lighter;
-    position: relative;
-    margin-right: 4px;
-  }
-
-  .heading {
-    height: 100vh;
-    width: 100%;
-
-    background: linear-gradient(rgba(12, 12, 12, 0.5), rgba(17, 17, 17, 0.5)),
-      url("/background.jpg") no-repeat;
-    background-size: cover;
-
-    display: grid;
-    align-items: center;
-    border-bottom: 1px solid $border-color;
-  }
-
-  .heading__content {
-    margin: 0 auto;
-    width: 100%;
-    max-width: 86rem;
-    padding: 0 5rem;
-  }
-
-  .heading__name {
-    font-weight: 700;
-    font-size: 8rem;
-    color: $title;
-    line-height: 1;
-    margin-left: -4px;
-  }
-
-  .heading__name__first,
-  .heading__name__last {
-    opacity: 0;
-    display: block;
-    text-transform: uppercase;
-    letter-spacing: 0.25rem;
-    animation: in-left 0.5s ease forwards;
-  }
-
-  .heading__name__first {
-    background: -webkit-linear-gradient(30deg, $primary-lighter, $secondary);
-    -webkit-background-clip: text;
-    color: $primary-lighter;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .heading__name__last {
-    animation-delay: 0.1s;
-  }
-
-  .heading__role {
-    margin-top: 1rem;
-    font-size: 2rem;
-    font-weight: bold;
-    animation: in-left 0.5s 0.2s ease forwards;
-    opacity: 0;
-  }
-
-  .nav {
-    display: flex;
-    flex-flow: row wrap;
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-
-  // The delay increase for each button
-  $nav-delay-inc: 0.15s;
-  // The total number of buttons
-  $nav-button-count: 5;
-  // The total animation delay for all the buttons
-  $nav-total-delay: $nav-delay-inc * $nav-button-count;
-
-  .nav__link {
-    font-weight: bold;
-    color: #999;
-    font-size: 1.25rem;
-    text-decoration: none;
-    padding: 1rem;
-    border: 2px solid #222b22;
-    text-transform: uppercase;
-    border-radius: 0.25rem;
-
-    background-color: transparent;
-    opacity: 0;
-
-    transition: color 0.5s, border-color 0.25s, background-color 0.5s;
-
-    animation: link-in-left 0.5s $nav-total-delay ease forwards;
-  }
-
-  // Delayed animations for each of the buttons
-  $delay: $nav-total-delay;
-  @for $i from 1 to ($nav-button-count + 1) {
-    .nav__link:nth-child(#{$i}) {
-      animation-delay: $delay;
-    }
-
-    $delay: $delay - $nav-delay-inc;
-  }
-
-  .nav__link:hover {
-    color: #ffffff;
-    border-color: $primary;
-    background-color: $primary-darker;
-  }
-
-  @keyframes link-in-left {
-    0% {
-      opacity: 0;
-      transform: translateX(-100%);
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  @media screen and (max-width: $screen-tablet) {
-    .heading__name {
-      font-size: 6rem;
-    }
-
-    .heading__role {
-      font-size: 2rem;
+    .typer {
+        color: $primary-lighter;
+        position: relative;
+        margin-right: 4px;
     }
 
     .heading {
-      text-align: center;
+        height: 100vh;
+        width: 100%;
+
+        background: linear-gradient(
+                rgba(12, 12, 12, 0.5),
+                rgba(17, 17, 17, 0.5)
+            ),
+            url("/background.jpg") no-repeat;
+        background-size: cover;
+
+        display: grid;
+        align-items: center;
+        border-bottom: 1px solid $border-color;
     }
 
-    .nav {
-      text-align: center;
-      justify-content: center;
-    }
-  }
-
-  @media screen and (max-width: $screen-small) {
     .heading__content {
-      padding: 0 3rem;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 86rem;
+        padding: 0 5rem;
     }
+
     .heading__name {
-      font-size: 5rem;
+        font-weight: 700;
+        font-size: 8rem;
+        color: $title;
+        line-height: 1;
+        margin-left: -4px;
+    }
+
+    .heading__name__first,
+    .heading__name__last {
+        opacity: 0;
+        display: block;
+        text-transform: uppercase;
+        letter-spacing: 0.25rem;
+        animation: in-left 0.5s ease forwards;
+    }
+
+    .heading__name__first {
+        background: -webkit-linear-gradient(
+            30deg,
+            $primary-lighter,
+            $secondary
+        );
+        -webkit-background-clip: text;
+        color: $primary-lighter;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .heading__name__last {
+        animation-delay: 0.1s;
     }
 
     .heading__role {
-      font-size: 1.25rem;
+        margin-top: 1rem;
+        font-size: 2rem;
+        font-weight: bold;
+        animation: in-left 0.5s 0.2s ease forwards;
+        opacity: 0;
     }
 
     .nav {
-      flex-flow: column nowrap;
-      width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        gap: 1rem;
+        margin-top: 1rem;
     }
+
+    // The delay increase for each button
+    $nav-delay-inc: 0.15s;
+    // The total number of buttons
+    $nav-button-count: 5;
+    // The total animation delay for all the buttons
+    $nav-total-delay: $nav-delay-inc * $nav-button-count;
 
     .nav__link {
-      display: block;
-      width: 100%;
-    }
-  }
+        font-weight: bold;
+        color: #999;
+        font-size: 1.25rem;
+        text-decoration: none;
+        padding: 1rem;
+        border: 2px solid #222b22;
+        text-transform: uppercase;
+        border-radius: 0.25rem;
 
-  @media screen and (max-width: $screen-extra-small) {
-    .heading__name {
-      font-size: 3rem;
+        background-color: transparent;
+        opacity: 0;
+
+        transition: color 0.5s, border-color 0.25s, background-color 0.5s;
+
+        animation: link-in-left 0.5s $nav-total-delay ease forwards;
     }
-  }
+
+    // Delayed animations for each of the buttons
+    $delay: $nav-total-delay;
+    @for $i from 1 to ($nav-button-count + 1) {
+        .nav__link:nth-child(#{$i}) {
+            animation-delay: $delay;
+        }
+
+        $delay: $delay - $nav-delay-inc;
+    }
+
+    .nav__link:hover {
+        color: #ffffff;
+        border-color: $primary;
+        background-color: $primary-darker;
+    }
+
+    @keyframes link-in-left {
+        0% {
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @media screen and (max-width: $screen-tablet) {
+        .heading__name {
+            font-size: 6rem;
+        }
+
+        .heading__role {
+            font-size: 2rem;
+        }
+
+        .heading {
+            text-align: center;
+        }
+
+        .nav {
+            text-align: center;
+            justify-content: center;
+        }
+    }
+
+    @media screen and (max-width: $screen-small) {
+        .heading__content {
+            padding: 0 3rem;
+        }
+        .heading__name {
+            font-size: 5rem;
+        }
+
+        .heading__role {
+            font-size: 1.25rem;
+        }
+
+        .nav {
+            flex-flow: column nowrap;
+            width: 100%;
+        }
+
+        .nav__link {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    @media screen and (max-width: $screen-extra-small) {
+        .heading__name {
+            font-size: 3rem;
+        }
+    }
 </style>

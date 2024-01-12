@@ -2,10 +2,10 @@
 title: "Quizler"
 tags: ["Svelte", "TypeScript", "Axum", "Rust", "Docker"]
 links:
-  [
-    { type: "GITHUB", link: "https://github.com/jacobtread/Quizler" },
-    { type: "WEBSITE", link: "https://quizler-2p40.onrender.com/" },
-  ]
+    [
+        { type: "GITHUB", link: "https://github.com/jacobtread/Quizler" },
+        { type: "WEBSITE", link: "https://quizler-2p40.onrender.com/" },
+    ]
 priority: 2
 image: "/projects/logos/quizler.svg"
 ---

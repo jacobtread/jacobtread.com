@@ -10,7 +10,7 @@ This blog post covers what I learned and how I implemented Windows support for t
 The pull request these changes were made in [Reference Pull Request](https://github.com/jkfran/killport/pull/21) and
 later I updated it with an improved version in [Updated pull request](https://github.com/jkfran/killport/pull/25)
 
-## Intro 
+## Intro
 
 While doing my late night scrolling through GitHub I stumbled upon this cool little project called [killport](https://github.com/jkfran/killport) in my GitHub Explore. I took a peek through the code and the README and though this looked like a cool project. I noticed that the project didn't support Windows so I jotted down a note
 to begin working on it tomrrow.
@@ -19,16 +19,16 @@ to begin working on it tomrrow.
 
 ## Getting started
 
-Fast forward to the next day im ready to start the project. With my very little experience in working with the Windows API I first decided to browser the API docs in search of a function which could provide me a mapping between port numbers and process IDs. 
+Fast forward to the next day im ready to start the project. With my very little experience in working with the Windows API I first decided to browser the API docs in search of a function which could provide me a mapping between port numbers and process IDs.
 
 ### Functions
 
 The functions that I found for this were the following
 
-- [GetExtendedTcpTable](https://learn.microsoft.com/en-us/windows/win32/api/iphlpapi/nf-iphlpapi-getextendedtcptable) Retrieves a table of TCP endpoints with the details about their owners
-- [GetExtendedUdpTable](https://learn.microsoft.com/en-us/windows/win32/api/iphlpapi/nf-iphlpapi-getextendedudptable) Retrieves a table of UDP endpoints with the details about their owners
-- [OpenProcess](https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-openprocess) Opens a handle to the process to allow terminating
-- [TerminateProcess](https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-terminateprocess) Can terminate a process using its handle 
+-   [GetExtendedTcpTable](https://learn.microsoft.com/en-us/windows/win32/api/iphlpapi/nf-iphlpapi-getextendedtcptable) Retrieves a table of TCP endpoints with the details about their owners
+-   [GetExtendedUdpTable](https://learn.microsoft.com/en-us/windows/win32/api/iphlpapi/nf-iphlpapi-getextendedudptable) Retrieves a table of UDP endpoints with the details about their owners
+-   [OpenProcess](https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-openprocess) Opens a handle to the process to allow terminating
+-   [TerminateProcess](https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-terminateprocess) Can terminate a process using its handle
 
 Now its time to implement the Rust code to interface with these functions
 
@@ -54,11 +54,10 @@ I only add this dependency for the Windows platform as thats the only target tha
 
 Because the GetExtendedTcpTable and GetExtendedUdpTable need to provide a list of unknown size back to me after being called I need to do heap allocations for the API to store the structured data.
 
-
 ### TableClass trait
 
 When accessing the tables from `GetExtendedTcpTable` and `GetExtendedUdpTable` each of them require a slightly different
-structure so to reduce duplication and create a simple way to access the required field on all of them I created `TableClass` 
+structure so to reduce duplication and create a simple way to access the required field on all of them I created `TableClass`
 trait that wraps this functionality.
 
 ```rust
@@ -123,7 +122,7 @@ of the processes in the table that are bound to the provided `port` and adding t
 All of the traits implementations access the same variables from the underlying table however because each
 of the different variants return different types where the required entries have different shapes they cannot
 share a single function implementation, to get around this I have created a macro called `impl_get_processes` for the
-`TableClass` trait in order to implement the `get_processes` function without having to repeat the same code. The 
+`TableClass` trait in order to implement the `get_processes` function without having to repeat the same code. The
 macro takes in the type of structure that the table pointer will represent.
 
 ```rust
@@ -152,8 +151,8 @@ macro_rules! impl_get_processes {
 ```
 
 The above code casts the underlying table to a pointer to the type provided to the macro
-where it is then iterated (Turned into a slice as the length is provided by the `dwNumEntries` field) 
-and the dwLocalPort field is checked on each of the rows, if this field matches then the `dwOwningPid` (Process ID) 
+where it is then iterated (Turned into a slice as the length is provided by the `dwNumEntries` field)
+and the dwLocalPort field is checked on each of the rows, if this field matches then the `dwOwningPid` (Process ID)
 is added to the `pids` HashSet.
 
 Then this macro can be used to define all the different table class variants:
@@ -277,7 +276,6 @@ where
 }
 ```
 
-
 ### Killing Processes
 
 Now for killing processes. In order to kill processes I must first obtain the process handle using `OpenProcess` with `PROCESS_TERMINATE` (Permission to terminate the process) then I can call `TerminateProcess` the following code handles this
@@ -379,7 +377,7 @@ unsafe fn collect_parents(pids: &mut HashSet<u32>) -> Result<()> {
 
 Now that I have all the functions required to implement the functionality I can create the
 function that the program uses to kill by port. The function name and arguments are the same
-across all the platform implementations. This function finds all the PIDs for the different 
+across all the platform implementations. This function finds all the PIDs for the different
 protocols and address families and collects them into a list of pids which it then iterates
 over and kills each of the processes.
 
@@ -432,7 +430,7 @@ pub fn kill_processes_by_port(port: u16, _: KillPortSignalOptions) -> Result<boo
 
 All that was left is to add the new module and function into the main program
 
-```rust 
+```rust
 #[cfg(target_os = "windows")]
 mod windows;
 
@@ -442,6 +440,6 @@ use windows::kill_processes_by_port;
 
 And with this the implementation was complete and working
 
-## What I learned 
+## What I learned
 
 Through working on this project I learned how to allocate heap memory manually in Rust, How to interface with the Windows API, How to navigate the Windows API documentation, how to work with unsafe Rust and dealing with pointers.

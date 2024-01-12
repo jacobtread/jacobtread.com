@@ -2,7 +2,12 @@
 title: "Freddy's Fast Food"
 tags: ["Python", "Assessment", "Ordering System"]
 links:
-  [{ type: "GITHUB", link: "https://github.com/jacobtread/Freddys-Fast-Food" }]
+    [
+        {
+            type: "GITHUB",
+            link: "https://github.com/jacobtread/Freddys-Fast-Food",
+        },
+    ]
 ---
 
 A python application submitted for an internal assessment in Digital Technologies for Achievement

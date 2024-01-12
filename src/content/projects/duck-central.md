@@ -1,15 +1,15 @@
 ---
 title: "DuckCentral"
 tags:
-  [
-    "Kotlin",
-    "C++",
-    "Android",
-    "Jetpack Compose",
-    "ESP8266",
-    "WebSocket",
-    "Arduino",
-  ]
+    [
+        "Kotlin",
+        "C++",
+        "Android",
+        "Jetpack Compose",
+        "ESP8266",
+        "WebSocket",
+        "Arduino",
+    ]
 links: [{ type: "GITHUB", link: "https://github.com/jacobtread/DuckCentral" }]
 ---
 

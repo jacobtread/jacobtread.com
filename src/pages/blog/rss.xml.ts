@@ -16,26 +16,26 @@ type RssEntry = { link: string } & BlogEntry["data"];
  * @returns The RSS feed response
  */
 export const get: APIRoute = async (
-  context: APIContext
+    context: APIContext
 ): Promise<EndpointOutput> => {
-  // Collect all the blog posts
-  const posts: BlogEntry[] = await getCollection("blog");
+    // Collect all the blog posts
+    const posts: BlogEntry[] = await getCollection("blog");
 
-  // Get the site baseurl
-  const site: string = context.site?.toString() ?? "https://jacobtread.com";
+    // Get the site baseurl
+    const site: string = context.site?.toString() ?? "https://jacobtread.com";
 
-  // Create the entries from the blog posts
-  const items: RssEntry[] = posts.map(
-    (post: BlogEntry): RssEntry => ({
-      ...post.data,
-      link: `/blog/${post.slug}/`,
-    })
-  );
+    // Create the entries from the blog posts
+    const items: RssEntry[] = posts.map(
+        (post: BlogEntry): RssEntry => ({
+            ...post.data,
+            link: `/blog/${post.slug}/`,
+        })
+    );
 
-  return rss({
-    title: SITE_TITLE,
-    description: SITE_DESCRIPTION,
-    site,
-    items,
-  });
+    return rss({
+        title: SITE_TITLE,
+        description: SITE_DESCRIPTION,
+        site,
+        items,
+    });
 };

@@ -2,13 +2,13 @@
 title: "TrueRandom"
 tags: ["TypeScript", "HTML", "SASS", "NodeJS", "ExpressJS", "Docker"]
 links:
-  [
-    {
-      type: "GITHUB",
-      link: "https://github.com/Questionable-Research-Labs/TrueRandom-MainServer",
-    },
-    { type: "WEBSITE", link: "https://tr.host.qrl.nz/" },
-  ]
+    [
+        {
+            type: "GITHUB",
+            link: "https://github.com/Questionable-Research-Labs/TrueRandom-MainServer",
+        },
+        { type: "WEBSITE", link: "https://tr.host.qrl.nz/" },
+    ]
 priority: 7
 ---
 

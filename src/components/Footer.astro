@@ -3,62 +3,62 @@ const today = new Date();
 ---
 
 <footer class="footer">
-  <div class="footer-wrapper">
-    <p class="footer__brand">JR</p>
-    <p class="footer__email">jacobtread@gmail.com</p>
-    <p class="footer__copy">
-      Copyright &copy; 2020 - {today.getFullYear()} Jacob Read. All rights reserved.
-    </p>
-    <div class="nav">
-      <a href="/" class="nav__link">Home</a>
-      <a href="/blog" class="nav__link">Blog</a>
-      <a href="/#contact" class="nav__link">Contact</a>
-      <a href="/#about" class="nav__link">About</a>
-      <a href="/#technology" class="nav__link">Technology</a>
-      <a href="/projects" class="nav__link">Projects</a>
+    <div class="footer-wrapper">
+        <p class="footer__brand">JR</p>
+        <p class="footer__email">jacobtread@gmail.com</p>
+        <p class="footer__copy">
+            Copyright &copy; 2020 - {today.getFullYear()} Jacob Read. All rights
+            reserved.
+        </p>
+        <div class="nav">
+            <a href="/" class="nav__link">Home</a>
+            <a href="/blog" class="nav__link">Blog</a>
+            <a href="/#contact" class="nav__link">Contact</a>
+            <a href="/#about" class="nav__link">About</a>
+            <a href="/#technology" class="nav__link">Technology</a>
+            <a href="/projects" class="nav__link">Projects</a>
+        </div>
     </div>
-  </div>
 </footer>
 <style lang="scss">
-  @import "@styles/scheme.scss";
+    @import "@styles/scheme.scss";
 
-  .footer {
-    border-top: 1px solid $border-color;
-    width: 100%;
-    gap: 1.5rem;
-    padding: 2rem;
-    // background-color: #22222260;
-  }
+    .footer {
+        border-top: 1px solid $border-color;
+        width: 100%;
+        gap: 1.5rem;
+        padding: 2rem;
+    }
 
-  .footer-wrapper {
-    max-width: $content-width;
-    margin: 2rem auto;
-  }
+    .footer-wrapper {
+        max-width: $content-width;
+        margin: 2rem auto;
+    }
 
-  .footer__brand {
-    font-size: 4rem;
-    font-weight: bold;
-  }
+    .footer__brand {
+        font-size: 4rem;
+        font-weight: bold;
+    }
 
-  .footer__email {
-    color: $text;
-  }
+    .footer__email {
+        color: $text;
+    }
 
-  .footer__copy {
-    color: $primary-lighter;
-    margin-top: 0.5rem;
-  }
+    .footer__copy {
+        color: $primary-lighter;
+        margin-top: 0.5rem;
+    }
 
-  .nav {
-    margin-top: 0.5rem;
-  }
+    .nav {
+        margin-top: 0.5rem;
+    }
 
-  .nav__link {
-    color: $text;
-    margin-right: 1rem;
-  }
+    .nav__link {
+        color: $text;
+        margin-right: 1rem;
+    }
 
-  .nav__link:hover {
-    color: #fff;
-  }
+    .nav__link:hover {
+        color: #fff;
+    }
 </style>

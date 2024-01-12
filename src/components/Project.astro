@@ -5,86 +5,88 @@ import GitHub from "./icons/GitHub.astro";
 type Props = CollectionEntry<"projects">;
 
 const {
-  data: { title, tags, links, image },
-  render,
+    data: { title, tags, links, image },
+    render,
 } = Astro.props;
 
 const DEFAULT_NAMES: Record<string, string> = {
-  GITHUB: "Github",
-  WEBSITE: "View Website",
+    GITHUB: "Github",
+    WEBSITE: "View Website",
 };
 
 const { Content } = await render();
 ---
 
 <li class="block project">
-  <div>
-    {image && <img src={image} alt={title} loading="lazy" class="icon" />}
+    <div>
+        {image && <img src={image} alt={title} loading="lazy" class="icon" />}
 
-    <h2 class="project__title">{title}</h2>
-    <Content />
-  </div>
+        <h2 class="project__title">{title}</h2>
+        <Content />
+    </div>
 
-  <div>
-    <ul class="block__row">
-      {tags.map((tag) => <li class="project__tag">{tag}</li>)}
-    </ul>
-    <ul class="block__row">
-      {
-        links &&
-          links.map((link) => {
-            const name = link.name ?? DEFAULT_NAMES[link.type];
-            return (
-              <li>
-                <a
-                  class="block__button"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  href={link.link}>
-                  {link.type === "GITHUB" && <GitHub class="inline-icon" />}
-                  {name}
-                </a>
-              </li>
-            );
-          })
-      }
-    </ul>
-  </div>
+    <div>
+        <ul class="block__row">
+            {tags.map((tag) => <li class="project__tag">{tag}</li>)}
+        </ul>
+        <ul class="block__row">
+            {
+                links &&
+                    links.map((link) => {
+                        const name = link.name ?? DEFAULT_NAMES[link.type];
+                        return (
+                            <li>
+                                <a
+                                    class="block__button"
+                                    target="_blank"
+                                    rel="noreferrer noopener"
+                                    href={link.link}>
+                                    {link.type === "GITHUB" && (
+                                        <GitHub class="inline-icon" />
+                                    )}
+                                    {name}
+                                </a>
+                            </li>
+                        );
+                    })
+            }
+        </ul>
+    </div>
 </li>
 
 <style is:global>
-  .project p {
-    margin: 1rem 0;
-    font-size: 1.15rem;
-    color: #999;
-  }
-
-  @media screen and (max-width: 48rem) {
     .project p {
-      font-size: 1rem;
+        margin: 1rem 0;
+        font-size: 1.15rem;
+        color: #999;
     }
-  }
+
+    @media screen and (max-width: 48rem) {
+        .project p {
+            font-size: 1rem;
+        }
+    }
 </style>
 
 <style lang="scss">
-  @import "@styles/scheme.scss";
+    @import "@styles/scheme.scss";
 
-  .icon {
-    max-height: 32px;
-    height: 100%;
-    width: auto;
-    margin-bottom: 1rem;
-  }
-
-  .project {
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-content: space-between;
-    align-content: space-between;
-    gap: 1rem;
-
-    &__tag {
-      color: #777;
+    .icon {
+        max-height: 32px;
+        height: 100%;
+        width: auto;
+        margin-bottom: 1rem;
     }
-  }
+
+    .project {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: space-between;
+        align-content: space-between;
+        gap: 1rem;
+
+        &__tag {
+            color: #777;
+        }
+    }
 </style>

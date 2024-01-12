@@ -1,15 +1,15 @@
 ---
 title: "BlazeKT"
 tags:
-  [
-    "Kotlin",
-    "Gradle",
-    "Maven",
-    "Annotation Processing",
-    "Library",
-    "Packet System",
-    "Netty",
-  ]
+    [
+        "Kotlin",
+        "Gradle",
+        "Maven",
+        "Annotation Processing",
+        "Library",
+        "Packet System",
+        "Netty",
+    ]
 links: [{ type: "GITHUB", link: "https://github.com/jacobtread/BlazeKt" }]
 ---
 

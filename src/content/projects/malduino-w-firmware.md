@@ -1,16 +1,16 @@
 ---
 title: "Malduino-W Firmware"
 tags:
-  [
-    "Svelte",
-    "C++",
-    "Typescript",
-    "Javascript",
-    "SCSS",
-    "ESP8266",
-    "WebSocket",
-    "Arduino",
-  ]
+    [
+        "Svelte",
+        "C++",
+        "Typescript",
+        "Javascript",
+        "SCSS",
+        "ESP8266",
+        "WebSocket",
+        "Arduino",
+    ]
 links: [{ type: "GITHUB", link: "https://github.com/jacobtread/MalDuino-W" }]
 ---
 

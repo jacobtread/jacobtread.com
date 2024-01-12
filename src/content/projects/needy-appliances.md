@@ -1,22 +1,22 @@
 ---
 title: "Needy Appliances"
 tags:
-  [
-    "Rust",
-    "MQTT",
-    "CSS",
-    "TypeScript",
-    "Svelte",
-    "Hackathon",
-    "Terrible Ideas 2023",
-  ]
+    [
+        "Rust",
+        "MQTT",
+        "CSS",
+        "TypeScript",
+        "Svelte",
+        "Hackathon",
+        "Terrible Ideas 2023",
+    ]
 links:
-  [
-    {
-      type: "GITHUB",
-      link: "https://github.com/Questionable-Research-Labs/needy-appliances",
-    },
-  ]
+    [
+        {
+            type: "GITHUB",
+            link: "https://github.com/Questionable-Research-Labs/needy-appliances",
+        },
+    ]
 priority: 3
 ---
 

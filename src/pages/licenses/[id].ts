@@ -13,12 +13,12 @@ type License = CollectionEntry<"licenses">;
  * @returns The license text
  */
 export const get: APIRoute = async (
-  context: APIContext
+    context: APIContext
 ): Promise<EndpointOutput> => {
-  const date: string = new Date().getFullYear().toString();
-  const body: string = context.props.body.replace("%d", date);
+    const date: string = new Date().getFullYear().toString();
+    const body: string = context.props.body.replace("%d", date);
 
-  return { body };
+    return { body };
 };
 
 /**
@@ -28,9 +28,9 @@ export const get: APIRoute = async (
  * @returns The collection of licenses
  */
 export const getStaticPaths = async () => {
-  const licenses: License[] = await getCollection("licenses");
-  return licenses.map((license: License) => ({
-    params: { id: license.id },
-    props: license,
-  }));
+    const licenses: License[] = await getCollection("licenses");
+    return licenses.map((license: License) => ({
+        params: { id: license.id },
+        props: license,
+    }));
 };

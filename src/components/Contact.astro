@@ -6,105 +6,107 @@ import Mail from "./icons/Mail.astro";
 ---
 
 <section class="section contact" id="contact">
-  <h2 class="section__title">Getting in touch</h2>
-  <p class="section__text">
-    Below are my Socials which you can connect with me on. Check out my
-    <b>GitHub</b> to see all the projects that im currently working on.
-  </p>
+    <h2 class="section__title">Getting in touch</h2>
+    <p class="section__text">
+        Below are my Socials which you can connect with me on. Check out my
+        <b>GitHub</b> to see all the projects that im currently working on.
+    </p>
 
-  <div class="blocks">
-    <a
-      href="https://github.com/jacobtread"
-      rel="noreferrer noopener"
-      target="_blank"
-      class="block contact-item"
-      title="Packed with side projects">
-      <GitHub class="icon" />
-      <div>
-        <span class="contact-item__name">GitHub</span>
-        <p class="contact-item__value">github.com/jacobtread</p>
-      </div>
-    </a>
-    <a
-      href="https://www.linkedin.com/in/jacobtread/"
-      rel="noreferrer noopener"
-      target="_blank"
-      class="block contact-item"
-      title="Where the professionals are">
-      <LinkedIn class="icon" />
-      <div>
-        <span class="contact-item__name">Linked in</span>
-        <p class="contact-item__value">www.linkedin.com/in/jacobtread</p>
-      </div>
-    </a>
-    <a
-      href="mailto:jacobtread@gmail.com"
-      rel="noreferrer noopener"
-      target="_blank"
-      class="block contact-item"
-      title="The good-ol contact method">
-      <Mail class="icon" />
-      <div>
-        <span class="contact-item__name">Email</span>
-        <p class="contact-item__value">jacobtread@gmail.com</p>
-      </div>
-    </a>
+    <div class="blocks">
+        <a
+            href="https://github.com/jacobtread"
+            rel="noreferrer noopener"
+            target="_blank"
+            class="block contact-item"
+            title="Packed with side projects">
+            <GitHub class="icon" />
+            <div>
+                <span class="contact-item__name">GitHub</span>
+                <p class="contact-item__value">github.com/jacobtread</p>
+            </div>
+        </a>
+        <a
+            href="https://www.linkedin.com/in/jacobtread/"
+            rel="noreferrer noopener"
+            target="_blank"
+            class="block contact-item"
+            title="Where the professionals are">
+            <LinkedIn class="icon" />
+            <div>
+                <span class="contact-item__name">Linked in</span>
+                <p class="contact-item__value">
+                    www.linkedin.com/in/jacobtread
+                </p>
+            </div>
+        </a>
+        <a
+            href="mailto:jacobtread@gmail.com"
+            rel="noreferrer noopener"
+            target="_blank"
+            class="block contact-item"
+            title="The good-ol contact method">
+            <Mail class="icon" />
+            <div>
+                <span class="contact-item__name">Email</span>
+                <p class="contact-item__value">jacobtread@gmail.com</p>
+            </div>
+        </a>
 
-    <a
-      href="https://discord.com/users/265320629203501056"
-      rel="noreferrer noopener"
-      target="_blank"
-      class="block contact-item"
-      title="Favorite chatting app">
-      <Discord class="icon" />
-      <div>
-        <span class="contact-item__name">Discord</span>
-        <p class="contact-item__value">jacobtread</p>
-      </div>
-    </a>
-  </div>
+        <a
+            href="https://discord.com/users/265320629203501056"
+            rel="noreferrer noopener"
+            target="_blank"
+            class="block contact-item"
+            title="Favorite chatting app">
+            <Discord class="icon" />
+            <div>
+                <span class="contact-item__name">Discord</span>
+                <p class="contact-item__value">jacobtread</p>
+            </div>
+        </a>
+    </div>
 
-  <p class="hint">Keep reading to find out more about me 👀</p>
+    <p class="hint">Keep reading to find out more about me 👀</p>
 </section>
 
 <style lang="scss">
-  @import "@styles/scheme.scss";
+    @import "@styles/scheme.scss";
 
-  .icon {
-    max-width: 3rem;
-    width: 100%;
-    height: auto;
-  }
-
-  .contact-item {
-    display: grid;
-    grid-template-columns: 3rem 1fr;
-    align-items: center;
-
-    gap: 1rem;
-    padding: 1rem !important;
-  }
-
-  .contact-item__name {
-    font-weight: bold;
-    font-size: 1.25rem;
-  }
-
-  .contact-item__value {
-    color: #999;
-    font-size: 1.15rem;
-  }
-
-  @media screen and (max-width: $screen-mobile) {
     .icon {
-      margin: 0 auto;
-      max-width: 2rem;
+        max-width: 3rem;
+        width: 100%;
+        height: auto;
     }
-  }
 
-  @media screen and (max-width: $screen-extra-small) {
-    .contact-item__value {
-      display: none;
+    .contact-item {
+        display: grid;
+        grid-template-columns: 3rem 1fr;
+        align-items: center;
+
+        gap: 1rem;
+        padding: 1rem !important;
     }
-  }
+
+    .contact-item__name {
+        font-weight: bold;
+        font-size: 1.25rem;
+    }
+
+    .contact-item__value {
+        color: #999;
+        font-size: 1.15rem;
+    }
+
+    @media screen and (max-width: $screen-mobile) {
+        .icon {
+            margin: 0 auto;
+            max-width: 2rem;
+        }
+    }
+
+    @media screen and (max-width: $screen-extra-small) {
+        .contact-item__value {
+            display: none;
+        }
+    }
 </style>

@@ -8,162 +8,163 @@ import "@fontsource/jetbrains-mono/400.css";
 type Props = CollectionEntry<"blog">["data"];
 
 const {
-  title,
-  description,
-  pubDate,
-  updatedDate,
-  heroImage,
-  socialImage = "/social.jpg",
+    title,
+    description,
+    pubDate,
+    updatedDate,
+    heroImage,
+    socialImage = "/social.jpg",
 } = Astro.props;
 ---
 
 <Layout title={title} description={description} image={socialImage}>
-  <main>
-    <a href="/blog" class="back button">Back</a>
-    <article class="content">
-      {
-        heroImage && (
-          <div class="hero">
-            <img
-              class="hero__img"
-              width={720}
-              height={360}
-              src={heroImage}
-              alt=""
-            />
-          </div>
-        )
-      }
-      <div class="heading">
-        <h1 class="title">{title}</h1>
-        <p>{description}</p>
-        <div class="date">
-          <FormattedDate date={pubDate} />
-          {
-            updatedDate && (
-              <div class="last-updated-on">
-                Last updated on <FormattedDate date={updatedDate} />
-              </div>
-            )
-          }
-        </div>
-      </div>
-      <hr />
-      <slot />
-    </article>
-  </main>
+    <main>
+        <a href="/blog" class="back button">Back</a>
+        <article class="content">
+            {
+                heroImage && (
+                    <div class="hero">
+                        <img
+                            class="hero__img"
+                            width={720}
+                            height={360}
+                            src={heroImage}
+                            alt=""
+                        />
+                    </div>
+                )
+            }
+            <div class="heading">
+                <h1 class="title">{title}</h1>
+                <p>{description}</p>
+                <div class="date">
+                    <FormattedDate date={pubDate} />
+                    {
+                        updatedDate && (
+                            <div class="last-updated-on">
+                                Last updated on{" "}
+                                <FormattedDate date={updatedDate} />
+                            </div>
+                        )
+                    }
+                </div>
+            </div>
+            <hr />
+            <slot />
+        </article>
+    </main>
 </Layout>
 
 <style is:global>
-  .content h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
+    .content h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
 
-  .content h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-  }
+    .content h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
 
-  .content h4 {
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
-  }
+    .content h4 {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+    }
 
-  .content p {
-    font-size: 1.15rem;
-    color: #999;
-    margin: 1rem 0;
-  }
+    .content p {
+        font-size: 1.15rem;
+        color: #999;
+        margin: 1rem 0;
+    }
 
-  .content ul,
-  .content ol {
-    padding: 1rem;
-    line-height: 1.5;
-    color: #999;
-    font-size: 1.15rem;
-    list-style-position: inside;
-  }
+    .content ul,
+    .content ol {
+        padding: 1rem;
+        line-height: 1.5;
+        color: #999;
+        font-size: 1.15rem;
+        list-style-position: inside;
+    }
 
-  .content .astro-code {
-    padding: 1rem;
-    line-height: 1.5;
-    margin: 1rem 0;
-  }
+    .content .astro-code {
+        padding: 1rem;
+        line-height: 1.5;
+        margin: 1rem 0;
+    }
 
-  .content .astro-code * {
-    font-family: "Jetbrains Mono", "Courier New", Courier, monospace;
-  }
+    .content .astro-code * {
+        font-family: "Jetbrains Mono", "Courier New", Courier, monospace;
+    }
 
-  .content a {
-    color: #7ed380;
-  }
+    .content a {
+        color: #7ed380;
+    }
 
-  .content blockquote {
-    padding: 0.1rem 1rem;
-    background-color: #1b1b1b;
-    margin: 1rem 0;
-  }
+    .content blockquote {
+        padding: 0.1rem 1rem;
+        background-color: #1b1b1b;
+        margin: 1rem 0;
+    }
 
-  .content p code {
-    color: #6bac6c;
-  }
+    .content p code {
+        color: #6bac6c;
+    }
 
-  .content img {
-    max-width: 100%;
-  }
+    .content img {
+        max-width: 100%;
+    }
 </style>
 
 <style lang="scss">
-  @import "@styles/scheme.scss";
+    @import "@styles/scheme.scss";
 
-  .date {
-    color: #666;
-  }
+    .date {
+        color: #666;
+    }
 
-  .last-updated-on {
-    margin-top: 0.5rem;
-    font-style: italic;
-  }
+    .last-updated-on {
+        margin-top: 0.5rem;
+        font-style: italic;
+    }
 
-  .hero {
-    position: relative;
-    width: 100%;
-    height: 20rem;
-    overflow: hidden;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1));
-    margin-bottom: 1.5rem;
-  }
+    .hero {
+        position: relative;
+        width: 100%;
+        height: 20rem;
+        overflow: hidden;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1));
+        margin-bottom: 1.5rem;
+    }
 
-  .hero__img {
-    position: absolute;
-    width: 100%;
-    height: auto;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    // z-index: -1;
-    // filter: blur(5px);
-  }
+    .hero__img {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        // z-index: -1;
+        // filter: blur(5px);
+    }
 
-  .back {
-    z-index: 1;
-    position: fixed;
-    top: 1rem;
-    left: 1rem;
-    display: inline-block;
-  }
+    .back {
+        z-index: 1;
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+        display: inline-block;
+    }
 
-  .title {
-    font-size: 2em;
-    margin: 0.25em 0 0;
-  }
+    .title {
+        font-size: 2em;
+        margin: 0.25em 0 0;
+    }
 
-  .content {
-    max-width: $blog-content-width;
-    margin: 2rem auto;
-    padding: 2rem;
-    background-color: $background;
-    border: 1px solid $border-color;
-  }
+    .content {
+        max-width: $blog-content-width;
+        margin: 2rem auto;
+        padding: 2rem;
+        background-color: $background;
+        border: 1px solid $border-color;
+    }
 </style>

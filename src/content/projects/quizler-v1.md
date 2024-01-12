@@ -1,10 +1,7 @@
 ---
 title: "Quizler v1"
 tags: ["VueJS", "TypeScript", "Go", "Docker"]
-links:
-  [
-    { type: "GITHUB", link: "https://github.com/jacobtread/Quizler-v1" },
-  ]
+links: [{ type: "GITHUB", link: "https://github.com/jacobtread/Quizler-v1" }]
 priority: 6
 ---
 

@@ -44,7 +44,7 @@ Discovering the dedicated server topology alone wasn't enough to solve the issue
 
 I had come up with an idea to use the dedicated server topology to trick the host client into becoming a dedicated server. The Pocket Relay server would act as a relay for tunneling traffic. Instead of clients connecting directly to the host with the peer-hosted model, the dedicated server model instructs clients to connect to a local address. At this local address, a server forwards game packets through the Pocket Relay server, which then sends the packets to their respective peers.
 
-### The advantages of this approach 
+### The advantages of this approach
 
 With the game no longer directly reaching out to connect to its peers, there's no longer a concern about NAT strictness. Any player, regardless of NAT or firewall settings, can now host a game.
 
@@ -52,8 +52,8 @@ With the game no longer directly reaching out to connect to its peers, there's n
 
 Implementing this tunneling setup involved modifying both the Pocket Relay clients and the server itself.
 
-- Client-side changes included creating a pool of sockets. This pool of sockets is used for communication in place of normal internet connections. The client was also modified to include a bi-directional stream connection with the server, similar to that used for the actual server data. ([PR](https://github.com/PocketRelay/PocketRelayClientShared/pull/2))
-- Server-side changes involved setting up the bi-directional stream connection, managing streams, and finding a way to associate the streams with their respective clients. ([PR](https://github.com/PocketRelay/Server/pull/65))
+-   Client-side changes included creating a pool of sockets. This pool of sockets is used for communication in place of normal internet connections. The client was also modified to include a bi-directional stream connection with the server, similar to that used for the actual server data. ([PR](https://github.com/PocketRelay/PocketRelayClientShared/pull/2))
+-   Server-side changes involved setting up the bi-directional stream connection, managing streams, and finding a way to associate the streams with their respective clients. ([PR](https://github.com/PocketRelay/Server/pull/65))
 
 Progress was tracked [here](https://github.com/PocketRelay/Server/issues/64).
 
@@ -63,7 +63,7 @@ Here's a diagram illustrating the new networking process with the tunneling:
 
 ## Outcome
 
-After testing myself and through members of the community, the tunneling is a **success!** 
+After testing myself and through members of the community, the tunneling is a **success!**
 
 This not only resolves NAT connectivity issues but also opens up additional opportunities, making services like ngrok much easier to use. It eliminates the need for a QoS server, which was proving difficult to implement due to odd behavior.
 

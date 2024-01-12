@@ -2,7 +2,7 @@
 title: "Blaze SSL Async"
 tags: ["Rust", "SSLv3", "Mass Effect 3", "Async", "Tokio"]
 links:
-  [{ type: "GITHUB", link: "https://github.com/jacobtread/blaze-ssl-async" }]
+    [{ type: "GITHUB", link: "https://github.com/jacobtread/blaze-ssl-async" }]
 priority: 3
 ---
 

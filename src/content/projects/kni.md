@@ -1,16 +1,16 @@
 ---
 title: "KNI"
 tags:
-  [
-    "Python",
-    "Java",
-    "PHP",
-    "JavaScript",
-    "Kotlin",
-    "Rust",
-    "TypeScript",
-    ".NET",
-  ]
+    [
+        "Python",
+        "Java",
+        "PHP",
+        "JavaScript",
+        "Kotlin",
+        "Rust",
+        "TypeScript",
+        ".NET",
+    ]
 links: [{ type: "GITHUB", link: "https://github.com/jacobtread/KNI" }]
 ---
 
