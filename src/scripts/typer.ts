@@ -9,7 +9,7 @@ const PRE_DISPLAY_DURATION: number = 500;
  * @param element The element to create the typer from
  */
 function createTyper(element: HTMLElement): void {
-    const valuesAttribute = element.getAttribute("data-values");
+    const valuesAttribute: string | null = element.getAttribute("data-values");
 
     // Ensure the value attributes are present
     if (valuesAttribute == null) return;
@@ -21,10 +21,10 @@ function createTyper(element: HTMLElement): void {
 
     let valueIndex: number = 0;
 
-    function updateDeleting() {
-        const value = element.innerText;
-        const length = value.length - 1;
-        const complete = length == 0;
+    function updateDeleting(): void {
+        const value: string = element.innerText;
+        const length: number = value.length - 1;
+        const complete: boolean = length == 0;
 
         // Asssign the new value
         element.innerText = value.substring(0, length);
@@ -43,10 +43,10 @@ function createTyper(element: HTMLElement): void {
         }
     }
 
-    function updateTyping() {
-        const value = values[valueIndex];
-        const length = element.innerText.length + 1;
-        const complete = length == value.length;
+    function updateTyping(): void {
+        const value: string = values[valueIndex];
+        const length: number = element.innerText.length + 1;
+        const complete: boolean = length == value.length;
 
         // Asssign the new value
         element.innerText = value.substring(0, length);
@@ -71,6 +71,6 @@ function createTyper(element: HTMLElement): void {
 
 // Load the typer elements when the window loads
 window.onload = () => {
-    const typers = document.querySelectorAll(".typer");
-    typers.forEach((typer) => createTyper(typer as HTMLElement));
+    const typers: NodeListOf<Element> = document.querySelectorAll(".typer");
+    typers.forEach((typer: Element) => createTyper(typer as HTMLElement));
 };

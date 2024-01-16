@@ -1,19 +1,18 @@
 ---
-import { CollectionEntry } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 import GitHub from "./icons/GitHub.astro";
 
-type Props = CollectionEntry<"projects">;
+type Project = CollectionEntry<"projects">;
+type Props = Project;
 
-const {
-    data: { title, tags, links, image },
-    render,
-} = Astro.props;
+const { data, render } = Astro.props;
 
 const DEFAULT_NAMES: Record<string, string> = {
     GITHUB: "Github",
     WEBSITE: "View Website",
 };
 
+const { title, tags, links, image } = data;
 const { Content } = await render();
 ---
 
@@ -27,7 +26,7 @@ const { Content } = await render();
 
     <div>
         <ul class="block__row">
-            {tags.map((tag) => <li class="project__tag">{tag}</li>)}
+            {tags.map((tag: string) => <li class="project__tag">{tag}</li>)}
         </ul>
         <ul class="block__row">
             {

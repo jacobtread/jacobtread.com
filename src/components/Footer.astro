@@ -1,5 +1,8 @@
 ---
+// The current date for setting the copyright year
 const today = new Date();
+// Year for the copyright section
+const year: number = today.getFullYear();
 ---
 
 <footer class="footer">
@@ -7,8 +10,7 @@ const today = new Date();
         <p class="footer__brand">JR</p>
         <p class="footer__email">jacobtread@gmail.com</p>
         <p class="footer__copy">
-            Copyright &copy; 2020 - {today.getFullYear()} Jacob Read. All rights
-            reserved.
+            Copyright &copy; 2020 - {year} Jacob Read. All rights reserved.
         </p>
         <div class="nav">
             <a href="/" class="nav__link">Home</a>
