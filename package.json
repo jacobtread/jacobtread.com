@@ -12,18 +12,18 @@
     "format": "yarn prettier -w src --plugin-search-dir=."
   },
   "dependencies": {
-    "@astrojs/mdx": "^0.18.2",
-    "@astrojs/rss": "^2.3.1",
-    "@astrojs/sitemap": "^1.2.1",
-    "@astrojs/svelte": "^2.1.0",
-    "@fontsource/inter": "^4.5.15",
-    "@fontsource/jetbrains-mono": "^5.0.17",
-    "astro": "^2.1.0",
-    "sass": "^1.60.0",
-    "svelte": "^3.54.0"
+    "@astrojs/mdx": "^2.0.4",
+    "@astrojs/rss": "^4.0.2",
+    "@astrojs/sitemap": "^3.0.4",
+    "@astrojs/svelte": "^5.0.3",
+    "@fontsource/inter": "^5.0.16",
+    "@fontsource/jetbrains-mono": "^5.0.18",
+    "astro": "latest",
+    "sass": "^1.69.7",
+    "svelte": "^4.2.8"
   },
   "devDependencies": {
-    "prettier": "^2.8.7",
-    "prettier-plugin-astro": "^0.8.0"
+    "prettier": "^3.2.2",
+    "prettier-plugin-astro": "^0.12.3"
   }
 }
