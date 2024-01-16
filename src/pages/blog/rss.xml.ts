@@ -1,7 +1,7 @@
 import rss from "@astrojs/rss";
 import { getCollection, type CollectionEntry } from "astro:content";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
-import type { APIContext, APIRoute, EndpointOutput } from "astro";
+import type { APIContext, APIRoute } from "astro";
 
 // Type of a blog entry
 type BlogEntry = CollectionEntry<"blog">;
@@ -15,9 +15,9 @@ type RssEntry = { link: string } & BlogEntry["data"];
  * @param context The API request context
  * @returns The RSS feed response
  */
-export const get: APIRoute = async (
+export const GET: APIRoute = async (
     context: APIContext
-): Promise<EndpointOutput> => {
+): Promise<Response> => {
     // Collect all the blog posts
     const posts: BlogEntry[] = await getCollection("blog");
 

@@ -1,5 +1,5 @@
-import type { APIRoute, EndpointOutput, APIContext } from "astro";
-import { CollectionEntry, getCollection } from "astro:content";
+import type { APIRoute, APIContext } from "astro";
+import { type CollectionEntry, getCollection } from "astro:content";
 
 // Type of a license in the licenses collection
 type License = CollectionEntry<"licenses">;
@@ -12,13 +12,13 @@ type License = CollectionEntry<"licenses">;
  * @param context The API request context
  * @returns The license text
  */
-export const get: APIRoute = async (
+export const GET: APIRoute = async (
     context: APIContext
-): Promise<EndpointOutput> => {
+): Promise<Response> => {
     const date: string = new Date().getFullYear().toString();
     const body: string = context.props.body.replace("%d", date);
 
-    return { body };
+    return new Response(body);
 };
 
 /**
