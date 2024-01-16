@@ -15,12 +15,10 @@
     "@astrojs/mdx": "^2.0.4",
     "@astrojs/rss": "^4.0.2",
     "@astrojs/sitemap": "^3.0.4",
-    "@astrojs/svelte": "^5.0.3",
     "@fontsource/inter": "^5.0.16",
     "@fontsource/jetbrains-mono": "^5.0.18",
     "astro": "latest",
-    "sass": "^1.69.7",
-    "svelte": "^4.2.8"
+    "sass": "^1.69.7"
   },
   "devDependencies": {
     "prettier": "^3.2.2",
