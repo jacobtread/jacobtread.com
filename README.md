@@ -4,7 +4,7 @@
 
 [Deployed Site](https://jacobtread.com)
 
-This is the GitHub repository for my personal website. This website is written using [Astro](https://astro.build/), SCSS, Svelte, and TypeScript.
+This is the GitHub repository for my personal website. This website is written using [Astro](https://astro.build/), SCSS, and TypeScript.
 
 ## Projects
 
@@ -13,16 +13,30 @@ This website has a list of projects which is loaded from markdown files in the `
 ```md
 ---
 title: "Pocket Relay"
-tags: ["Rust", "Axum", "Mass Effect 3", "Game Server", "Docker"]
+tags: ["Rust", "Axum", "SQLite", "Mass Effect 3", "Game Server", "Docker"]
 links:
-  [
-    { type: "GITHUB", link: "https://github.com/PocketRelay/Server" },
-    { type: "WEBSITE", link: "https://pocket-relay.pages.dev/" },
-  ]
+    [
+        {
+            type: "GITHUB",
+            link: "https://github.com/PocketRelay",
+            name: "Project GitHub",
+        },
+        {
+            type: "GITHUB",
+            link: "https://github.com/PocketRelay/Server",
+            name: "Server GitHub",
+        },
+        { type: "WEBSITE", link: "https://pocket-relay.pages.dev/" },
+    ]
 priority: 1
+image: "/projects/logos/pocket-relay.svg"
 ---
 
-I have started completely rewriting my Pocket Relay game server in Rust which early on showed off great performance improvements along with many benifits over the original Kotlin version. So far I've seen a massive memory usage decrease going from 160mb idle on the Kotlin server to only 3.5mb with two players on the Rust server. This Rust rewrite also removes the requirement of needing a JVM which greatly improves its easy of use and user experience. This version also makes use of my BlazeSSL project which makes it more stable and not depend on operating system SSL implementations for its legacy connections.
+**Pocket Relay** is a custom game server emulator for **Mass Effect 3**. The server allows players to host their own servers for the game, enabling things like playing over **LAN** (Local Area Network).
+
+This server includes a dashboard, which allows users to manage the server and even experiment with different in-game items and characters in an environment isolated from the official game servers.
+
+The server is very performant, able to handle many simultaneous connections while using very few resources.
 ```
 
 ## 🧞 Commands
