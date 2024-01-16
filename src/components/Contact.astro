@@ -79,8 +79,9 @@ import Mail from "./icons/Mail.astro";
     }
 
     .contact-item {
-        display: grid;
-        grid-template-columns: 3rem 1fr;
+        display: flex;
+        flex-flow: row;
+
         align-items: center;
 
         gap: 1rem;
@@ -99,7 +100,6 @@ import Mail from "./icons/Mail.astro";
 
     @media screen and (max-width: $screen-mobile) {
         .icon {
-            margin: 0 auto;
             max-width: 2rem;
         }
     }

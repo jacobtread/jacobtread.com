@@ -79,8 +79,9 @@ const { Content } = await render();
     }
 
     .project {
-        display: grid;
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-flow: column;
+
         justify-content: space-between;
         align-content: space-between;
         gap: 1rem;

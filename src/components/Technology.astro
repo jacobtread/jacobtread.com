@@ -115,26 +115,27 @@
 
 <style>
     .blocks {
-        display: grid;
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-flow: column;
+
         gap: 2rem;
     }
 
     .block {
-        display: grid;
-        grid-template-columns: 1fr 170px;
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+
+        gap: 1rem;
     }
 
     @media screen and (max-width: 48rem) {
         .block {
-            grid-template-columns: 1fr;
+            flex-flow: column-reverse;
             justify-content: center;
-            align-items: center;
         }
 
         .block__img {
-            grid-column: 1 / 1;
-            grid-row: 1 / 1;
             margin: 0 auto 1rem;
         }
     }
