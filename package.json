@@ -1,27 +1,27 @@
 {
-  "name": "jacobtread.com",
-  "type": "module",
-  "version": "0.0.1",
-  "license": "MIT",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro",
-    "format": "yarn prettier -w src --plugin-search-dir=."
-  },
-  "dependencies": {
-    "@astrojs/mdx": "^2.0.4",
-    "@astrojs/rss": "^4.0.2",
-    "@astrojs/sitemap": "^3.0.4",
-    "@fontsource/inter": "^5.0.16",
-    "@fontsource/jetbrains-mono": "^5.0.18",
-    "astro": "latest",
-    "sass": "^1.69.7"
-  },
-  "devDependencies": {
-    "prettier": "^3.2.2",
-    "prettier-plugin-astro": "^0.12.3"
-  }
+    "name": "jacobtread.com",
+    "type": "module",
+    "version": "0.0.1",
+    "license": "MIT",
+    "scripts": {
+        "dev": "astro dev",
+        "start": "astro dev",
+        "build": "astro build",
+        "preview": "astro preview",
+        "astro": "astro",
+        "format": "yarn prettier -w src --plugin-search-dir=."
+    },
+    "dependencies": {
+        "@astrojs/mdx": "^2.0.4",
+        "@astrojs/rss": "^4.0.2",
+        "@astrojs/sitemap": "^3.0.4",
+        "@fontsource/inter": "^5.0.16",
+        "@fontsource/jetbrains-mono": "^5.0.18",
+        "astro": "latest",
+        "sass": "^1.69.7"
+    },
+    "devDependencies": {
+        "prettier": "^3.2.2",
+        "prettier-plugin-astro": "^0.12.3"
+    }
 }

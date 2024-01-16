@@ -5,8 +5,8 @@ const PRE_DISPLAY_DURATION: number = 500;
 
 /**
  * Creates a new typer from the provided html element
- * 
- * @param element The element to create the typer from 
+ *
+ * @param element The element to create the typer from
  */
 function createTyper(element: HTMLElement): void {
     const valuesAttribute = element.getAttribute("data-values");
@@ -29,7 +29,7 @@ function createTyper(element: HTMLElement): void {
         // Asssign the new value
         element.innerText = value.substring(0, length);
         // Set the typing state attribute
-        element.setAttribute("data-typing", (!complete).toString())
+        element.setAttribute("data-typing", (!complete).toString());
 
         if (complete) {
             // Switch to the next value
@@ -39,7 +39,7 @@ function createTyper(element: HTMLElement): void {
             setTimeout(updateTyping, PRE_DISPLAY_DURATION);
         } else {
             // Continue delete updates until the value is complete
-            setTimeout(updateDeleting, 150 - (Math.random() * 50));
+            setTimeout(updateDeleting, 150 - Math.random() * 50);
         }
     }
 
@@ -51,14 +51,14 @@ function createTyper(element: HTMLElement): void {
         // Asssign the new value
         element.innerText = value.substring(0, length);
         // Set the typing state attribute
-        element.setAttribute("data-typing", (!complete).toString())
+        element.setAttribute("data-typing", (!complete).toString());
 
         if (complete) {
             // The next update is a deleting update
             setTimeout(updateDeleting, DISPLAY_DURATION);
         } else {
             // Continue typing updates until the value is complete
-            setTimeout(updateTyping, 300 - (Math.random() * 100));
+            setTimeout(updateTyping, 300 - Math.random() * 100);
         }
     }
 
@@ -68,7 +68,6 @@ function createTyper(element: HTMLElement): void {
     // Execute the first update
     updateTyping();
 }
-
 
 // Load the typer elements when the window loads
 window.onload = () => {

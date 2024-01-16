@@ -5,7 +5,6 @@ import "../styles/typer.scss";
 
 // Create a comma seperate list of the values to type
 const typerValues: string = typerList.join(",");
-
 ---
 
 <div class="heading">
@@ -16,9 +15,7 @@ const typerValues: string = typerList.join(",");
         </h1>
         <p class="heading__role">
             <!-- Typing element with its possible values -->
-            <span
-                class="typer"
-                data-values={typerValues}>
+            <span class="typer" data-values={typerValues}>
                 {typerList[0]}
             </span>
 
@@ -34,8 +31,7 @@ const typerValues: string = typerList.join(",");
     </div>
 </div>
 
-<script src="../scripts/typer.ts" ></script>
-
+<script src="../scripts/typer.ts"></script>
 
 <style lang="scss">
     @import "@styles/scheme.scss";
@@ -50,10 +46,8 @@ const typerValues: string = typerList.join(",");
         height: 100vh;
         width: 100%;
 
-        background: linear-gradient(
-                rgba(12, 12, 12, 0.5),
-                rgba(17, 17, 17, 0.5)
-            ),
+        background:
+            linear-gradient(rgba(12, 12, 12, 0.5), rgba(17, 17, 17, 0.5)),
             url("/background.jpg") no-repeat;
         background-size: cover;
 
@@ -136,7 +130,10 @@ const typerValues: string = typerList.join(",");
         background-color: transparent;
         opacity: 0;
 
-        transition: color 0.5s, border-color 0.25s, background-color 0.5s;
+        transition:
+            color 0.5s,
+            border-color 0.25s,
+            background-color 0.5s;
 
         animation: link-in-left 0.5s $nav-total-delay ease forwards;
     }
