@@ -1,0 +1,25 @@
+// Before element for displaying the typing cursor 
+.typer[data-typing="true"]::after {
+    content: "";
+    position: absolute;
+
+    right: -4px;
+    top: 0;
+    width: 2px;
+    height: 100%;
+
+    background: currentColor;
+    animation: typer-cursor-blink 1s 1s infinite;
+}
+
+
+// Blinking cursor animation using opacity 
+@keyframes typer-cursor-blink {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}

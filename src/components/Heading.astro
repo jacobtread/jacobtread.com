@@ -1,6 +1,11 @@
 ---
-import Typer from "./Typer.svelte";
 import typerList from "../data/typer.json";
+
+import "../styles/typer.scss";
+
+// Create a comma seperate list of the values to type
+const typerValues: string = typerList.join(",");
+
 ---
 
 <div class="heading">
@@ -10,15 +15,13 @@ import typerList from "../data/typer.json";
             <span class="heading__name__last">Read</span>
         </h1>
         <p class="heading__role">
-            <!-- Fallback incase the typer cannot be loaded -->
-            <noscript><span class="typer">Full-Stack</span></noscript>
             <!-- Typing element with its possible values -->
-            <Typer
+            <span
                 class="typer"
-                client:only="svelte"
-                values={typerList}
-                duration={1000}
-            />
+                data-values={typerValues}>
+                {typerList[0]}
+            </span>
+
             Developer
         </p>
         <nav class="nav">
@@ -30,6 +33,9 @@ import typerList from "../data/typer.json";
         </nav>
     </div>
 </div>
+
+<script src="../scripts/typer.ts" ></script>
+
 
 <style lang="scss">
     @import "@styles/scheme.scss";
