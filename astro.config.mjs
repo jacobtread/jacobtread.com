@@ -13,4 +13,9 @@ export default defineConfig({
       theme: "dark-plus",
     },
   },
+  vite: {
+    build: {
+      assetsInlineLimit: 8192
+    }
+  }
 });
