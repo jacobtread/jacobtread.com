@@ -16,6 +16,9 @@ export interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
+// URL path to the sitemap
+const sitemapUrl: URL = new URL("/sitemap-index.xml", Astro.site);
+
 const {
     title,
     description,
@@ -48,6 +51,7 @@ const {
             href="/favicon-16x16.png"
         />
         <link rel="manifest" href="/site.webmanifest" />
+        <link rel="sitemap" href={sitemapUrl} />
         <meta name="theme-color" content="#7ed380" />
         <meta name="author" content="Jacobtread" />
         <meta name="keywords" content={keywords} />

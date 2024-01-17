@@ -9,7 +9,7 @@
         "build": "astro build",
         "preview": "astro preview",
         "astro": "astro",
-        "format": "yarn prettier -w src --plugin-search-dir=."
+        "format": "prettier -w src --plugin-search-dir=."
     },
     "dependencies": {
         "@astrojs/mdx": "^2.0.4",
