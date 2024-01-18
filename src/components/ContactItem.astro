@@ -1,0 +1,71 @@
+---
+export interface Props {
+    // The link for the contact item
+    link: string;
+    // The title of the contact item (Hover text)
+    title: string;
+    // The name of the contact item
+    name: string;
+    // The text value of the contact item (Short version)
+    value: string;
+    // The icon to use for this contact item
+    icon: any;
+}
+
+const { link, title, name, value, icon: Icon } = Astro.props;
+---
+
+<a
+    href={link}
+    rel="noreferrer noopener"
+    target="_blank"
+    class="block contact"
+    title={title}>
+    <Icon class="icon" />
+    <div>
+        <span class="contact__name">{name}</span>
+        <p class="contact__value">{value}</p>
+    </div>
+</a>
+
+<style lang="scss">
+    @use "@styles/scheme.scss" as scheme;
+
+    .icon {
+        max-width: 3rem;
+        width: 100%;
+        height: auto;
+    }
+
+    .contact {
+        display: flex;
+        flex-flow: row;
+
+        align-items: center;
+
+        gap: 1rem;
+        padding: 1rem !important;
+
+        &__name {
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+
+        &__value {
+            color: scheme.$text;
+            font-size: 1.15rem;
+        }
+    }
+
+    @media screen and (max-width: scheme.$screen-mobile) {
+        .icon {
+            max-width: 2rem;
+        }
+    }
+
+    @media screen and (max-width: scheme.$screen-extra-small) {
+        .contact-item__value {
+            display: none;
+        }
+    }
+</style>

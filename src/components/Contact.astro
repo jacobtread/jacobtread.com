@@ -1,11 +1,12 @@
 ---
+import ContactItem from "./ContactItem.astro";
 import Discord from "./icons/Discord.astro";
 import GitHub from "./icons/GitHub.astro";
 import LinkedIn from "./icons/LinkedIn.astro";
 import Mail from "./icons/Mail.astro";
 ---
 
-<section class="section contact" id="contact">
+<section class="section" id="contact">
     <h2 class="section__title">Getting in touch</h2>
     <p class="section__text">
         Below are my Socials which you can connect with me on. Check out my
@@ -13,57 +14,37 @@ import Mail from "./icons/Mail.astro";
     </p>
 
     <div class="blocks">
-        <a
-            href="https://github.com/jacobtread"
-            rel="noreferrer noopener"
-            target="_blank"
-            class="block contact-item"
-            title="Packed with side projects">
-            <GitHub class="icon" />
-            <div>
-                <span class="contact-item__name">GitHub</span>
-                <p class="contact-item__value">github.com/jacobtread</p>
-            </div>
-        </a>
-        <a
-            href="https://www.linkedin.com/in/jacobtread/"
-            rel="noreferrer noopener"
-            target="_blank"
-            class="block contact-item"
-            title="Where the professionals are">
-            <LinkedIn class="icon" />
-            <div>
-                <span class="contact-item__name">Linked in</span>
-                <p class="contact-item__value">
-                    www.linkedin.com/in/jacobtread
-                </p>
-            </div>
-        </a>
-        <a
-            href="mailto:jacobtread@gmail.com"
-            rel="noreferrer noopener"
-            target="_blank"
-            class="block contact-item"
-            title="The good-ol contact method">
-            <Mail class="icon" />
-            <div>
-                <span class="contact-item__name">Email</span>
-                <p class="contact-item__value">jacobtread@gmail.com</p>
-            </div>
-        </a>
+        <ContactItem
+            link="https://github.com/jacobtread"
+            title="Packed with side projects"
+            name="GitHub"
+            value="github.com/jacobtread"
+            icon={GitHub}
+        />
 
-        <a
-            href="https://discord.com/users/265320629203501056"
-            rel="noreferrer noopener"
-            target="_blank"
-            class="block contact-item"
-            title="Favorite chatting app">
-            <Discord class="icon" />
-            <div>
-                <span class="contact-item__name">Discord</span>
-                <p class="contact-item__value">jacobtread</p>
-            </div>
-        </a>
+        <ContactItem
+            link="https://github.com/jacobtread"
+            title="Where the professionals are"
+            name="Linked in"
+            value="www.linkedin.com/in/jacobtread"
+            icon={LinkedIn}
+        />
+
+        <ContactItem
+            link="mailto:jacobtread@gmail.com"
+            title="The good-ol contact method"
+            name="Email"
+            value="jacobtread@gmail.com"
+            icon={Mail}
+        />
+
+        <ContactItem
+            link="https://discord.com/users/265320629203501056"
+            title="Favorite chatting app"
+            name="Discord"
+            value="jacobtread"
+            icon={Discord}
+        />
     </div>
 
     <p class="hint">Keep reading to find out more about me 👀</p>
@@ -72,41 +53,9 @@ import Mail from "./icons/Mail.astro";
 <style lang="scss">
     @use "@styles/scheme.scss" as scheme;
 
-    .icon {
-        max-width: 3rem;
-        width: 100%;
-        height: auto;
-    }
-
-    .contact-item {
-        display: flex;
-        flex-flow: row;
-
-        align-items: center;
-
-        gap: 1rem;
-        padding: 1rem !important;
-
-        &__name {
-            font-weight: bold;
-            font-size: 1.25rem;
-        }
-
-        &__value {
-            color: scheme.$text;
-            font-size: 1.15rem;
-        }
-    }
-
-    @media screen and (max-width: scheme.$screen-mobile) {
-        .icon {
-            max-width: 2rem;
-        }
-    }
-
-    @media screen and (max-width: scheme.$screen-extra-small) {
-        .contact-item__value {
-            display: none;
-        }
+    .hint {
+        color: scheme.$text;
+        font-size: 1.1rem;
+        margin-top: 1rem;
     }
 </style>
