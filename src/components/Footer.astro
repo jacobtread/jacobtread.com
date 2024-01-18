@@ -23,44 +23,44 @@ const year: number = today.getFullYear();
     </div>
 </footer>
 <style lang="scss">
-    @import "@styles/scheme.scss";
+    @use "@styles/scheme.scss" as scheme;
 
     .footer {
-        border-top: 1px solid $border-color;
+        border-top: 1px solid scheme.$border-color;
         width: 100%;
         gap: 1.5rem;
         padding: 2rem;
+
+        &__brand {
+            font-size: 4rem;
+            font-weight: bold;
+        }
+
+        &__email {
+            color: scheme.$text;
+        }
+
+        &__copy {
+            color: scheme.$primary-lighter;
+            margin-top: 0.5rem;
+        }
     }
 
     .footer-wrapper {
-        max-width: $content-width;
+        max-width: scheme.$content-width;
         margin: 2rem auto;
-    }
-
-    .footer__brand {
-        font-size: 4rem;
-        font-weight: bold;
-    }
-
-    .footer__email {
-        color: $text;
-    }
-
-    .footer__copy {
-        color: $primary-lighter;
-        margin-top: 0.5rem;
     }
 
     .nav {
         margin-top: 0.5rem;
-    }
 
-    .nav__link {
-        color: $text;
-        margin-right: 1rem;
-    }
+        &__link {
+            color: scheme.$text;
+            margin-right: 1rem;
 
-    .nav__link:hover {
-        color: #fff;
+            &:hover {
+                color: #fff;
+            }
+        }
     }
 </style>

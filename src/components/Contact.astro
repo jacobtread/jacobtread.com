@@ -70,7 +70,7 @@ import Mail from "./icons/Mail.astro";
 </section>
 
 <style lang="scss">
-    @import "@styles/scheme.scss";
+    @use "@styles/scheme.scss" as scheme;
 
     .icon {
         max-width: 3rem;
@@ -86,25 +86,25 @@ import Mail from "./icons/Mail.astro";
 
         gap: 1rem;
         padding: 1rem !important;
+
+        &__name {
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+
+        &__value {
+            color: scheme.$text;
+            font-size: 1.15rem;
+        }
     }
 
-    .contact-item__name {
-        font-weight: bold;
-        font-size: 1.25rem;
-    }
-
-    .contact-item__value {
-        color: $text;
-        font-size: 1.15rem;
-    }
-
-    @media screen and (max-width: $screen-mobile) {
+    @media screen and (max-width: scheme.$screen-mobile) {
         .icon {
             max-width: 2rem;
         }
     }
 
-    @media screen and (max-width: $screen-extra-small) {
+    @media screen and (max-width: scheme.$screen-extra-small) {
         .contact-item__value {
             display: none;
         }

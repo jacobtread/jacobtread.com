@@ -55,70 +55,73 @@ const {
     </main>
 </Layout>
 
+<!-- Global styles for styling within the rendered content -->
 <style is:global lang="scss">
-    @import "@styles/scheme.scss";
+    @use "@styles/scheme" as scheme;
 
-    .content h2 {
-        font-size: 2rem;
-        margin-bottom: 1rem;
-    }
+    .content {
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
 
-    .content h3 {
-        font-size: 1.5rem;
-        margin-bottom: 0.5rem;
-    }
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
 
-    .content h4 {
-        font-size: 1.25rem;
-        margin-bottom: 0.5rem;
-    }
+        h4 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
 
-    .content p {
-        font-size: 1.15rem;
-        color: $text;
-        margin: 1rem 0;
-    }
+        p {
+            font-size: 1.15rem;
+            color: scheme.$text;
+            margin: 1rem 0;
+        }
 
-    .content ul,
-    .content ol {
-        padding: 1rem;
-        line-height: 1.5;
-        color: $text;
-        font-size: 1.15rem;
-        list-style-position: inside;
-    }
+        ul,
+        ol {
+            padding: 1rem;
+            line-height: 1.5;
+            color: scheme.$text;
+            font-size: 1.15rem;
+            list-style-position: inside;
+        }
 
-    .content .astro-code {
-        padding: 1rem;
-        line-height: 1.5;
-        margin: 1rem 0;
-    }
+        .astro-code {
+            padding: 1rem;
+            line-height: 1.5;
+            margin: 1rem 0;
 
-    .content .astro-code * {
-        font-family: "Jetbrains Mono", "Courier New", Courier, monospace;
-    }
+            * {
+                font-family: "Jetbrains Mono", "Courier New", Courier, monospace;
+            }
+        }
 
-    .content a {
-        color: #7ed380;
-    }
+        a {
+            color: #7ed380;
+        }
 
-    .content blockquote {
-        padding: 0.1rem 1rem;
-        background-color: #1b1b1b;
-        margin: 1rem 0;
-    }
+        blockquote {
+            padding: 0.1rem 1rem;
+            background-color: #1b1b1b;
+            margin: 1rem 0;
+        }
 
-    .content p code {
-        color: #6bac6c;
-    }
+        p code {
+            color: #6bac6c;
+        }
 
-    .content img {
-        max-width: 100%;
+        img {
+            max-width: 100%;
+        }
     }
 </style>
 
 <style lang="scss">
-    @import "@styles/scheme.scss";
+    @use "@styles/scheme" as scheme;
 
     .date {
         color: #666;
@@ -136,17 +139,15 @@ const {
         overflow: hidden;
         background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1));
         margin-bottom: 1.5rem;
-    }
 
-    .hero__img {
-        position: absolute;
-        width: 100%;
-        height: auto;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        // z-index: -1;
-        // filter: blur(5px);
+        &__img {
+            position: absolute;
+            width: 100%;
+            height: auto;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
     }
 
     .back {
@@ -163,10 +164,10 @@ const {
     }
 
     .content {
-        max-width: $blog-content-width;
+        max-width: scheme.$blog-content-width;
         margin: 2rem auto;
         padding: 2rem;
-        background-color: $background;
-        border: 1px solid $border-color;
+        background-color: scheme.$background;
+        border: 1px solid scheme.$border-color;
     }
 </style>

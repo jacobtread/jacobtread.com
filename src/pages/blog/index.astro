@@ -45,7 +45,7 @@ blogPosts.sort(
                     <li>
                         <a class="post block" href={`/blog/${post.slug}/`}>
                             <h2 class="post__title">
-                                {post.data.title}{" "}
+                                {post.data.title + " "}
                                 <span class="post__date">
                                     <FormattedDate date={post.data.pubDate} />
                                 </span>
@@ -60,7 +60,7 @@ blogPosts.sort(
 </Layout>
 
 <style lang="scss">
-    @import "@styles/scheme";
+    @use "@styles/scheme" as scheme;
 
     .rss {
         $bg-color: #222222;
@@ -76,12 +76,12 @@ blogPosts.sort(
             padding-right: 0.5rem;
             font-size: 1.25rem;
             user-select: none;
-            color: $text;
+            color: scheme.$text;
         }
 
         &__value {
             display: inline-block;
-            color: $primary;
+            color: scheme.$primary;
             background-color: #151515;
             padding: 0.95rem;
             margin: 0.25rem;
@@ -91,7 +91,7 @@ blogPosts.sort(
 
     .posts {
         padding: 1rem;
-        border: 1px solid $border-color;
+        border: 1px solid scheme.$border-color;
         opacity: 0;
         animation: in-left 0.5s 0.3s ease forwards;
     }
@@ -99,26 +99,20 @@ blogPosts.sort(
     .post {
         display: block;
         padding: 1rem;
+
+        &__date {
+            font-size: 1rem;
+            font-style: italic;
+            color: #595959;
+            font-weight: normal;
+        }
+
+        &:visited {
+            color: scheme.$text;
+        }
     }
 
-    .post__date {
-        font-size: 1rem;
-        font-style: italic;
-        color: #595959;
-        font-weight: normal;
-    }
-
-    .post:visited {
-        color: $text;
-    }
-
-    .post__title {
-    }
-
-    .post__desc {
-    }
-
-    @media screen and (max-width: $screen-small) {
+    @media screen and (max-width: scheme.$screen-small) {
         .back,
         .rss {
             width: 100%;

@@ -10,13 +10,15 @@ const PAGE_DESCRIPTION =
     "Check out a list of my projects. This list doesn't contain all my projects but it contains a decent chunk of the important ones.";
 
 // Type alias for a project entry
-type Project = CollectionEntry<"projects">;
+type ProjectEntry = CollectionEntry<"projects">;
 
 // Obtain the collection of projects
-const projects: Project[] = await getCollection("projects");
+const projects: ProjectEntry[] = await getCollection("projects");
 
 // Sort the projects based on their priority
-projects.sort((a: Project, b: Project) => a.data.priority - b.data.priority);
+projects.sort(
+    (a: ProjectEntry, b: ProjectEntry) => a.data.priority - b.data.priority
+);
 ---
 
 <Layout title={PAGE_TITLE} description={PAGE_DESCRIPTION}>
@@ -40,7 +42,7 @@ projects.sort((a: Project, b: Project) => a.data.priority - b.data.priority);
         </div>
 
         <ul class="blocks blocks--span-first">
-            {projects.map((project) => <Project {...project} />)}
+            {projects.map((project: ProjectEntry) => <Project {...project} />)}
         </ul>
     </main>
 </Layout>

@@ -63,24 +63,8 @@ const { Content } = await render();
     </div>
 </li>
 
-<style is:global>
-    @import "@styles/scheme.scss";
-
-    .project p {
-        margin: 1rem 0;
-        font-size: 1.15rem;
-        color: $text;
-    }
-
-    @media screen and (max-width: 48rem) {
-        .project p {
-            font-size: 1rem;
-        }
-    }
-</style>
-
 <style lang="scss">
-    @import "@styles/scheme.scss";
+    @use "@styles/scheme.scss" as scheme;
 
     .icon {
         max-height: 32px;
@@ -114,6 +98,18 @@ const { Content } = await render();
             .project__tag {
                 background-color: #3c3c3c;
             }
+        }
+
+        :global(p) {
+            margin: 1rem 0;
+            font-size: 1.15rem;
+            color: scheme.$text;
+        }
+    }
+
+    @media screen and (max-width: 48rem) {
+        .project :global(p) {
+            font-size: 1rem;
         }
     }
 </style>

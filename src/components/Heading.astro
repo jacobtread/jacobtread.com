@@ -34,10 +34,10 @@ const typerValues: string = typerList.join(",");
 <script src="../scripts/typer.ts"></script>
 
 <style lang="scss">
-    @import "@styles/scheme.scss";
+    @use "@styles/scheme.scss" as scheme;
 
     .typer {
-        color: $primary-lighter;
+        color: scheme.$primary-lighter;
         position: relative;
         margin-right: 4px;
     }
@@ -53,7 +53,7 @@ const typerValues: string = typerList.join(",");
 
         display: flex;
         align-items: center;
-        border-bottom: 1px solid $border-color;
+        border-bottom: 1px solid scheme.$border-color;
     }
 
     .heading__content {
@@ -66,7 +66,7 @@ const typerValues: string = typerList.join(",");
     .heading__name {
         font-weight: bold;
         font-size: 8rem;
-        color: $title;
+        color: scheme.$title;
         line-height: 1;
         margin-left: -4px;
     }
@@ -83,11 +83,11 @@ const typerValues: string = typerList.join(",");
     .heading__name__first {
         background: -webkit-linear-gradient(
             30deg,
-            $primary-lighter,
-            $secondary
+            scheme.$primary-lighter,
+            scheme.$secondary
         );
         -webkit-background-clip: text;
-        color: $primary-lighter;
+        color: scheme.$primary-lighter;
         -webkit-text-fill-color: transparent;
     }
 
@@ -119,7 +119,7 @@ const typerValues: string = typerList.join(",");
 
     .nav__link {
         font-weight: bold;
-        color: $text;
+        color: scheme.$text;
         font-size: 1.25rem;
         text-decoration: none;
         padding: 1rem;
@@ -136,22 +136,22 @@ const typerValues: string = typerList.join(",");
             background-color 0.5s;
 
         animation: link-in-left 0.5s $nav-total-delay ease forwards;
-    }
 
-    // Delayed animations for each of the buttons
-    $delay: $nav-total-delay;
-    @for $i from 1 to ($nav-button-count + 1) {
-        .nav__link:nth-child(#{$i}) {
-            animation-delay: $delay;
+        // Delayed animations for each of the buttons
+        $delay: $nav-total-delay;
+        @for $i from 1 to ($nav-button-count + 1) {
+            &:nth-child(#{$i}) {
+                animation-delay: $delay;
+            }
+
+            $delay: $delay - $nav-delay-inc;
         }
 
-        $delay: $delay - $nav-delay-inc;
-    }
-
-    .nav__link:hover {
-        color: #ffffff;
-        border-color: $primary;
-        background-color: $primary-darker;
+        &:hover {
+            color: #ffffff;
+            border-color: scheme.$primary;
+            background-color: scheme.$primary-darker;
+        }
     }
 
     @keyframes link-in-left {
@@ -165,17 +165,17 @@ const typerValues: string = typerList.join(",");
         }
     }
 
-    @media screen and (max-width: $screen-tablet) {
-        .heading__name {
-            font-size: 6rem;
-        }
-
-        .heading__role {
-            font-size: 2rem;
-        }
-
+    @media screen and (max-width: scheme.$screen-tablet) {
         .heading {
             text-align: center;
+
+            &__name {
+                font-size: 6rem;
+            }
+
+            &__role {
+                font-size: 2rem;
+            }
         }
 
         .nav {
@@ -184,30 +184,33 @@ const typerValues: string = typerList.join(",");
         }
     }
 
-    @media screen and (max-width: $screen-small) {
-        .heading__content {
-            padding: 0 3rem;
-        }
-        .heading__name {
-            font-size: 5rem;
-        }
+    @media screen and (max-width: scheme.$screen-small) {
+        .heading {
+            &__content {
+                padding: 0 3rem;
+            }
 
-        .heading__role {
-            font-size: 1.25rem;
+            &__name {
+                font-size: 5rem;
+            }
+
+            &__role {
+                font-size: 1.25rem;
+            }
         }
 
         .nav {
             flex-flow: column nowrap;
             width: 100%;
-        }
 
-        .nav__link {
-            display: block;
-            width: 100%;
+            &__link {
+                display: block;
+                width: 100%;
+            }
         }
     }
 
-    @media screen and (max-width: $screen-extra-small) {
+    @media screen and (max-width: scheme.$screen-extra-small) {
         .heading__name {
             font-size: 3rem;
         }
