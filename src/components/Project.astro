@@ -18,7 +18,17 @@ const { Content } = await render();
 
 <li class="block project">
     <div>
-        {image && <img src={image} alt={title} loading="lazy" class="icon" />}
+        {
+            image && (
+                <img
+                    src={image}
+                    alt={title}
+                    loading="lazy"
+                    decoding="async"
+                    class="icon"
+                />
+            )
+        }
 
         <h2 class="project__title">{title}</h2>
         <Content />
