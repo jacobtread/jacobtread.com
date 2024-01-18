@@ -1,3 +1,13 @@
+---
+import { Picture } from "astro:assets";
+
+import backendLanguagesImage from "@assets/images/langb-small.png";
+import frontendLanguagesImage from "@assets/images/langf-small.png";
+import editorsImage from "@assets/images/editors-small.png";
+import backendFrameworksImage from "@assets/images/framb-small.png";
+import frontendFrameworksImage from "@assets/images/framf-small.png";
+---
+
 <div class="section technology" id="technology">
     <h2 class="section__title">Technology</h2>
     <p class="section__text">
@@ -17,12 +27,13 @@
                     years with PHP.
                 </p>
             </div>
-            <img
+            <Picture
+                src={backendLanguagesImage}
+                formats={["webp", "png"]}
                 class="block__img"
-                src="/images/langb-small.png"
                 alt="Backend Languages"
-                width="170"
-                height="153"
+                width={170}
+                height={153}
             />
         </div>
 
@@ -37,12 +48,13 @@
                     HTML having around 5 years experience using them both.
                 </p>
             </div>
-            <img
+            <Picture
+                src={frontendLanguagesImage}
+                formats={["webp", "png"]}
                 class="block__img"
-                src="/images/langf-small.png"
                 alt="Frontend Languages"
-                width="170"
-                height="150"
+                width={170}
+                height={150}
             />
         </div>
 
@@ -61,12 +73,13 @@
                     Helix in my off time.
                 </p>
             </div>
-            <img
+            <Picture
+                src={editorsImage}
+                formats={["webp", "png"]}
                 class="block__img"
-                src="/images/editors-small.png"
                 alt="IDE & Editors"
-                width="170"
-                height="153"
+                width={170}
+                height={153}
             />
         </div>
         <div class="block">
@@ -84,12 +97,13 @@
                     developing my Rust applications.
                 </p>
             </div>
-            <img
+            <Picture
+                src={backendFrameworksImage}
+                formats={["webp", "png"]}
                 class="block__img"
-                src="/images/framb-small.png"
                 alt="Backend Frameworks & Tooling"
-                width="170"
-                height="153"
+                width={170}
+                height={153}
             />
         </div>
         <div class="block">
@@ -104,12 +118,13 @@
                     pathway.
                 </p>
             </div>
-            <img
+            <Picture
+                src={frontendFrameworksImage}
+                formats={["webp", "png"]}
                 class="block__img"
-                src="/images/framf-small.png"
                 alt="Frontend Frameworks & Tooling"
-                width="170"
-                height="112"
+                width={170}
+                height={112}
             />
         </div>
     </div>
