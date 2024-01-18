@@ -55,7 +55,9 @@ const {
     </main>
 </Layout>
 
-<style is:global>
+<style is:global lang="scss">
+    @import "@styles/scheme.scss";
+
     .content h2 {
         font-size: 2rem;
         margin-bottom: 1rem;
@@ -73,7 +75,7 @@ const {
 
     .content p {
         font-size: 1.15rem;
-        color: #999;
+        color: $text;
         margin: 1rem 0;
     }
 
@@ -81,7 +83,7 @@ const {
     .content ol {
         padding: 1rem;
         line-height: 1.5;
-        color: #999;
+        color: $text;
         font-size: 1.15rem;
         list-style-position: inside;
     }
