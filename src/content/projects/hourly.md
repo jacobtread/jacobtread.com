@@ -1,7 +1,7 @@
 ---
 title: "Hour.ly"
 tags: ["Javascript", "CSS", "HTML", "Electron"]
-links: [{ type: "GITHUB", link: "jacobtread/Hour.ly" }]
+links: [{ type: "GITHUB", link: "https://github.com/jacobtread/Hour.ly" }]
 ---
 
 Hourly is small desktop electron app for keeping track of how many hours you've worked for.
