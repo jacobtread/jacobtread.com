@@ -3,7 +3,10 @@ title: "Quizler Enterprise"
 tags: ["Svelte", "TypeScript", "Axum", "Rust", "Docker", "PostgreSQL"]
 links:
     [
-        { type: "GITHUB", link: "https://github.com/jacobtread/QuizlerEnterprise" },
+        {
+            type: "GITHUB",
+            link: "https://github.com/jacobtread/QuizlerEnterprise",
+        },
     ]
 priority: 3
 image: "/projects/logos/quizler-enterprise.svg"

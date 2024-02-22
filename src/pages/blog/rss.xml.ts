@@ -15,9 +15,7 @@ type RssEntry = { link: string } & BlogEntry["data"];
  * @param context The API request context
  * @returns The RSS feed response
  */
-export const GET: APIRoute = async (
-    context: APIContext
-): Promise<Response> => {
+export const GET: APIRoute = async (context: APIContext): Promise<Response> => {
     // Collect all the blog posts
     const posts: BlogEntry[] = await getCollection("blog");
 
