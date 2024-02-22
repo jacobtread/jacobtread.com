@@ -8,6 +8,7 @@
             "@styles/*": ["styles/*"],
             "@assets/*": ["assets/*"],
             "@sections/*": ["sections/*"],
+            "@data/*": ["data/*"],
             "@/*": ["*"]
         }
     }

@@ -1,6 +1,6 @@
 import rss from "@astrojs/rss";
 import { getCollection, type CollectionEntry } from "astro:content";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import { SITE_TITLE, SITE_DESCRIPTION } from "@/consts";
 import type { APIContext, APIRoute } from "astro";
 
 // Type of a blog entry
