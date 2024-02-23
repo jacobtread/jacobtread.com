@@ -1,0 +1,61 @@
+@use "@assets/styles/scheme" as scheme;
+
+.blog-content {
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    h4 {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+    }
+
+    p {
+        font-size: 1.15rem;
+        color: var(--text);
+        margin: 1rem 0;
+    }
+
+    ul,
+    ol {
+        padding: 1rem;
+        line-height: 1.5;
+        color: var(--text);
+        font-size: 1.15rem;
+        list-style-position: inside;
+    }
+
+    .astro-code {
+        padding: 1rem;
+        line-height: 1.5;
+        margin: 1rem 0;
+
+        * {
+            font-family: "Jetbrains Mono", "Courier New", Courier, monospace;
+        }
+    }
+
+    a {
+        color: var(--primary-lighter);
+    }
+
+    blockquote {
+        padding: 0.1rem 1rem;
+        background-color: #1b1b1b;
+        margin: 1rem 0;
+    }
+
+    p code {
+        color: var(--primary-light);
+    }
+
+    img {
+        max-width: 100%;
+    }
+}

@@ -20,7 +20,7 @@ export const GET: APIRoute = async (context: APIContext): Promise<Response> => {
 };
 
 /**
- * Static paths defintiion for all the licenses in the
+ * Static paths definition for all the licenses in the
  * collection of licenses to SSR
  *
  * @returns The collection of licenses
