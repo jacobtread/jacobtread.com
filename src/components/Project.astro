@@ -64,8 +64,6 @@ const { Content } = await render();
 </li>
 
 <style lang="scss">
-    @use "@styles/scheme.scss" as scheme;
-
     .icon {
         max-height: 32px;
         height: 100%;
@@ -88,8 +86,8 @@ const { Content } = await render();
         &__tag {
             transition: background-color 0.25s ease;
             font-size: 0.8rem;
-            color: #aaa;
-            background: #333;
+            color: var(--text-dark);
+            background: var(--btn-surface-bg-color);
             padding: 0.5rem 0.75rem;
             border-radius: 5px;
         }
@@ -103,7 +101,7 @@ const { Content } = await render();
         :global(p) {
             margin: 1rem 0;
             font-size: 1.15rem;
-            color: scheme.$text;
+            color: var(--text);
         }
     }
 

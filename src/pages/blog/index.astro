@@ -76,12 +76,12 @@ blogPosts.sort(
             padding-right: 0.5rem;
             font-size: 1.25rem;
             user-select: none;
-            color: scheme.$text;
+            color: var(--text);
         }
 
         &__value {
             display: inline-block;
-            color: scheme.$primary;
+            color: var(--primary);
             background-color: #151515;
             padding: 0.95rem;
             margin: 0.25rem;
@@ -91,7 +91,7 @@ blogPosts.sort(
 
     .posts {
         padding: 1rem;
-        border: 1px solid scheme.$border-color;
+        border: 1px solid var(--border-color);
         opacity: 0;
         animation: in-left 0.5s 0.3s ease forwards;
     }
@@ -108,7 +108,7 @@ blogPosts.sort(
         }
 
         &:visited {
-            color: scheme.$text;
+            color: var(--text);
         }
     }
 

@@ -26,7 +26,7 @@ const year: number = today.getFullYear();
     @use "@styles/scheme.scss" as scheme;
 
     .footer {
-        border-top: 1px solid scheme.$border-color;
+        border-top: 1px solid var(--border-color);
         width: 100%;
         gap: 1.5rem;
         padding: 2rem;
@@ -37,11 +37,11 @@ const year: number = today.getFullYear();
         }
 
         &__email {
-            color: scheme.$text;
+            color: var(--text);
         }
 
         &__copy {
-            color: scheme.$primary-lighter;
+            color: var(--primary-lighter);
             margin-top: 0.5rem;
         }
     }
@@ -55,11 +55,11 @@ const year: number = today.getFullYear();
         margin-top: 0.5rem;
 
         &__link {
-            color: scheme.$text;
+            color: var(--text);
             margin-right: 1rem;
 
             &:hover {
-                color: #fff;
+                color: var(--text-light);
             }
         }
     }

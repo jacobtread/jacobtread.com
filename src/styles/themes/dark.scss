@@ -1,0 +1,45 @@
+$theme-variables: (
+    background: #111,
+
+    primary: #62a563,
+    primary-light: #6bac6c,
+    primary-lighter: #7ed380,
+    primary-darker: #335734,
+
+    secondary: #0c9bdd,
+
+    title: #ffffff,
+    text: #b0b3b8,
+    text-light: #ffffff,
+    text-dark: #aaa,
+
+    border-color: #333333,
+    text-default: #ffffff,
+
+    content-width: 80rem,
+    blog-content-width: 60rem,
+
+    screen-extra-small: 28rem,
+    screen-small: 34rem,
+    screen-mobile: 48rem,
+    screen-tablet: 64rem,
+    screen-desktop: 80rem,
+
+    // First level of elevation (Cards / Blocks)
+    surface: #222222,
+    surface-lighter: #2e2e2e,
+
+    // Second level of elevation (Buttons / Borders)
+    surface-raised: #333333,
+    surface-raised-lighter: #3e3e3e,
+
+    btn-text-color: #9f9f9f,
+    btn-border-color: #333333,
+    btn-bg-color: #222222,
+    btn-bg-color-hover: #333333,
+
+    btn-surface-text-color: #ffffff,
+    btn-surface-bg-color: #333333,
+    btn-surface-bg-color-lighter: #444444,
+    btn-surface-bg-color-hover: #62a563,
+);

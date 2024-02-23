@@ -36,7 +36,7 @@ const typerValues: string = typerList.join(",");
     @use "@styles/scheme.scss" as scheme;
 
     .typer {
-        color: scheme.$primary-lighter;
+        color: var(--primary-lighter);
         position: relative;
         margin-right: 4px;
     }
@@ -52,7 +52,7 @@ const typerValues: string = typerList.join(",");
 
         display: flex;
         align-items: center;
-        border-bottom: 1px solid scheme.$border-color;
+        border-bottom: 1px solid var(--border-color);
     }
 
     .heading__content {
@@ -65,7 +65,7 @@ const typerValues: string = typerList.join(",");
     .heading__name {
         font-weight: bold;
         font-size: 8rem;
-        color: scheme.$title;
+        color: var(--title);
         line-height: 1;
         margin-left: -4px;
     }
@@ -82,11 +82,11 @@ const typerValues: string = typerList.join(",");
     .heading__name__first {
         background: -webkit-linear-gradient(
             30deg,
-            scheme.$primary-lighter,
-            scheme.$secondary
+            var(--primary-lighter),
+            var(--secondary)
         );
         -webkit-background-clip: text;
-        color: scheme.$primary-lighter;
+        color: var(--primary-lighter);
         -webkit-text-fill-color: transparent;
     }
 
@@ -118,7 +118,7 @@ const typerValues: string = typerList.join(",");
 
     .nav__link {
         font-weight: bold;
-        color: scheme.$text;
+        color: var(--text);
         font-size: 1.25rem;
         text-decoration: none;
         padding: 1rem;
@@ -148,8 +148,8 @@ const typerValues: string = typerList.join(",");
 
         &:hover {
             color: #ffffff;
-            border-color: scheme.$primary;
-            background-color: scheme.$primary-darker;
+            border-color: var(--primary);
+            background-color: var(--primary-darker);
         }
     }
 

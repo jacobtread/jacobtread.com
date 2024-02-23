@@ -95,7 +95,7 @@ const {
 
         p {
             font-size: 1.15rem;
-            color: scheme.$text;
+            color: var(--text);
             margin: 1rem 0;
         }
 
@@ -103,7 +103,7 @@ const {
         ol {
             padding: 1rem;
             line-height: 1.5;
-            color: scheme.$text;
+            color: var(--text);
             font-size: 1.15rem;
             list-style-position: inside;
         }
@@ -119,7 +119,7 @@ const {
         }
 
         a {
-            color: #7ed380;
+            color: var(--primary-lighter);
         }
 
         blockquote {
@@ -129,7 +129,7 @@ const {
         }
 
         p code {
-            color: #6bac6c;
+            color: var(--primary-light);
         }
 
         img {
@@ -185,7 +185,7 @@ const {
         max-width: scheme.$blog-content-width;
         margin: 2rem auto;
         padding: 2rem;
-        background-color: scheme.$background;
-        border: 1px solid scheme.$border-color;
+        background-color: var(--background);
+        border: 1px solid var(--border-color);
     }
 </style>
