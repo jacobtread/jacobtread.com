@@ -1,6 +1,5 @@
-@use "@styles/scheme.scss" as scheme;
-
-@use "@styles/themes/dark.scss" as dark;
+@use "@assets/styles/scheme.scss" as scheme;
+@use "@assets/styles/themes/dark.scss" as dark;
 
 :root {
     @each $name, $color in dark.$theme-variables {

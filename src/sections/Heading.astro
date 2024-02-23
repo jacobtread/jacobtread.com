@@ -1,6 +1,6 @@
 ---
 import typerList from "@data/typer.json";
-import "@styles/typer.scss";
+import "@assets/styles/typer.scss";
 
 // Create a comma seperate list of the values to type
 const typerValues: string = typerList.join(",");
@@ -33,7 +33,7 @@ const typerValues: string = typerList.join(",");
 <script src="../scripts/typer.ts"></script>
 
 <style lang="scss">
-    @use "@styles/scheme.scss" as scheme;
+    @use "@assets/styles/scheme.scss" as scheme;
 
     .typer {
         color: var(--primary-lighter);
