@@ -3,7 +3,7 @@ import { type CollectionEntry, getCollection } from "astro:content";
 import Project from "@components/Project.astro";
 import Layout from "@layouts/Layout.astro";
 import GitHub from "@components/icons/GitHub.astro";
-import { SITE_TITLE } from "@/consts";
+import { SITE_TITLE } from "@/constants";
 
 const PAGE_TITLE = "Projects | " + SITE_TITLE;
 const PAGE_DESCRIPTION =
@@ -46,3 +46,4 @@ projects.sort(
         </ul>
     </main>
 </Layout>
+@/constants

@@ -1,6 +1,6 @@
 ---
 title: "Computron"
-tags: ["VueJS", "NuxtJS", "SCSS", "Javascript", "Website", "Assessment"]
+tags: ["VueJS", "Nux``````````````tJS", "SCSS", "Javascript", "Website", "Assessment"]
 links: [{ type: "GITHUB", link: "https://github.com/jacobtread/Computron" }]
 ---
 

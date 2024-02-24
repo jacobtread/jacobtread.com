@@ -49,7 +49,7 @@ This server handles the bulk of all the server logic like games, matchmaking, pl
 
 ### Telemetry
 
-This server recieves informational messages from the **Mass Effect 3** game client. This includes messages for information like when players get kills and the details of each kill. An example of the decoded contents for one of these messages looks like the following:
+This server receives informational messages from the **Mass Effect 3** game client. This includes messages for information like when players get kills and the details of each kill. An example of the decoded contents for one of these messages looks like the following:
 
 ```js
 00000055/-;00000029/GAME/MULT/KILL/inst=Jacob&dead=SFXPawn_Cannibal2
@@ -101,7 +101,7 @@ Below is my process of solving this issue
 
 ### The original idea
 
-In order to solve these issues I game up with an idea to move the Telemetry, Redirector, and Quality of Service servers to the client rather than having them on the server side. This is because these servers don't actually require being connect to the server as on the official servers they are also seperate parts.
+In order to solve these issues I game up with an idea to move the Telemetry, Redirector, and Quality of Service servers to the client rather than having them on the server side. This is because these servers don't actually require being connect to the server as on the official servers they are also separate parts.
 
 Changing this would also allow the Redirector to use domains rather than only being able to use IP addresses as its target
 
@@ -109,7 +109,7 @@ Changing this would also allow the Redirector to use domains rather than only be
 
 While attempting this I ran into a few road blocks, of which the largest was that the server now wasn't easily able to tell the client where the HTTP server was as it no longer knows what it's address is relative to the users computer
 
-> Previously this wasn't an issue becuase the client was setting the `gosredirector.ea.com` domain to the IP address of the server, This allowed the server to use that domain in place of its public address.
+> Previously this wasn't an issue because the client was setting the `gosredirector.ea.com` domain to the IP address of the server, This allowed the server to use that domain in place of its public address.
 
 ---
 
@@ -117,9 +117,9 @@ While attempting this I ran into a few road blocks, of which the largest was tha
 
 Quickly realizing that this wasn't going to be something that would work easily I took my ideas back to the drawing board. Early on I had mentioned to a friend of mine that it could be possible to proxy the data which would normally go the Main server over a WebSocket connection which would.
 
-This idea seemed great in theory however I realized that I would have to decode and then re-encoding packets in order to properly send them over the WebSocket protocol, Which would likely create **MASSIVE** performance bottlenecks along with un-nessicary memory usage so that idea seemed off the table.
+This idea seemed great in theory however I realized that I would have to decode and then re-encoding packets in order to properly send them over the WebSocket protocol, Which would likely create **MASSIVE** performance bottlenecks along with un-necessary memory usage so that idea seemed off the table.
 
-I decided to look into the WebSocket protocol because I wasn't sure how it was actually working under the hood. To my suprise I found out that HTTP connections can be directly Upgraded to a raw stream of bytes on the underlying transport using [HTTP Upgrade](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Upgrade) and that WebSockets made use of this with its own protocol.
+I decided to look into the WebSocket protocol because I wasn't sure how it was actually working under the hood. To my surprise I found out that HTTP connections can be directly Upgraded to a raw stream of bytes on the underlying transport using [HTTP Upgrade](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Upgrade) and that WebSockets made use of this with its own protocol.
 
 This sparked an idea which got me thinking "I wonder if its possible for me to upgrade my HTTP connection direcly into a Blaze stream" this would replace the need for any sort of decoding and re-encoding as I would be able to use the upgraded HTTP stream directly.
 
@@ -438,9 +438,9 @@ async fn handle_blaze(client: TcpStream) {
 /// `client` The client stream to pipe
 /// `server` The server stream to pipe
 async fn pipe(mut client: TcpStream, mut server: Upgraded) -> io::Result<()> {
-    // Buffer for data recieved from the client
+    // Buffer for data received from the client
     let mut client_buffer = [0u8; BUFFER_SIZE];
-    // Buffer for data recieved from the server
+    // Buffer for data received from the server
     let mut server_buffer = [0u8; BUFFER_SIZE];
 
     loop {
@@ -478,7 +478,7 @@ With all these improvements the server now only needs to expose 1 port that bein
 
 ## The benefits of this
 
-This new structure came with many benfits, below are some of the most notable
+This new structure came with many benefits, below are some of the most notable
 
 ### Only 1 port
 
@@ -488,7 +488,7 @@ The server now only has to expose 1 port which makes the life of the server main
 
 ### HTTPs Support
 
-Prevously the Main server was not able to be easily secured as it would require lots of extra code to implement TLS for the server and would also require the users to manually specify certificate and private key files.
+Previously the Main server was not able to be easily secured as it would require lots of extra code to implement TLS for the server and would also require the users to manually specify certificate and private key files.
 
 This all changes now that the entire server runs over HTTP. Due to the server using HTTP upgrades the server can now completely communicate through the HTTP protocol which means the server can be placed behind an NGINX proxy that provides TLS. This effectively gives the server **FREE** extra security.
 
@@ -502,4 +502,4 @@ Previously if you wanted to host a **Pocket Relay** server you would have to get
 
 ### Server knowledge
 
-Because of how HTTP upgrades work if the server needs extra information about the client environment it possible to transmit that information through the initial request before the session is created. Previously such things wouldn't be possible or atleast wouldn't be reliable. This extra knowledge was made use of in order to provide the correct HTTP server details to the client. This was achieved by having the client provide headers containing the server details.
+Because of how HTTP upgrades work if the server needs extra information about the client environment it possible to transmit that information through the initial request before the session is created. Previously such things wouldn't be possible or at least wouldn't be reliable. This extra knowledge was made use of in order to provide the correct HTTP server details to the client. This was achieved by having the client provide headers containing the server details.

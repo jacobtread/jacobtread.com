@@ -26,7 +26,7 @@ function createTyper(element: HTMLElement): void {
         const length: number = value.length - 1;
         const complete: boolean = length == 0;
 
-        // Asssign the new value
+        // Assign the new value
         element.innerText = value.substring(0, length);
         // Set the typing state attribute
         element.setAttribute("data-typing", (!complete).toString());
@@ -48,7 +48,7 @@ function createTyper(element: HTMLElement): void {
         const length: number = element.innerText.length + 1;
         const complete: boolean = length == value.length;
 
-        // Asssign the new value
+        // Assign the new value
         element.innerText = value.substring(0, length);
         // Set the typing state attribute
         element.setAttribute("data-typing", (!complete).toString());
@@ -71,6 +71,6 @@ function createTyper(element: HTMLElement): void {
 
 // Load the typer elements when the window loads
 window.onload = () => {
-    const typers: NodeListOf<Element> = document.querySelectorAll(".typer");
-    typers.forEach((typer: Element) => createTyper(typer as HTMLElement));
+    const typerElements: NodeListOf<Element> = document.querySelectorAll(".typer");
+    typerElements.forEach((typer: Element) => createTyper(typer as HTMLElement));
 };

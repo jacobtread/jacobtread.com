@@ -12,16 +12,16 @@ heroImage: "/blog/interlink/social.jpg"
 ![Cargo Downloads](https://img.shields.io/crates/d/interlink?style=for-the-badge)
 
 This blog post covers the creation of my async framework **Interlink** which I make use of in my **Pocket Relay** project
-for managing shared states and communication between asyncronous entities. You can find the source code for **Interlink**
+for managing shared states and communication between asynchronous entities. You can find the source code for **Interlink**
 on it [GitHub](https://github.com/jacobtread/interlink)
 
 ## Inspriation
 
-While working on **Pocket Relay** my project was a mess of different frameworks ([Tokio](https://tokio.rs/), and [Actix](https://actix.rs/)) and I was plauged by having
-to have locks all throughout the project. This made the developer experience quite poor and also introduced alot of complexity to
+While working on **Pocket Relay** my project was a mess of different frameworks ([Tokio](https://tokio.rs/), and [Actix](https://actix.rs/)) and I was plagued by having
+to have locks all throughout the project. This made the developer experience quite poor and also introduced a lot of complexity to
 the project with having to manage all the locks everywhere.
 
-While searching for a solution a few times I attempted to port the project over to the [Actix Actors](https://actix.rs/docs/actix/actor) async pattern. Porting to Actix Actors completey removed the original problem with needing lots of locks for everything. However, it introduced a performance bottleneck due to the Actors side of actix being single threaded which also caused issues as at the time **Pocket Relay** ran many services as a monolith which didn't
+While searching for a solution a few times I attempted to port the project over to the [Actix Actors](https://actix.rs/docs/actix/actor) async pattern. Porting to Actix Actors completely removed the original problem with needing lots of locks for everything. However, it introduced a performance bottleneck due to the Actors side of actix being single threaded which also caused issues as at the time **Pocket Relay** ran many services as a monolith which didn't
 play nicely running on a single thread.
 
 > NOTE: I think its possible to do multi-threading with actix actors however I spent far too long attempting to without getting
@@ -33,7 +33,7 @@ So rather than ditching the nice and familiar Actors pattern I decided to create
 
 Interlink uses a very similar structure to the Actix Actors pattern
 
-Interlink represents different asyncronous entities as "Services" and these services can be communicated with using "Messages" that are sent through "Links". Services are spawned into a tokio task and wait for messages and can then execute actions when they recieve messages.
+Interlink represents different asynchronous entities as "Services" and these services can be communicated with using "Messages" that are sent through "Links". Services are spawned into a tokio task and wait for messages and can then execute actions when they receive messages.
 
 Rather than my previous approach where the external logic obtains mutable access to the entity from the outside and then makes its modifications; this structure instead allows the external logic to send messages to the entity and then the entity completes mutable actions on itself. This new structure means
 that the service is always the sole owner of its state giving it free-range to mutate itself.
@@ -146,7 +146,7 @@ async fn test() {
 
 ### Send and forget
 
-There is an alternative form for sending messages for cases that you don't want to wait for the response "Send and forget". This is useful in cases such as being outside an asyncronous context where you are unable to wait for the response but need to cause an action on a service. For this you can use [Link::do_send](https://docs.rs/interlink/latest/interlink/link/struct.Link.html#method.do_send)
+There is an alternative form for sending messages for cases that you don't want to wait for the response "Send and forget". This is useful in cases such as being outside an asynchronous context where you are unable to wait for the response but need to cause an action on a service. For this you can use [Link::do_send](https://docs.rs/interlink/latest/interlink/link/struct.Link.html#method.do_send)
 
 ```rust
 use interlink::prelude::*;

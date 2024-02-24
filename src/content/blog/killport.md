@@ -13,7 +13,7 @@ later I updated it with an improved version in [Updated pull request](https://gi
 ## Intro
 
 While doing my late night scrolling through GitHub I stumbled upon this cool little project called [killport](https://github.com/jkfran/killport) in my GitHub Explore. I took a peek through the code and the README and though this looked like a cool project. I noticed that the project didn't support Windows so I jotted down a note
-to begin working on it tomrrow.
+to begin working on it tomorrow.
 
 > The killport project is a command line tool which allows you to kill any process that is using specific ports
 
