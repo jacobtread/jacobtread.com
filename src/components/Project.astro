@@ -12,6 +12,12 @@ const DEFAULT_NAMES: Record<string, string> = {
     WEBSITE: "View Website",
 };
 
+type ProjectLink = {
+    type: "GITHUB" | "WEBSITE";
+    link: string;
+    name?: string;
+};
+
 const { title, tags, links, image } = data;
 const { Content } = await render();
 ---
@@ -41,7 +47,7 @@ const { Content } = await render();
         <ul class="block__row">
             {
                 links &&
-                    links.map((link) => {
+                    links.map((link: ProjectLink) => {
                         const name = link.name ?? DEFAULT_NAMES[link.type];
                         return (
                             <li>
