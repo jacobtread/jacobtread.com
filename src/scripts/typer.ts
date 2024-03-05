@@ -71,6 +71,9 @@ function createTyper(element: HTMLElement): void {
 
 // Load the typer elements when the window loads
 window.onload = () => {
-    const typerElements: NodeListOf<Element> = document.querySelectorAll(".typer");
-    typerElements.forEach((typer: Element) => createTyper(typer as HTMLElement));
+    const typerElements: NodeListOf<Element> =
+        document.querySelectorAll(".typer");
+    typerElements.forEach((typer: Element) =>
+        createTyper(typer as HTMLElement)
+    );
 };
