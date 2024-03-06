@@ -7,13 +7,15 @@ type Props = Project;
 
 const { data, render } = Astro.props;
 
-const DEFAULT_NAMES: Record<string, string> = {
+type ProjectLinkType = "GITHUB" | "WEBSITE";
+
+const DEFAULT_NAMES: Record<ProjectLinkType, string> = {
     GITHUB: "Github",
     WEBSITE: "View Website",
 };
 
 type ProjectLink = {
-    type: "GITHUB" | "WEBSITE";
+    type: ProjectLinkType;
     link: string;
     name?: string;
 };
