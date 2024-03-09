@@ -140,7 +140,7 @@ hr {
 .blocks {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+    gap: 1.5rem;
     list-style: none;
 
     &--column {
@@ -258,6 +258,10 @@ hr {
 }
 
 @media screen and (max-width: scheme.$screen-small) {
+    .blocks {
+        gap: 1rem;
+    }
+
     .section__title {
         font-size: 2rem;
     }
