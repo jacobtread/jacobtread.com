@@ -1,0 +1,11 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "@/constants";
+import Timesheet from "@components/timesheet/Timesheet";
+---
+
+<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+    <main class="main">
+        <Timesheet client:only />
+    </main>
+</Layout>
