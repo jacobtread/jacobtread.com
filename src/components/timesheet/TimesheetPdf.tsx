@@ -98,6 +98,12 @@ const styles = StyleSheet.create({
         fontSize: 8,
         marginBottom: 5,
     },
+
+    footNote: {
+        marginTop: 10,
+        fontSize: 6,
+        fontFamily: "Helvetica-Bold",
+    },
 });
 
 function formatDateTime(value: Date): string {
@@ -250,6 +256,11 @@ export default function TimesheetPdf({ data, invoiceNumber }: Props) {
                         </Text>
                     </View>
                 </View>
+
+                <Text style={styles.footNote}>
+                    Information present in this timesheet should be considered
+                    Commercial in Confidence.
+                </Text>
             </Page>
         </Document>
     );
