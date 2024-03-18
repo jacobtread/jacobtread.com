@@ -25,6 +25,7 @@
         "reqwest",
         "struct",
         "Tetris",
+        "Timekeep",
         "Timesheet",
         "usize",
         "Wellbot"
