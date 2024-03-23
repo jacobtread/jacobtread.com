@@ -11,5 +11,4 @@ links:
 priority: 4
 ---
 
-Obsidian Timekeep is a plugin designed for Obsidian that enables time tracking directly within Obsidian Vaults, the tracked time information is stored inside
-the result and can keep tracking even when the app is closed. The tracked data can be exported to a variety of formats including Markdown, CSV, JSON, and PDF
+Obsidian Timekeep is a plugin designed for Obsidian that enables time tracking directly within Obsidian Vaults. The tracked time information is stored within the markdown directly and can continue tracking even when the app is closed. Moreover, the tracked data can be exported to a variety of formats, including Markdown, CSV, JSON, and PDF.
