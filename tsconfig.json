@@ -1,25 +1,25 @@
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "baseUrl": "D:/Projects/Web/jacobtread.com/src",
+    "baseUrl": ".",
     "paths": {
       "@components/*": [
-        "components/*"
+        "src/components/*"
       ],
       "@layouts/*": [
-        "layouts/*"
+        "src/layouts/*"
       ],
       "@assets/*": [
-        "assets/*"
+        "src/assets/*"
       ],
       "@sections/*": [
-        "sections/*"
+        "src/sections/*"
       ],
       "@data/*": [
-        "data/*"
+        "src/data/*"
       ],
       "@/*": [
-        "*"
+        "src/*"
       ]
     },
     "jsx": "react-jsx",
