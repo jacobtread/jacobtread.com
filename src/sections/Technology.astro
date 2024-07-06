@@ -130,7 +130,7 @@ import frontendFrameworksImage from "@assets/images/framf-small.png";
     </div>
 </section>
 
-<style>
+<style lang="scss">
     .blocks {
         display: flex;
         flex-flow: column;
@@ -140,8 +140,13 @@ import frontendFrameworksImage from "@assets/images/framf-small.png";
         display: flex;
         flex-flow: row;
         align-items: center;
+        justify-content: space-between;
 
         gap: 1rem;
+
+        &__text {
+            max-width: 50rem;
+        }
     }
 
     @media screen and (max-width: 48rem) {
