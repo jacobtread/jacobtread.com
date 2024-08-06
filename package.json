@@ -26,6 +26,7 @@
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "sass": "^1.69.7",
+        "sharp": "^0.33.4",
         "zod": "^3.22.4"
     },
     "devDependencies": {
