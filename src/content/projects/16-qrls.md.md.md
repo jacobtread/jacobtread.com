@@ -10,7 +10,7 @@ links:
             name: "V2 GitHub",
         },
     ]
-priority: 15
+priority: 16
 ---
 
 QRLS is a kiosk system for the Questionable Research Labs which allows members and guests to sign in when entering the building and also manage and view who has been in the building. There has been multiple iterations of this website first of which was not created by me but since then there has been two new remakes by me.

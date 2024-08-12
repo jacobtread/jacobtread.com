@@ -11,7 +11,7 @@ tags:
         "Arduino",
     ]
 links: [{ type: "GITHUB", link: "https://github.com/jacobtread/DuckCentral" }]
-priority: 37
+priority: 38
 ---
 
 An app for controlling the Malduino Wireless Bad-USB using a Android app with a

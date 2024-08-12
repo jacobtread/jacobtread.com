@@ -2,7 +2,7 @@
 title: "TetriVersal"
 tags: ["Typescript", "Shell", "NodeJS"]
 links: [{ type: "GITHUB", link: "https://github.com/jacobtread/TetriVersal" }]
-priority: 20
+priority: 21
 ---
 
 An unfinished game of multiplayer Tetris intended for use as the game for a school project.

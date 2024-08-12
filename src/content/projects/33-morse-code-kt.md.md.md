@@ -2,7 +2,7 @@
 title: "Morse Code Kt"
 tags: ["Kotlin", "Gradle", "Maven", "Morse Code", "Library"]
 links: [{ type: "GITHUB", link: "https://github.com/jacobtread/MorseCode" }]
-priority: 32
+priority: 33
 ---
 
 This is a library for encoding and decoding Morse code in Kotlin. The library also has a WIP

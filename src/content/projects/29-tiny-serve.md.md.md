@@ -2,7 +2,7 @@
 title: "Tiny Serve"
 tags: ["Rust", "HTTP", "Server"]
 links: [{ type: "GITHUB", link: "https://github.com/jacobtread/TinyServe" }]
-priority: 28
+priority: 29
 ---
 
 This is a tiny portable Rust application which has only one purpose and that is to create an
