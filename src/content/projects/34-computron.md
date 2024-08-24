@@ -2,7 +2,7 @@
 title: "Computron"
 tags: ["VueJS", "NuxtJS", "SCSS", "Javascript", "Website", "Assessment"]
 links: [{ type: "GITHUB", link: "https://github.com/jacobtread/Computron" }]
-priority: 33
+priority: 34
 ---
 
 A website designed, built and submitted for an internal assessment in Digital Technologies
