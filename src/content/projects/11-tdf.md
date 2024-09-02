@@ -1,7 +1,7 @@
 ---
 title: "Tdf"
 tags: ["Rust", "Library", "Packet System", "Macros"]
-links: [{ type: "GITHUB", link: "https://github.com/jacobtread/Tdf" }]
+links: [{ type: "GITHUB", link: "https://github.com/jacobtread/tdf" }]
 priority: 11
 ---
 
