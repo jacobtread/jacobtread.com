@@ -1,7 +1,7 @@
 ---
-title: "Process PDF"
+title: "PDF Process"
 tags: ["Rust", "Async", "Tokio", "Library", "PDF"]
-links: [{ type: "GITHUB", link: "https://github.com/jacobtread/interlink" }]
+links: [{ type: "GITHUB", link: "https://github.com/jacobtread/pdf_process" }]
 priority: 13
 ---
 
