@@ -1,19 +1,40 @@
 import fs from "fs";
 import path from "path";
 
-// Function to read all markdown files in a directory
+/**
+ * Finds all markdown files within the provided
+ * directory
+ *
+ * @param {string} directory The directory to search within
+ * @returns All markdown files in the directory
+ */
 function readMarkdownFiles(directory) {
     return fs.readdirSync(directory).filter((file) => file.endsWith(".md"));
 }
 
-// Function to update priority line in a markdown file
+/**
+ * Reads the provided markdown file and updates the
+ * "priority: {NUMBER}" line within the file to match
+ * the provided priority
+ *
+ * @param {string} filePath The path to the markdown file
+ * @param {number} newPriority The new priority to use
+ */
 function updatePriorityLine(filePath, newPriority) {
     let content = fs.readFileSync(filePath, "utf8");
     content = content.replace(/priority: \d+/, `priority: ${newPriority}`);
     fs.writeFileSync(filePath, content);
 }
 
-// Function to insert a file at a specific order
+/**
+ * Inserts a new markdown file at the provided priority order.
+ * Will move any existing markdown files that are after or
+ * conflicting with the priority requested
+ *
+ * @param {string} directory Base directory to work within
+ * @param {number} order Priority to give the file
+ * @param {string} name Name for the new file
+ */
 function insertFileAtOrder(directory, order, name) {
     const files = readMarkdownFiles(directory);
 
