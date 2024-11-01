@@ -4,7 +4,7 @@
 
 [Deployed Site](https://jacobtread.com)
 
-This is the GitHub repository for my personal website. This website is written using [Astro](https://astro.build/), SCSS, and TypeScript.
+This is the GitHub repository for my personal website. This website is written using [Astro](https://astro.build/), SCSS, TypeScript, and Markdown.
 
 ## Projects
 
