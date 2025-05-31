@@ -37,6 +37,7 @@ const projects = defineCollection({
             .optional(),
         priority: z.number().optional().default(MAX_PRIORITY_VALUE),
         image: z.string().optional(),
+        span: z.boolean().optional(),
     }),
 });
 

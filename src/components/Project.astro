@@ -20,11 +20,11 @@ type ProjectLink = {
     name?: string;
 };
 
-const { title, tags, links, image } = data;
+const { title, tags, links, image, span } = data;
 const { Content } = await render();
 ---
 
-<li class="block project">
+<li class={span ? "block block--span project" : "block project"}>
     <div>
         {
             image && (
@@ -44,7 +44,7 @@ const { Content } = await render();
 
     <div>
         <ul class="block__row project__tags">
-            {tags.map((tag: string) => <li class="project__tag">{tag}</li>)}
+            {tags.map((tag: string) => <li class="project__tag"># {tag}</li>)}
         </ul>
         <ul class="block__row">
             {
@@ -88,7 +88,7 @@ const { Content } = await render();
         gap: 1rem;
 
         &__tags {
-            gap: 0.5rem;
+            gap: 1rem;
         }
 
         &__tag {
