@@ -22,7 +22,7 @@ const { link, title, name, value, icon: Icon } = Astro.props;
     class="block contact"
     title={title}>
     <Icon class="icon" />
-    <div>
+    <div class="contact__content">
         <span class="contact__name">{name}</span>
         <p class="contact__value">{value}</p>
     </div>
@@ -35,6 +35,12 @@ const { link, title, name, value, icon: Icon } = Astro.props;
         max-width: 3rem;
         width: 100%;
         height: auto;
+        flex-shrink: 0;
+    }
+
+    .contact__content {
+        flex: auto;
+        overflow: hidden;
     }
 
     .contact {
@@ -45,6 +51,7 @@ const { link, title, name, value, icon: Icon } = Astro.props;
 
         gap: 1rem;
         padding: 1rem !important;
+        overflow: hidden;
 
         &__name {
             font-weight: bold;
@@ -54,6 +61,8 @@ const { link, title, name, value, icon: Icon } = Astro.props;
         &__value {
             color: var(--text);
             font-size: 1.15rem;
+            text-overflow: ellipsis;
+            overflow: hidden;
         }
     }
 
