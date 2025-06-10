@@ -1,6 +1,8 @@
 ---
 import typerList from "@data/typer.json";
 import "@assets/styles/typer.scss";
+import jacobSvg from "@assets/images/jacob.svg";
+import readSvg from "@assets/images/read.svg";
 
 // Create a comma seperate list of the values to type
 const typerValues: string = typerList.join(",");
@@ -9,8 +11,23 @@ const typerValues: string = typerList.join(",");
 <div class="heading">
     <div class="heading__content">
         <h1 class="heading__name">
-            <span class="heading__name__first">Jacob</span>
-            <span class="heading__name__last">Read</span>
+            <img
+                class="heading__name__first"
+                src={jacobSvg.src}
+                width="450px"
+                height="100px"
+                alt="Jacob"
+                aria-hidden="true"
+            />
+            <img
+                class="heading__name__last"
+                src={readSvg.src}
+                width="340px"
+                height="90px"
+                alt="Read"
+                aria-hidden="true"
+            />
+            <span class="sr-only">Jacob Read</span>
         </h1>
         <p class="heading__role">
             <!-- Typing element with its possible values -->
@@ -63,31 +80,20 @@ const typerValues: string = typerList.join(",");
     }
 
     .heading__name {
+        display: flex;
+        flex-flow: column;
+        gap: 2rem;
+
         font-weight: bold;
         font-size: 8rem;
         color: var(--title);
-        line-height: 1;
         margin-left: -4px;
     }
 
     .heading__name__first,
     .heading__name__last {
         opacity: 0;
-        display: block;
-        text-transform: uppercase;
-        letter-spacing: 0.25rem;
         animation: in-left 0.5s ease forwards;
-    }
-
-    .heading__name__first {
-        background: -webkit-linear-gradient(
-            30deg,
-            var(--primary-lighter),
-            var(--secondary)
-        );
-        -webkit-background-clip: text;
-        color: var(--primary-lighter);
-        -webkit-text-fill-color: transparent;
     }
 
     .heading__name__last {
@@ -169,12 +175,23 @@ const typerValues: string = typerList.join(",");
             text-align: center;
 
             &__name {
-                font-size: 6rem;
+                align-items: center;
+                gap: 1.5rem;
             }
 
             &__role {
                 font-size: 2rem;
             }
+        }
+
+        .heading__name__first {
+            width: 350px;
+            height: 80px;
+        }
+
+        .heading__name__last {
+            width: 240px;
+            height: 70px;
         }
 
         .nav {
@@ -190,12 +207,22 @@ const typerValues: string = typerList.join(",");
             }
 
             &__name {
-                font-size: 5rem;
+                gap: 0.25rem;
             }
 
             &__role {
                 font-size: 1.25rem;
             }
+        }
+
+        .heading__name__first {
+            width: 300px;
+            height: 70px;
+        }
+
+        .heading__name__last {
+            width: 190px;
+            height: 60px;
         }
 
         .nav {
@@ -210,6 +237,14 @@ const typerValues: string = typerList.join(",");
     }
 
     @media screen and (max-width: scheme.$screen-extra-small) {
+        .heading__name__first {
+            width: 200px;
+        }
+        .heading__name__last {
+            width: 140px;
+            height: 40px;
+        }
+
         .heading__name {
             font-size: 3rem;
         }
