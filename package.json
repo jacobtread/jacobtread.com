@@ -12,16 +12,16 @@
         "format": "prettier -w src --plugin-search-dir=."
     },
     "dependencies": {
-        "@astrojs/mdx": "^2.0.4",
-        "@astrojs/react": "^3.1.0",
-        "@astrojs/rss": "^4.0.2",
-        "@astrojs/sitemap": "^3.0.4",
+        "@astrojs/mdx": "^4.3.12",
+        "@astrojs/react": "^4.4.2",
+        "@astrojs/rss": "^4.0.14",
+        "@astrojs/sitemap": "^3.6.0",
         "@fontsource/inter": "^5.0.16",
         "@fontsource/jetbrains-mono": "^5.0.18",
         "@react-pdf/renderer": "^3.3.8",
         "@types/react": "^18.2.66",
         "@types/react-dom": "^18.2.22",
-        "astro": "latest",
+        "astro": "^5.16.3",
         "moment": "^2.30.1",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
@@ -30,8 +30,8 @@
         "zod": "^3.22.4"
     },
     "devDependencies": {
-        "@kindspells/astro-shield": "^1.3.6",
-        "prettier": "^3.2.2",
-        "prettier-plugin-astro": "^0.12.3"
+        "@jacobtread/astro-shield": "^1.0.0",
+        "prettier": "^3.7.3",
+        "prettier-plugin-astro": "^0.14.1"
     }
 }
