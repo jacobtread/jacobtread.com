@@ -1,0 +1,2 @@
+/*
+    Content-Security-Policy: default-src 'self'; script-src 'self' static.cloudflareinsights.com; connect-src cloudflareinsights.com ajax.cloudflare.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' https:; font-src 'self'; frame-src 'none'; object-src 'none'; media-src 'self'; frame-ancestors 'none'; base-uri 'self'; upgrade-insecure-requests; block-all-mixed-content
