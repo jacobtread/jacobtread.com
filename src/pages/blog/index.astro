@@ -43,7 +43,7 @@ blogPosts.sort(
             {
                 blogPosts.map((post) => (
                     <li>
-                        <a class="post block" href={`/blog/${post.slug}/`}>
+                        <a class="post block" href={`/blog/${post.id}/`}>
                             <h2 class="post__title">
                                 {post.data.title + " "}
                                 <span class="post__date">
@@ -60,7 +60,7 @@ blogPosts.sort(
 </Layout>
 
 <style lang="scss">
-    @use "@assets/styles/scheme" as scheme;
+    @use "@assets/styles/scheme.scss" as scheme;
 
     .rss {
         $bg-color: #222222;

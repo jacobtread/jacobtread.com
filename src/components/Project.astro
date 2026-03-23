@@ -1,11 +1,11 @@
 ---
-import type { CollectionEntry } from "astro:content";
+import { type CollectionEntry, render } from "astro:content";
 import GitHub from "./icons/GitHub.astro";
 
 type Project = CollectionEntry<"projects">;
 type Props = Project;
 
-const { data, render } = Astro.props;
+const { data } = Astro.props;
 
 type ProjectLinkType = "GITHUB" | "WEBSITE";
 
@@ -21,7 +21,7 @@ type ProjectLink = {
 };
 
 const { title, tags, links, image, span } = data;
-const { Content } = await render();
+const { Content } = await render(Astro.props);
 ---
 
 <li class={span ? "block block--span project" : "block project"}>

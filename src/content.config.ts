@@ -1,6 +1,9 @@
-import { defineCollection, z } from "astro:content";
+import { glob } from "astro/loaders";
+import { defineCollection } from "astro:content";
+import { z } from "astro/zod";
 
 const blog = defineCollection({
+    loader: glob({ base: "./src/content/blog", pattern: "**/*.md" }),
     // Type-check frontmatter using a schema
     schema: z.object({
         title: z.string(),
@@ -23,6 +26,7 @@ const blog = defineCollection({
 const MAX_PRIORITY_VALUE: number = Number.MAX_SAFE_INTEGER;
 
 const projects = defineCollection({
+    loader: glob({ base: "./src/content/projects", pattern: "**/*.md" }),
     schema: z.object({
         title: z.string(),
         tags: z.array(z.string()),

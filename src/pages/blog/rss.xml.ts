@@ -26,7 +26,7 @@ export const GET: APIRoute = async (context: APIContext): Promise<Response> => {
     const items: RssEntry[] = posts.map(
         (post: BlogEntry): RssEntry => ({
             ...post.data,
-            link: `/blog/${post.slug}/`,
+            link: `/blog/${post.id}/`,
         })
     );
 

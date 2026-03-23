@@ -1,5 +1,5 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
+import { type CollectionEntry, getCollection, render } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import FormattedDate from "@components/FormattedDate.astro";
 
@@ -16,13 +16,13 @@ type Props = BlogEntry;
 export const getStaticPaths = async () => {
     const posts: BlogEntry[] = await getCollection("blog");
     return posts.map((post: BlogEntry) => ({
-        params: { slug: post.slug },
+        params: { slug: post.id },
         props: post,
     }));
 };
 
 const post = Astro.props;
-const { Content } = await post.render();
+const { Content } = await render(post);
 
 const {
     title,
@@ -75,7 +75,7 @@ const {
 </Layout>
 
 <style lang="scss">
-    @use "@assets/styles/scheme" as scheme;
+    @use "@assets/styles/scheme.scss" as scheme;
 
     .date {
         color: #666;
