@@ -45,6 +45,8 @@ const projects = defineCollection({
     }),
 });
 
-const licenses = defineCollection({});
+const licenses = defineCollection({
+    loader: glob({ base: "./src/content/licenses", pattern: "**/*.md" }),
+});
 
 export const collections = { blog, projects, licenses };

@@ -1,5 +1,6 @@
 import type { APIRoute, APIContext } from "astro";
 import { type CollectionEntry, getCollection } from "astro:content";
+import path from "node:path";
 
 // Type of a license in the licenses collection
 type License = CollectionEntry<"licenses">;
@@ -27,8 +28,16 @@ export const GET: APIRoute = async (context: APIContext): Promise<Response> => {
  */
 export const getStaticPaths = async () => {
     const licenses: License[] = await getCollection("licenses");
-    return licenses.map((license: License) => ({
-        params: { id: license.id },
-        props: license,
-    }));
+    return licenses.map((license: License) => {
+        if (!license.filePath) {
+            throw new Error("License file missing file path");
+        }
+
+        const fileName = path.basename(license.filePath);
+
+        return ({
+            params: { id: fileName },
+            props: license,
+        })
+    });
 };
