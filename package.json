@@ -30,13 +30,8 @@
         "zod": "^3.22.4"
     },
     "devDependencies": {
-        "@jacobtread/astro-shield": "^1.0.0",
+        "@jacobtread/astro-shield": "^2.0.0",
         "prettier": "^3.7.3",
         "prettier-plugin-astro": "^0.14.1"
-    },
-    "overrides": {
-        "@jacobtread/astro-shield": {
-            "astro": "^6.0.8"
-        }
     }
 }
