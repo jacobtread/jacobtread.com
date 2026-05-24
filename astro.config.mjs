@@ -1,13 +1,11 @@
 import { defineConfig } from "astro/config";
-import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
-import react from "@astrojs/react";
 import { shield } from "@jacobtread/astro-shield";
 
 // https://astro.build/config
 export default defineConfig({
     site: "https://jacobtread.com",
-    integrations: [mdx(), sitemap(), react(), shield({})],
+    integrations: [sitemap(), shield({})],
     markdown: {
         shikiConfig: {
             theme: "dark-plus",
