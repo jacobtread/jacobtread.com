@@ -1,8 +1,15 @@
 @use "@assets/styles/scheme.scss" as scheme;
 @use "@assets/styles/themes/dark.scss" as dark;
+@use "@assets/styles/themes/light.scss" as light;
 
 :root {
   @each $name, $color in dark.$theme-variables {
+    --#{$name}: #{$color};
+  }
+}
+
+.light {
+  @each $name, $color in light.$theme-variables {
     --#{$name}: #{$color};
   }
 }
