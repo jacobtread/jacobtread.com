@@ -13,16 +13,16 @@
     },
     "dependencies": {
         "@astrojs/rss": "^4.0.18",
-        "@astrojs/sitemap": "^3.7.2",
+        "@astrojs/sitemap": "^3.7.3",
         "@fontsource/inter": "^5.2.8",
         "@fontsource/jetbrains-mono": "^5.2.8",
-        "astro": "^6.3.7",
-        "sass": "^1.100.0",
+        "astro": "^6.4.6",
+        "sass": "^1.101.0",
         "sharp": "^0.33.5"
     },
     "devDependencies": {
         "@jacobtread/astro-shield": "^2.0.0",
-        "prettier": "^3.8.3",
+        "prettier": "^3.8.4",
         "prettier-plugin-astro": "^0.14.1"
     },
     "packageManager": "pnpm@10.33.4+sha512.1c67b3b359b2d408119ba1ed289f34b8fc3c6873412bec6fd264fbdc82489e510fcbecb9ce9d22dae7f3b76269d8441046014bdca53b9979cd7a561ad631b800"
