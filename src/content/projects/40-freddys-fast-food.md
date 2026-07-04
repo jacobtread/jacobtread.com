@@ -8,7 +8,7 @@ links:
             link: "https://github.com/jacobtread/Freddys-Fast-Food",
         },
     ]
-priority: 39
+priority: 40
 ---
 
 A python application submitted for an internal assessment in Digital Technologies for Achievement

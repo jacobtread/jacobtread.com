@@ -1,3 +1,4 @@
+import { execSync } from "child_process";
 import fs from "fs";
 import path from "path";
 
@@ -47,10 +48,9 @@ function insertFileAtOrder(directory, order, name) {
         if (parseInt(existingOrder) >= order) {
             const newOrder = parseInt(existingOrder) + 1;
             const newName = `${newOrder}-${existingName.replaceAll(".md", "")}.md`;
-            fs.renameSync(
-                path.join(directory, file),
-                path.join(directory, newName)
-            );
+            const oldPath = path.join(directory, file);
+            const newPath = path.join(directory, newName);
+            execSync(`git mv "${oldPath}" "${newPath}"`);
 
             // Update priority line in renamed file
             updatePriorityLine(path.join(directory, newName), newOrder);
