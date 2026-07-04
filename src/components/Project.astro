@@ -25,7 +25,7 @@ const { Content } = await render(Astro.props);
 ---
 
 <li class={span ? "block block--span project" : "block project"}>
-    <div>
+    <div class="project__content">
         {
             image && (
                 <img
@@ -110,6 +110,10 @@ const { Content } = await render(Astro.props);
             margin: 1rem 0;
             font-size: 1.15rem;
             color: var(--text);
+        }
+
+        .project__content :global(a) {
+            color: var(--primary-lighter);
         }
     }
 
