@@ -8,7 +8,7 @@ links:
             link: "https://github.com/jacobtread/QuizlerEnterprise",
         },
     ]
-priority: 25
+priority: 26
 image: "/projects/logos/quizler-enterprise.svg"
 ---
 

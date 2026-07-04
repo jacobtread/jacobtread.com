@@ -12,7 +12,7 @@ tags:
         "Arduino",
     ]
 links: [{ type: "GITHUB", link: "https://github.com/jacobtread/MalDuino-W" }]
-priority: 31
+priority: 32
 ---
 
 This is a custom fork of the Malduino Wireless Bad-USB firmware with a more modern embedded
