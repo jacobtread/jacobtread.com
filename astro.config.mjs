@@ -17,12 +17,12 @@ export default defineConfig({
         },
         resolve: {
             alias: [
-                { find: "@", replacement: "./src" },
-                { find: "@components", replacement: "./src/components" },
-                { find: "@layouts", replacement: "./src/layouts" },
-                { find: "@assets", replacement: "./src/assets" },
-                { find: "@sections", replacement: "./src/sections" },
-                { find: "@data", replacement: "./src/data" },
+                { find: "@", replacement: "src" },
+                { find: "@components", replacement: "src/components" },
+                { find: "@layouts", replacement: "src/layouts" },
+                { find: "@assets", replacement: "src/assets" },
+                { find: "@sections", replacement: "src/sections" },
+                { find: "@data", replacement: "src/data" },
             ],
         },
     },
