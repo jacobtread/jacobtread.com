@@ -18,7 +18,7 @@
         "@fontsource/jetbrains-mono": "^5.3.0",
         "astro": "^7.3.3",
         "sass": "^1.104.1",
-        "sharp": "^0.33.5"
+        "sharp": "^0.35.4"
     },
     "devDependencies": {
         "@jacobtread/astro-shield": "^3.0.0",
