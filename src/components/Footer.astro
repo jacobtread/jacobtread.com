@@ -52,11 +52,13 @@ const year: number = today.getFullYear();
     }
 
     .nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
         margin-top: 0.5rem;
 
         &__link {
             color: var(--text);
-            margin-right: 1rem;
 
             &:hover {
                 color: var(--text-light);
