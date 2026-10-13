@@ -3,10 +3,10 @@ title: "QRLS"
 tags: ["VueJS", "SASS", "TypeScript", "JavaScript", "HTML", "NodeJS", "Docker"]
 links:
     [
-        { type: "GITHUB", link: "https://github.com/jacobtread/QRLS" },
+        { type: "GITHUB", link: "https://github.com/Questionable-Research-Labs/QRLS" },
         {
             type: "GITHUB",
-            link: "https://github.com/jacobtread/QRLS-v2",
+            link: "https://github.com/Questionable-Research-Labs/QRLS-v2",
             name: "V2 GitHub",
         },
     ]
